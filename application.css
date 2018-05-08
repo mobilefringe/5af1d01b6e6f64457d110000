@@ -1,0 +1,194 @@
+/* *** HEADER *** */
+header {
+   margin-top: 20px;
+   margin-bottom: 20px; 
+}
+.logo_container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end; 
+}
+.site_logo {
+    width: 116px;
+    img {
+        max-width: 100%;
+    }
+}
+#menu-icon {
+    display: none;
+}
+.header_social_container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+.language_select {
+    margin-left: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    a {
+        color: #000;
+    }
+}
+.header_social {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-pack: end;
+   -webkit-justify-content: flex-end;
+   -ms-flex-pack: end;
+   justify-content: flex-end;
+    .social_icons {
+        a {
+            margin-right: 5px;
+            margin-left: 5px;
+            display: block;
+            float: left;
+        }
+        .fa {
+            font-size: 20px;
+            line-height: normal;
+            color: $secondary;
+            transition: color 0.3s ease;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}
+.header_newsletter_container {
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    .newsletter_input {
+        margin: 0;
+        margin-left: 5px;
+        padding: 2px;
+        width: 154px;
+        height: 25px;
+        border-radius: 5px 0px 0px 5px;
+        border: 1px solid #C9C9C9;
+        background: #EFEFEF;
+        font-size: 11px;
+        color: #6E6E6E;
+        text-align: center;
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            font-size: 11px;
+            color: #6E6E6E;
+        }
+        ::-moz-placeholder { /* Firefox 19+ */
+            font-size: 11px;
+            color: #6E6E6E;
+        }
+        :-ms-input-placeholder { /* IE 10+ */
+            font-size: 11px;
+            color: #6E6E6E;
+        }
+        :-moz-placeholder { /* Firefox 18- */
+            font-size: 11px;
+            color: #6E6E6E;
+        }
+    }  
+    .newsletter_btn {
+        width: 86px;
+        height: 25px;
+        border-radius: 0px 5px 5px 0px;
+        border: 1px solid #C9C9C9;
+        background: #D8D8D8;
+        font-size: 11px;
+        color: #6E6E6E;
+    }
+    .language_select {
+        font-size: 12px;
+        line-height: normal;
+    }
+}
+.todays_hours, .mobile_social_icons {
+    display: none;
+}
+#primary_nav {
+    margin: 15px auto 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+#primary_nav ul {
+    margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	font-weight: 600;
+	
+}
+#primary_nav ul a {
+    padding: 0 15px;
+	display: block;
+	text-decoration: none;
+    color: #FFF;
+}
+#primary_nav ul .menu_item {
+    margin: 0;
+	padding: 5px 0;
+    width: 130px;
+    display: inline-block;
+	position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+#primary_nav ul .menu_item:hover {
+	background: rgba(0,0,0,0.8);
+	color: #FFF;
+}
+#primary_nav ul ul {
+	padding: 0;
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	font-size: 14px;
+	text-transform: none;
+}
+#primary_nav ul ul .submenu_item {
+	width: 130px;
+}
+#primary_nav ul ul a {
+	padding: 10px 15px;
+	line-height: 120%;
+}
+#primary_nav ul .menu_item:hover > ul {
+	display: block;
+	z-index: 99;
+}
