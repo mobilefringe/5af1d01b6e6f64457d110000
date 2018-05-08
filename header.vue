@@ -5,7 +5,7 @@
                 <div class="col-md-2">
                     <div class="site_logo center-block">
                         <a href="/">
-                            <img alt="Property Logo" src="//codecloud.cdn.speedyrails.net/sites/57f3bee46e6f643959000000/image/png/undefined/logo.png">
+                            <img alt="Property Logo" src="//codecloud.cdn.speedyrails.net/sites/5af1d01b6e6f64457d110000/image/png/1518446490000/Logo@2x.png">
                         </a>
                     </div>
                     <div @click="show_menu = !show_menu" :class="{ open: show_menu }" id="menu-icon">
