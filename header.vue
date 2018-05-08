@@ -2,7 +2,7 @@
     <header>
         <section id="header" class="header main_container">
             <div class="row logo_container">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <div class="site_logo center-block">
                         <a href="/">
                             <img alt="Property Logo" src="//codecloud.cdn.speedyrails.net/sites/5af1d01b6e6f64457d110000/image/png/1518446490000/Logo@2x.png">
@@ -15,7 +15,7 @@
                         <span></span>
                     </div>
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-9">
                     <div class="header_social_container hidden-sm hidden-xs">
                         <div class="header_social">
                             <span class="social_icon" v-for="item in social_media">
