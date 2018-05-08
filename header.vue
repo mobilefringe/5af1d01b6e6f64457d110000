@@ -39,16 +39,9 @@
                                 </span>
                             </div>
                             <ul>
-                                <li id="dropDown1" @click="toggleSubMenu('dropDown1')" class="menu_item">Directory
-                                    <ul :class="'submenu' + { show_submenu: showSubMenu1 }">
-                                        <router-link tag="li" to="/stores" class="submenu_item" exact>
-                                            <a>{{ $t("menu.stores") }}</a>
-                                        </router-link>
-                                        <router-link tag="li" to="/map" class="submenu_item" exact>
-                                            <a>{{ $t("menu.centre-map") }}</a>
-                                        </router-link>
-                                    </ul>
-                                </li>
+                                <router-link tag="li" to="/stores" class="menu_item" exact>
+                                    Directory
+                                </router-link>
                                 <router-link tag="li" to="/events" class="menu_item" exact>
                                     Events & Promotions
                                 </router-link>
