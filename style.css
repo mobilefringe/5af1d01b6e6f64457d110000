@@ -1,22 +1,22 @@
-/* *** FONTS *** */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
-@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,700');
+// /* *** FONTS *** */
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+// @import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,700');
 
-@font-face {
-    font-family: 'NewBodoni';
-    src: url('//codecloud.cdn.speedyrails.net/sites/5af1d01b6e6f64457d110000//1516942408000/NewBodoni-Italic.woff2') format('woff2'),
-        url('//codecloud.cdn.speedyrails.net/sites/5af1d01b6e6f64457d110000//1516942408000/NewBodoni-Italic.woff') format('woff');
-    font-weight: normal;
-    // font-style: italic;
-}
+// @font-face {
+//     font-family: 'NewBodoni';
+//     src: url('//codecloud.cdn.speedyrails.net/sites/5af1d01b6e6f64457d110000//1516942408000/NewBodoni-Italic.woff2') format('woff2'),
+//         url('//codecloud.cdn.speedyrails.net/sites/5af1d01b6e6f64457d110000//1516942408000/NewBodoni-Italic.woff') format('woff');
+//     font-weight: normal;
+//     // font-style: italic;
+// }
 
-@font-face {
-    font-family: 'Bodoni-Italic-Lite';
-    src: url('//codecloud.cdn.speedyrails.net/sites/5af1d01b6e6f64457d110000//1516942542000/BauerBodoniLT-Italic.woff2') format('woff2'),
-        url('//codecloud.cdn.speedyrails.net/sites/5af1d01b6e6f64457d110000//1516942542000/BauerBodoniLT-Italic.woff') format('woff');
-    font-weight: normal;
-    // font-style: italic;
-}
+// @font-face {
+//     font-family: 'Bodoni-Italic-Lite';
+//     src: url('//codecloud.cdn.speedyrails.net/sites/5af1d01b6e6f64457d110000//1516942542000/BauerBodoniLT-Italic.woff2') format('woff2'),
+//         url('//codecloud.cdn.speedyrails.net/sites/5af1d01b6e6f64457d110000//1516942542000/BauerBodoniLT-Italic.woff') format('woff');
+//     font-weight: normal;
+//     // font-style: italic;
+// }
 
 /* *** COLOURS *** */
 $primary: #F5A623;
