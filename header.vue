@@ -39,7 +39,7 @@
                                 </span>
                             </div>
                             <ul>
-                                <li id="dropDown1" @click="toggleSubMenu('dropDown1')" class="menu_item">{{ $t("menu.store-directory") }}
+                                <li id="dropDown1" @click="toggleSubMenu('dropDown1')" class="menu_item">Directory
                                     <ul :class="'submenu' + { show_submenu: showSubMenu1 }">
                                         <router-link tag="li" to="/stores" class="submenu_item" exact>
                                             <a>{{ $t("menu.stores") }}</a>
@@ -50,22 +50,15 @@
                                     </ul>
                                 </li>
                                 <router-link tag="li" to="/events" class="menu_item" exact>
-                                    {{ $t("menu.events") }}
+                                    Events & Promotions
                                 </router-link>
                                 <router-link tag="li" to="/promotions" class="menu_item" exact>
-                                    {{ $t("menu.promotions") }}
+                                    Dine
                                 </router-link>
-                                <li id="dropDown2" @click="toggleSubMenu('dropDown2')" class="menu_item">{{ $t("menu.leasing") }}
-                                    <ul :class="'submenu' + { show_submenu: showSubMenu2 }">
-                                        <router-link tag="li" to="/pages/milton-leasing" class="submenu_item" exact>
-                                            <a>{{ $t("menu.leasing") }}</a>
-                                        </router-link>
-                                        <router-link tag="li" to="/photos" class="submenu_item" exact>
-                                            <a>{{ $t("menu.photos") }}</a>
-                                        </router-link>
-                                    </ul>
-                                </li>
-                                <li id="dropDown3" @click="toggleSubMenu('dropDown3')" class="menu_item">{{ $t("menu.contact") }}
+                                <router-link tag="li" to="/promotions" class="menu_item" exact>
+                                    Location
+                                </router-link>
+                                <li id="dropDown3" @click="toggleSubMenu('dropDown3')" class="menu_item">Contact Us
                                     <ul :class="'submenu' + { show_submenu: showSubMenu3 }">
                                         <router-link tag="li" to="/contact-us" class="submenu_item" exact>
                                             <a>{{ $t("menu.contact") }}</a>
