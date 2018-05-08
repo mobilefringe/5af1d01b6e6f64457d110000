@@ -93,7 +93,7 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
                     {
                         name: "YouTube",
                         url: "https://www.youtube.com/",
-                        iconClass: "fa fa-youtube-square"
+                        iconClass: "fa fa-youtube"
                     }
                 ],
             }
