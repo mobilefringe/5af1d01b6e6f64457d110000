@@ -18,18 +18,15 @@
                 <div class="col-md-10">
                     <div class="header_social_container hidden-sm hidden-xs">
                         <div class="header_social">
-                            <div class="social_icons">
-                                <span v-for="item in social_media">
-                                    <a :href="item.url" target="_blank">
-                                        <div>
-                                            <p class="accessibility">{{item.name}}</p>
-                                            <i :class="item.iconClass" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </span>
-                            </div>
+                            <span class="social_icon" v-for="item in social_media">
+                                <a :href="item.url" target="_blank">
+                                    <div>
+                                        <p class="accessibility">{{item.name}}</p>
+                                        <i :class="item.iconClass" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </span>
                         </div>
-                        
                     </div>
                     
                     <transition name="custom-classes-transition" enter-active-class="animated slideInRight" leave-active-class="animated slideOutRight">
