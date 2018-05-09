@@ -126,6 +126,7 @@
                         }
                     });
                     var sortedEvents = _.orderBy(showEvents, function (o) { return o.end_date })
+                    console.log(sortedEvents)
                     return sortedEvents
                 },
                 promos: function promos() {
@@ -145,6 +146,7 @@
                         }
                     });
                     var sortedPromos = _.orderBy(showPromos, [function(o) { return o.end_date; }]);
+                    console.log(sortedPromos)
                     return sortedPromos;
                 }
             },
