@@ -80,7 +80,7 @@
                                 <div class="store_desc" id="jobs_container"></div>
                             </div> 
                             
-                            <div v-if="this.currentStore.promotions">
+                            <div v-if="this.currentStore.jobs">
                                 <b-card no-body class="mb-1 inside_page_toggle">
                                     <b-card-header header-tag="header" class="p-1" role="tab">
                                         <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" aria-controls="togglePromotions">
