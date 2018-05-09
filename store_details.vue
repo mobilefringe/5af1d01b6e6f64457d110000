@@ -93,6 +93,7 @@
                     currentStore: null,
                     storeHours: null,
                     storePromotions: null,
+                    togglePromos: false,
                     map: null
                 }
             },
