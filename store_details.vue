@@ -47,7 +47,7 @@
                             <div id="collapse3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
                                 <div class="store_desc" id="promos_container"></div>
                             </div>
-                            <div v-for="(item,key) in menu_items"
+                            <div v-for="promo"
                                 <b-card no-body class="mb-1">
                                     <b-card-header header-tag="header" class="p-1" role="tab">
                                         <b-btn block @click="item.show_sub_menu = !item.show_sub_menu" :class="item.show_sub_menu ? 'collapsed' : null" :aria-controls="$t(item.name)" :aria-expanded="item.show_sub_menu ? 'true' : 'false'">
@@ -56,7 +56,7 @@
                                             <i v-else  class="fa fa-plus"></i>
                                         </b-btn>
                                     </b-card-header>
-                                    <b-collapse v-model="item.show_sub_menu" :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(item.name)" role="tabpanel" class="accordion_body">
+                                    <b-collapse v-for="promo in storePromotions" v-model="item.show_sub_menu" :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(item.name)" role="tabpanel" class="accordion_body">
                                         <b-card-body v-for="sub_menu in item.sub_menu">
                                             <p class="card-text">
                                                 <router-link :to="sub_menu.href">{{$t(sub_menu.name)}}</router-link>
