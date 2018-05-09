@@ -18,9 +18,9 @@
                                 <p class="inside_page_title">Phone</p>
                                 <a class="store_details_phone" :href="'tel:' + currentStore.phone">{{ currentStore.phone }}</a>    
                             </div>
-                            <div v-if="currentStore.address">
+                            <div v-if="currentStore.unit">
                                 <p class="inside_page_title">Address</p>
-                                <p class="side_link"></p>
+                                <p class="store_details_phone">{{ currentStore.unit }}</p>
                             </div>
                             <a v-if="currentStore.website" class="animated_btn" :href="'http://' + currentStore.website" target="_blank">Visit Website</a>
                         </div>
