@@ -19,7 +19,7 @@
                                 <a class="store_details_phone" :href="'tel:' + currentStore.phone">{{ currentStore.phone }}</a>    
                             </div>
                             <div v-if="currentStore.address">
-                                <p class="inside_page_header">Address</p>
+                                <p class="inside_page_title">Address</p>
                                 <p class="side_link"></p>
                             </div>
                             <a v-if="currentStore.website" class="animated_btn" :href="'http://' + currentStore.website" target="_blank">Visit Website</a>
@@ -30,14 +30,14 @@
                             </div>
                                 
                             <!--<div id="mapsvg_store_detail" class="map_container"></div>-->
-                            <h5 class="details_header">Store Hours & Information</h5>
+                            <div class="inside_page_header">Store Hours & Information</div>
                             <table id="reg_hours_container" class="hours_container"></table>
                             <div class=" margin_30 store_details_desc" v-html="currentStore.rich_description"></div>
                             
-                            <h5 id="promotions_header" class="details_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            <div id="promotions_header" class="details_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
                                 Promotions
                                 <i class="fa fa-chevron-up pull-right"></i>
-                            </h5>
+                            </div>
                             <div id="collapse3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
                                 <div class="store_desc" id="promos_container"></div>
                             </div>
