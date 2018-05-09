@@ -40,7 +40,7 @@
                             </ul>
                             <div class=" margin_30 store_details_desc" v-html="currentStore.rich_description"></div>
                             
-                            <div v-if="currentStore.promotions > 0" id="promotions_header" class="inside_page_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            <div v-if="currentStore.total_published_promos > 0" id="promotions_header" class="inside_page_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
                                 Promotions
                                 <i class="fa fa-chevron-up pull-right"></i>
                             </div>
@@ -48,10 +48,10 @@
                                 <div class="store_desc" id="promos_container"></div>
                             </div>
                             
-                            <h5 id="jobs_header" class="inside_page_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            <div v-if="currentStore.total_published_jobs > 0" id="jobs_header" class="inside_page_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
                                 Jobs
                                 <i class="fa fa-chevron-up pull-right"></i>
-                            </h5>
+                            </div>
                             <div id="collapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
                                 <div class="store_desc" id="jobs_container"></div>
                             </div>    
