@@ -31,7 +31,8 @@
                             <div class="inside_page_header">Store Hours & Information</div>
                             <ul v-if="storeHours" class="store_details_hours_list">
                                 <li v-for="hour in storeHours" v-if="!hour.is_closed">
-                                    {{hour.day_of_week | moment("dddd", timezone)}}: {{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}
+                                    <span class="day">{{hour.day_of_week | moment("dddd", timezone)}}:</span> 
+                                    <span>{{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}</span>
                                 </li>
                                 <li v-else>
                                     {{hour.day_of_week | moment("dddd", timezone)}}: CLOSED
