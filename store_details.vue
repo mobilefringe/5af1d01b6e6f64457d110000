@@ -143,6 +143,7 @@
                         // }
 
                         temp_promo.push(current_promo);
+                        console.log(current_promo)
                     }); 
                     this.storePromotions = temp_promo;
                     console.log(this.storePromotions)
