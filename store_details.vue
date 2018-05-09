@@ -78,7 +78,40 @@
                             </div>
                             <div id="collapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
                                 <div class="store_desc" id="jobs_container"></div>
-                            </div>    
+                            </div> 
+                            
+                            <div v-if="this.currentStore.promotions">
+                                <b-card no-body class="mb-1 inside_page_toggle">
+                                    <b-card-header header-tag="header" class="p-1" role="tab">
+                                        <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" aria-controls="togglePromotions">
+                                            Promotions
+                                            <i v-if="togglePromos"  class="fa fa-minus f"></i>
+                                            <i v-else  class="fa fa-plus"></i>
+                                        </b-btn>
+                                    </b-card-header>
+                                    <b-collapse v-for="promo in storePromotions" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
+                                        <b-card-body>
+                                            <div class="row">
+                                                <div class="col-md-5" v-if="">
+                                                    <img :src="promo.image_url" :alt="promo.name" class="" />
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <p class="promo_name">{{promo.name}}</p>
+                                                    <p class="promo_date" v-if="isMultiDay(promo)">
+                        							    {{ promo.start_date | moment("MMMM D", timezone)}} to {{ promo.end_date | moment("MMMM D", timezone)}}
+                                                    </p>
+                                                    <p class="promo_date" v-else>{{ promo.start_date | moment("MMMM D", timezone)}}</p>
+                                                    <div class="promo_desc" v-html="promo.description_short"></div>
+                                                    <router-link :to="'/promotions/'+ promo.slug" >
+							                            <a class="read_more">Promo Details</a>
+					                                </router-link>
+                                                </div>
+                                            </div>
+                                            <hr class="promo_separator" />
+                                        </b-card-body>
+                                    </b-collapse>
+                                </b-card>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -126,7 +159,6 @@
                     
                     var vm = this;
                     var temp_promo = [];
-                    console.log(this.currentStore.promotions)
                     _.forEach(this.currentStore.promotions, function(value, key) {
                         var current_promo = vm.findPromoById(value);
                         
@@ -138,7 +170,6 @@
                         temp_promo.push(current_promo);
                     }); 
                     this.storePromotions = temp_promo;
-                    console.log(this.storePromotions)
                 },
                 // map : function (){
                     
