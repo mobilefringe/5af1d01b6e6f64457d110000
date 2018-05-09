@@ -159,6 +159,7 @@
                         temp_promo.push(current_promo);
                     }); 
                     this.storePromotions = temp_promo;
+                    this.togglePromotions = true;
                     
                     var vm = this;
                     var temp_job = [];
