@@ -29,15 +29,9 @@
                                 <svg-map  ref="svgmapRef"  @updateMap="updateSVGMap"  :svgMapUrl="getSVGurl" ></svg-map>
                             </div>
                             <div class="inside_page_header">Store Hours & Information</div>
-                            <!--<div v-if="currentStore.store_hours.length > 0" class="store_details_hours_container">-->
-                            <!--    <p v-for="hour in ">-->
-                            <!--        <td class="hours_left">{{day}}</td>   -->
-                            <!--        <td class="hours_right">{{hour_string}}</td>    -->
-                            <!--    </p>-->
-                            <!--</div>-->
                             <ul v-if="storeHours" class="details-hours-list">
                                 <li v-for="hour in storeHours" v-if="!hour.is_closed">
-                                    {{hour.day_of_week | moment("dddd", timezone)}}: {{hour.open_time | moment("hA", timezone)}}-{{hour.close_time | moment("hA", timezone)}}
+                                    {{hour.day_of_week | moment("dddd", timezone)}}: {{hour.open_time | moment("h:mma", timezone)}}-{{hour.close_time | moment("h:mma", timezone)}}
                                 </li>
                                 <li v-else>
                                     {{hour.day_of_week | moment("dddd", timezone)}}: CLOSED
