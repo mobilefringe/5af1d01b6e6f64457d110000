@@ -146,8 +146,10 @@
                         }
                     });
                     var sortedEvents = _.orderBy(showEvents, function (o) { return o.end_date })
-                    console.log(sortedEvents)
                     return sortedEvents
+                    if (sortedEvents.length > 0) {
+                        this.toggleEvents: true,    
+                    }
                 },
                 promoList: function promos() {
                     var vm = this;
@@ -170,8 +172,10 @@
                         }
                     });
                     var sortedPromos = _.orderBy(showPromos, [function(o) { return o.end_date; }]);
-                    console.log(sortedPromos)
                     return sortedPromos;
+                    if (sortedPromos.length > 0) {
+                        this.togglePromos: true,    
+                    }
                 }
             },
             methods: {
