@@ -71,15 +71,6 @@
                                     </b-collapse>
                                 </b-card>
                             </div>
-                                            
-                            <div v-if="currentStore.total_published_jobs > 0" id="jobs_header" class="inside_page_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                Jobs
-                                <i class="fa fa-chevron-up pull-right"></i>
-                            </div>
-                            <div id="collapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
-                                <div class="store_desc" id="jobs_container"></div>
-                            </div> 
-                            
                             <div v-if="this.currentStore.jobs">
                                 <b-card no-body class="mb-1 inside_page_toggle">
                                     <b-card-header header-tag="header" class="p-1" role="tab">
@@ -98,7 +89,7 @@
                         							    {{ job.start_date | moment("MMMM D", timezone)}} to {{ job.end_date | moment("MMMM D", timezone)}}
                                                     </p>
                                                     <p class="promo_date" v-else>{{ job.start_date | moment("MMMM D", timezone)}}</p>
-                                                    <a href="/jobs/{{slug}}" class="read_more">View Requirements</a>
+                                                    <!--<a href="/jobs/{{slug}}" class="read_more">View Requirements</a>-->
                                                 </div>
                                             </div>
                                             <hr class="promo_separator" />
