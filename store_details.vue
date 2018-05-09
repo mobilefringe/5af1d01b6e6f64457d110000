@@ -55,9 +55,13 @@
                                                     <img :src="promo.image_url" :alt="promo.name" class="" />
                                                 </div>
                                                 <div class="col-md-7">
-                                                    <p class="colored_link">{{promo.name}}</p>
+                                                    <p class="promo_name">{{promo.name}}</p>
+                                                    <p class="promo_date" v-if="isMultiDay(promo)">
+                        							    {{ promo.start_date | moment("MMMM D", timezone)}} to {{ promo.end_date | moment("MMMM D", timezone)}}
+                                                    </p>
+                                                    <p class="promo_date" v-else>{{ promo.start_date | moment("MMMM D", timezone)}}</p>
                                                     <!--<h3 class="publish_date">{{dates}}</h3>-->
-                                                    <div class="details_desc" v-html="promo.description_short"></div>
+                                                    <div class="promo_desc" v-html="promo.description_short"></div>
                                                     <router-link :to="'/promotions/'+ promo.slug" >
 							                            <a class="read_more">Promo Details</a>
 					                                </router-link>
