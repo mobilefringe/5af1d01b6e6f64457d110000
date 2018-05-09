@@ -68,8 +68,11 @@
                                                 <div class="col-md-7">
                                                     <p class="promo_name">{{promo.name}}</p>
                                                     <p class="promo_store_name">
-                                                        <span v-if="promo.promotionable_type == 'Store'">{{ promo.store.name }} | </span>
-                                                        <span v-else>{{ property.name }} | </span>
+                                                        <router-link v-if="promo.promotionable_type == 'Store'" :to="'/stores/'+ promo.store.slug" >
+                                                            {{ promo.store.name }}
+                                                        </router-link>
+                                                        <span v-else>{{ property.name }}</span>
+                                                        |
                                                         <span v-if="isMultiDay(promo)" class="promo_date">{{ promo.start_date | moment("MMMM D", timezone)}} to {{ promo.end_date | moment("MMMM D", timezone)}}</span>
                                                         <span v-else class="promo_date">{{ promo.start_date | moment("MMMM D", timezone)}}</span>
                                                     </p>
