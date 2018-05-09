@@ -29,7 +29,12 @@
                                 <svg-map  ref="svgmapRef"  @updateMap="updateSVGMap"  :svgMapUrl="getSVGurl" ></svg-map>
                             </div>
                             <div class="inside_page_header">Store Hours & Information</div>
-                            <table id="reg_hours_container" class="hours_container"></table>
+                            <div v-if="currentStore.store_hours.length > 0" class="store_details_hours_container">
+                                <p>
+                                    <td class="hours_left">{{day}}</td>   
+                                    <td class="hours_right">{{hour_string}}</td>    
+                                </p>
+                            </div>
                             <div class=" margin_30 store_details_desc" v-html="currentStore.rich_description"></div>
                             
                             <div id="promotions_header" class="inside_page_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
