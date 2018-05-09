@@ -6,7 +6,7 @@
                 <div class="inside_header_background">
                     <div class="main_container">
                         <div class="page_container">
-                            <h2>{{ currentStore.name }}</h2>
+                            <h2>Events & Promotions</h2>
                         </div>
                     </div>
                 </div>
