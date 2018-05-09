@@ -20,7 +20,7 @@
                     <div v-if="featureItems" class="row">
                         <div v-for="item in featureItems" class="col-md-4">
                             <!--<div  class="feature_item">-->
-                                <img :src="item.image_url" />
+                                <img :src="item.image_url" alt="item.name" />
                                 <!--<img src="//codecloud.cdn.speedyrails.net/sites/5af1d01b6e6f64457d110000/image/png/1518461604000/Stores Directory.png" />-->
                             <!--</div>    -->
                         </div>
