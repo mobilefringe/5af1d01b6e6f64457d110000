@@ -15,11 +15,11 @@
                         <div class="col-md-3">
                             <img class="store_details_image" :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'" />
                             <div v-if="currentStore.phone">
-                                <p class="colored_link">Phone</p>
+                                <p class="inside_page_header">Phone</p>
                                 <a class="side_link" :href="'tel:' + currentStore.phone">{{ currentStore.phone }}</a>    
                             </div>
                             <div v-if="currentStore.address">
-                                <p class="colored_link">Address</p>
+                                <p class="inside_page_header">Address</p>
                                 <p class="side_link"></p>
                             </div>
                             <a v-if="currentStore.website" class="animated_btn" :href="'http://' + currentStore.website" target="_blank">Visit Website</a>
