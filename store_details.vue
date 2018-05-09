@@ -50,9 +50,9 @@
                             <div v-if="storePromotions">
                                 <b-card no-body class="mb-1">
                                     <b-card-header header-tag="header" class="p-1" role="tab">
-                                        <b-btn block @click="togglePromos = !togglePromos"  :aria-controls="$t(item.name)" :aria-expanded="promo.togglePromos ? 'true' : 'false'"> <!-- :class="item.show_sub_menu ? 'collapsed' : null" -->
+                                        <b-btn block @click="togglePromos = !togglePromos"   :aria-expanded="togglePromos ? 'true' : 'false'"> <!-- :class="item.show_sub_menu ? 'collapsed' : null" :aria-controls="$t(item.name)" -->
                                             Promotions
-                                            <i v-if="item.show_sub_menu"  class="fa fa-minus"></i>
+                                            <i v-if="togglePromos"  class="fa fa-minus"></i>
                                             <i v-else  class="fa fa-plus"></i>
                                         </b-btn>
                                     </b-card-header>
