@@ -17,7 +17,9 @@
             <loading-spinner v-if="!dataLoaded"></loading-spinner>
             <messages-component v-if="dataLoaded"></messages-component>
             <header-component :social_media="social_media" v-if="dataLoaded"></header-component>
-            <router-view v-if="dataLoaded" class="page-content"></router-view>
+            <router-view v-if="dataLoaded" class="page-content">
+                <h1 class="accessibility">Site Name</h1>
+            </router-view>
             <footer-component :social_media="social_media" v-if="dataLoaded"></footer-component>
         </div>
         <script src="https://unpkg.com/babel-polyfill@6.26.0/dist/polyfill.min.js"></script>
