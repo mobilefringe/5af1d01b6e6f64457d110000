@@ -30,11 +30,21 @@
                             </div>
                             <div class="inside_page_header">Store Hours & Information</div>
                             <div v-if="currentStore.store_hours.length > 0" class="store_details_hours_container">
-                                <p>
+                                <p v-for="hour in ">
                                     <td class="hours_left">{{day}}</td>   
                                     <td class="hours_right">{{hour_string}}</td>    
                                 </p>
                             </div>
+                            <ul class="details-hours-list">
+                                <li v-if="!hour.is_closed" v-for="hour in hours">
+                                    {{hour.day_of_week | moment("dddd", timezone)}}: {{hour.open_time | moment("hA", timezone)}}-{{hour.close_time | moment("hA", timezone)}}
+                                </li>
+                                <li v-else>
+                                    {{hour.day_of_week | moment("dddd", timezone)}}: CLOSED
+                                </li>
+                            </ul>
+                                
+                                
                             <div class=" margin_30 store_details_desc" v-html="currentStore.rich_description"></div>
                             
                             <div id="promotions_header" class="inside_page_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
@@ -70,6 +80,7 @@
                 return {
                     dataLoaded: false,
                     currentStore: null,
+                    storeHours: null,
                     map: null
                 }
             },
@@ -85,6 +96,14 @@
             watch: {
                 $route: function () {
                     this.updateCurrentStore(this.$route.params.id);
+                },
+                currentStore: function () {
+                    var vm = this;
+                    var storeHours = [];
+                    _.forEach(this.currentStore.store_hours, function (value, key) {
+                        storeHours.push(vm.findHourById(value));
+                    });
+                    this.storeHours = storeHours;
                 },
                 // map : function (){
                     
