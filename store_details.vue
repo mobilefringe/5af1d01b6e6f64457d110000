@@ -52,7 +52,7 @@
                                         <b-card-body> <!--  v-for="sub_menu in item.sub_menu" -->
                                             <div class="row">
                                                 <div class="col-md-3" v-if="">
-                                                    <!--<img src="{{promo_image_url_abs}}" :alt="promo.name" class="" />-->
+                                                    <img :src="promo.image_url" :alt="promo.name" class="" />
                                                 </div>
                                                 <div class="col-md-9">
                                                     <p class="colored_link">{{promo.name}}</p>
@@ -125,6 +125,9 @@
                     _.forEach(this.currentStore.promotions, function(value, key) {
                         var current_promo = vm.findPromoById(value);
                         
+                        if (_.includes(current_promo.image_url, 'missing')) {
+                            current_promo.image_url = "http://placehold.it/1560x800/757575";
+                        }
                         // current_promo.name_short = _.truncate(current_promo.name, { 'length': 30, 'separator': ' ' });
                         // current_promo.name_short_2 = _.truncate(current_promo.name_2, { 'length': 30, 'separator': ' ' });
 
