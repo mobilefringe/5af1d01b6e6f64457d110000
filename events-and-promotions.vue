@@ -65,10 +65,11 @@
                                                 </div>
                                                 <div class="col-md-7">
                                                     <p class="promo_name">{{promo.name}}</p>
-                                                    <p class="promo_date" v-if="isMultiDay(promo)">
+                                                    <p class="promo_date">
                                                         <span v-if="promo.promotionable_type == 'Store'">{{ promo.store.name }} | </span>
                                                         <span v-else>{{ property.name }} | </span>
-                        							    {{ promo.start_date | moment("MMMM D", timezone)}} to {{ promo.end_date | moment("MMMM D", timezone)}}
+                                                        <span v-if="isMultiDay(promo)">{{ promo.start_date | moment("MMMM D", timezone)}} to {{ promo.end_date | moment("MMMM D", timezone)}}</span>
+                                                        <span v-else>{{ promo.start_date | moment("MMMM D", timezone)}}</span>
                                                     </p>
                                                     <p class="promo_date" v-else>{{ promo.start_date | moment("MMMM D", timezone)}}</p>
                                                     <div class="promo_desc" v-html="promo.description_short"></div>
