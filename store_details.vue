@@ -89,7 +89,9 @@
                         							    {{ job.start_date | moment("MMMM D", timezone)}} to {{ job.end_date | moment("MMMM D", timezone)}}
                                                     </p>
                                                     <p class="promo_date" v-else>{{ job.start_date | moment("MMMM D", timezone)}}</p>
-                                                    <!--<a href="/jobs/{{slug}}" class="read_more">View Requirements</a>-->
+                                                    <router-link :to="'/jobs/'+ job.slug" >
+							                            <a class="read_more">View Job Details</a>
+					                                </router-link>
                                                 </div>
                                             </div>
                                             <hr class="promo_separator" />
