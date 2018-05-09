@@ -73,7 +73,6 @@
                                                         <span v-if="isMultiDay(promo)">{{ promo.start_date | moment("MMMM D", timezone)}} to {{ promo.end_date | moment("MMMM D", timezone)}}</span>
                                                         <span v-else>{{ promo.start_date | moment("MMMM D", timezone)}}</span>
                                                     </p>
-                                                    <p class="promo_date" v-else>{{ promo.start_date | moment("MMMM D", timezone)}}</p>
                                                     <div class="promo_desc" v-html="promo.description_short"></div>
                                                     <router-link :to="'/promotions/'+ promo.slug" >
 							                            <a class="read_more">Promo Details</a>
