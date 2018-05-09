@@ -13,7 +13,7 @@
                 <div class="main_container margin_30">
                     <div class="row">
                         <div class="col-md-3">
-                            
+                            <img src="http://placehold.it/1200x440/757575" alt="" />    
                         </div>
                         <div class="col-md-9">
                             
@@ -103,10 +103,7 @@
                     map: null
                 }
             },
-            props:['id'],
             created (){
-                window.Raphael = Raphael; // our mapSvg plugin is stupid and outdated. need this hack to tie Raphael to window object (global variable)
-                
                 this.loadData().then(response => {
                     this.dataLoaded = true;
                     this.updateCurrentStore(this.id);
