@@ -61,7 +61,7 @@ define([], function () {
             children: [
                 {
                     path: '',
-                    component: view('events'),
+                    component: view('events-and-promotions'),
                     meta: {
                         pageName: 'Events & Promotions',
                     },
