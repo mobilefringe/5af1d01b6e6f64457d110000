@@ -95,6 +95,7 @@
                             }
                         }
                     });
+                    console.log(banners)
                     return banners
                 },
                 featureItems() {
