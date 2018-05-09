@@ -132,12 +132,16 @@
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
                         if (today >= showOnWebDate) {
-                            console.log(window.width)
-                            if(window.width > 768) {
-                                value.description = _.truncate(value.description, { 'length': 100, 'separator': ' ' });
-                            } else {
-                                value.description = _.truncate(value.description, { 'length': 50, 'separator': ' ' });    
+                            if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
+                                value.store.image_url = "http://placehold.it/400x400";
                             }
+                            
+                            if (_.includes(value.image_url, 'missing')) {
+                                value.image_url = "http://placehold.it/400x400";
+                            }
+                            
+                            value.description_short = _.truncate(value.description, { 'length': 150, 'separator': ' ' });
+                            
                             showEvents.push(value);
                         }
                     });
@@ -155,6 +159,7 @@
                             if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
                                 value.store.image_url = "http://placehold.it/400x400";
                             }
+                            
                             if (_.includes(value.image_url, 'missing')) {
                                 value.image_url = "http://placehold.it/400x400";
                             }
