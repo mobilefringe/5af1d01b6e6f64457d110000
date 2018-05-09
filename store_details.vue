@@ -42,14 +42,14 @@
                             <div v-if="storePromotions">
                                 <b-card no-body class="mb-1 inside_page_toggle">
                                     <b-card-header header-tag="header" class="p-1" role="tab">
-                                        <b-btn block @click="togglePromos = !togglePromos"   :aria-expanded="togglePromos ? 'true' : 'false'"> <!-- :class="item.show_sub_menu ? 'collapsed' : null" :aria-controls="$t(item.name)" -->
+                                        <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" :aria-controls="togglePromotions"> <!-- :class="item.show_sub_menu ? 'collapsed' : null" :aria-controls="$t(item.name)" -->
                                             Promotions
-                                            <i v-if="togglePromos"  class="fa fa-minus"></i>
+                                            <i v-if="togglePromos"  class="fa fa-minus f"></i>
                                             <i v-else  class="fa fa-plus"></i>
                                         </b-btn>
                                     </b-card-header>
-                                    <b-collapse v-for="promo in storePromotions" v-model="togglePromos" role="tabpanel" class="accordion_body"> <!-- :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(promo.name)" -->
-                                        <b-card-body> <!--  v-for="sub_menu in item.sub_menu" -->
+                                    <b-collapse v-for="promo in storePromotions" v-model="togglePromos" role="tabpanel" :id="togglePromotions" class="accordion_body"> <!--  :visible="item.show_sub_menu" :accordion="$t(promo.name)" -->
+                                        <b-card-body>
                                             <div class="row">
                                                 <div class="col-md-5" v-if="">
                                                     <img :src="promo.image_url" :alt="promo.name" class="" />
@@ -60,7 +60,6 @@
                         							    {{ promo.start_date | moment("MMMM D", timezone)}} to {{ promo.end_date | moment("MMMM D", timezone)}}
                                                     </p>
                                                     <p class="promo_date" v-else>{{ promo.start_date | moment("MMMM D", timezone)}}</p>
-                                                    <!--<h3 class="publish_date">{{dates}}</h3>-->
                                                     <div class="promo_desc" v-html="promo.description_short"></div>
                                                     <router-link :to="'/promotions/'+ promo.slug" >
 							                            <a class="read_more">Promo Details</a>
