@@ -113,9 +113,9 @@
                 this.loadData().then(response => {
                     this.dataLoaded = true;
                     this.updateCurrentStore(this.id);
-                    
+                    console.log(this.storePromotions)
                 });
-                console.log(this.storePromotions)
+                
             },
             watch: {
                 $route: function () {
