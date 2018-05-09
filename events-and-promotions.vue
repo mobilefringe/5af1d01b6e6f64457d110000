@@ -13,7 +13,7 @@
                 <div class="main_container margin_30">
                     <div class="row">
                         <div class="col-md-3">
-                            <img class="img_max" src="http://placehold.it/440x1200/757575" alt="" />    
+                            <img class="img_max" src="http://placehold.it/440x1200" alt="" />    
                         </div>
                         <div class="col-md-9">
                             <div v-if="eventList.length >= 1">
