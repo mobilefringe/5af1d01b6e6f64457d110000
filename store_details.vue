@@ -55,7 +55,7 @@
                                                     <!--<img src="{{promo_image_url_abs}}" :alt="promo.name" class="" />-->
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <!--<p class="colored_link">{{promo.name}}</p>-->
+                                                    <p class="colored_link">{{promo.name}}</p>
                                                     <!--<h3 class="publish_date">{{dates}}</h3>-->
                                                     <!--<div class="details_desc">{{promo.description_short}}</div>-->
                                                     <!--<a :href="'/promotions/promo.slug" class="read_more">Promo Details</a>-->
