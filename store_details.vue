@@ -49,7 +49,7 @@
                                         </b-btn>
                                     </b-card-header>
                                     <b-collapse v-for="promo in storePromotions" v-model="togglePromos" role="tabpanel" class="accordion_body"> <!-- :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(promo.name)" -->
-                                        <b-card-body> <!--  v-for="sub_menu in item.sub_menu" -->
+                                        <b-card-body class="promo_container"> <!--  v-for="sub_menu in item.sub_menu" -->
                                             <div class="row">
                                                 <div class="col-md-3" v-if="">
                                                     <img :src="promo.image_url" :alt="promo.name" class="" />
