@@ -167,7 +167,7 @@
                         //     current_job.image_url = "http://placehold.it/1560x800/757575";
                         // }
                         // current_job.description_short = _.truncate(current_job.description, { 'length': 150, 'separator': ' ' });
-
+                        console.log(current_job)
                         temp_job.push(current_job);
                     }); 
                     this.storeJobs = temp_job;
