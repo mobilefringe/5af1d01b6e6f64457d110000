@@ -25,28 +25,30 @@
                             <a v-if="currentStore.website" class="animated_btn" :href="'http://' + currentStore.website" target="_blank">Visit Website</a>
                         </div>
                         <div class="col-md-9">
+                            <div id="map">
+                                <svg-map  ref="svgmapRef"  @updateMap="updateSVGMap"  :svgMapUrl="getSVGurl" ></svg-map>
+                            </div>
+                                
+                            <!--<div id="mapsvg_store_detail" class="map_container"></div>-->
+                            <h5 class="details_header">Store Hours & Information</h5>
+                            <table id="reg_hours_container" class="hours_container"></table>
+                            <div class=" margin_30 store_details_desc" v-html="currentStore.rich_description"></div>
                             
-                        </div>
-                    </div>
-                    <div v-if="currentStore" class="store_details_container">
-                        
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="store_details_logo">
-                                    <img :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'"/>
-                                </div>
+                            <h5 id="promotions_header" class="details_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Promotions
+                                <i class="fa fa-chevron-up pull-right"></i>
+                            </h5>
+                            <div id="collapse3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
+                                <div class="store_desc" id="promos_container"></div>
                             </div>
-                            <div class="col-md-8">
-                                <div id="map">
-                                    <svg-map  ref="svgmapRef"  @updateMap="updateSVGMap"  :svgMapUrl="getSVGurl" ></svg-map>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 margin_30">
-                                <div class="margin_40"></div>
-                                <div class="store_details_desc" v-html="currentStore.rich_description"></div>
-                            </div>
+                            
+                            <h5 id="jobs_header" class="details_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Jobs
+                                <i class="fa fa-chevron-up pull-right"></i>
+                            </h5>
+                            <div id="collapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
+                                <div class="store_desc" id="jobs_container"></div>
+                            </div>    
                         </div>
                     </div>
                 </div>
