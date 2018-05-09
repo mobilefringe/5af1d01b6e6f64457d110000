@@ -42,13 +42,13 @@
                             <div v-if="storePromotions">
                                 <b-card no-body class="mb-1 inside_page_toggle">
                                     <b-card-header header-tag="header" class="p-1" role="tab">
-                                        <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" aria-controls="togglePromotions"> <!-- :class="item.show_sub_menu ? 'collapsed' : null" :aria-controls="$t(item.name)" -->
+                                        <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" aria-controls="togglePromotions">
                                             Promotions
                                             <i v-if="togglePromos"  class="fa fa-minus f"></i>
                                             <i v-else  class="fa fa-plus"></i>
                                         </b-btn>
                                     </b-card-header>
-                                    <b-collapse v-for="promo in storePromotions" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body"> <!--  :visible="item.show_sub_menu" :accordion="$t(promo.name)" -->
+                                    <b-collapse v-for="promo in storePromotions" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
                                         <b-card-body>
                                             <div class="row">
                                                 <div class="col-md-5" v-if="">
@@ -134,17 +134,8 @@
                             current_promo.image_url = "http://placehold.it/1560x800/757575";
                         }
                         current_promo.description_short = _.truncate(current_promo.description, { 'length': 150, 'separator': ' ' });
-                        // current_promo.name_short_2 = _.truncate(current_promo.name_2, { 'length': 30, 'separator': ' ' });
-
-                        // if (_.includes(current_promo.image_url, 'missing')) {
-                        //     current_promo.image_url = "http://placehold.it/1560x800/757575";
-                        // }
-                        // if (_.includes(current_promo.promo_image2_url_abs, 'missing')) {
-                        //     current_promo.promo_image2_url_abs = "http://placehold.it/1560x800/757575";
-                        // }
 
                         temp_promo.push(current_promo);
-                        console.log(current_promo)
                     }); 
                     this.storePromotions = temp_promo;
                     console.log(this.storePromotions)
@@ -200,8 +191,7 @@
                     this.dropPin();
                 },
                 dropPin () {
-                    // console.log("this.currentStore.svgmap_region", this.currentStore.svgmap_region);
-                    this.svgMapRef.addMarker(this.currentStore,'//codecloud.cdn.speedyrails.net/sites/589e308f6e6f641b9f010000/image/png/1484850466000/show_pin.png');
+                    this.svgMapRef.addMarker(this.currentStore, '//codecloud.cdn.speedyrails.net/sites/589e308f6e6f641b9f010000/image/png/1484850466000/show_pin.png');
                     this.svgMapRef.setViewBox(this.currentStore)
                 },
                 isMultiDay(promo) {
