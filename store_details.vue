@@ -23,7 +23,7 @@
                             <p class="side_link">
                                 2275 Village Walk Drive Henderson, Nevada 89052
                             </p>
-                            <a class="main_btn animated_btn" href="//{{website}}" target="_blank" style="{{show}}">Visit Website</a>
+                            <a v-if="currentStore.website" class="animated_btn" :href="currentStore.website" target="_blank">Visit Website</a>
                         </div>
                         <div class="col-md-9">
                             
