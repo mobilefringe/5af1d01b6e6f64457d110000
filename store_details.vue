@@ -29,25 +29,7 @@
                         </div>
                     </div>
                     <div v-if="currentStore" class="store_details_container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1 class="store_details_name">{{ currentStore.name }}</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8">
-                                <p class="store_details_phone">
-                                    <span v-if="currentStore.phone">{{ currentStore.phone}}</span>
-                                    <span v-if="currentStore.website"> | <a :href="currentStore.website" target="_blank">Visit Website</a></span>
-                                </p>
-                            </div>
-                            <div class="col-md-4 text-right hidden_phone">
-                                <p v-if="currentStore.categories" class="store_details_categories">
-                                    Category: <span>{{ storeCategory }}</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="margin_40"></div>
+                        
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="store_details_logo">
