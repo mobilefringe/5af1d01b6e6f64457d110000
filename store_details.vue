@@ -56,8 +56,8 @@
                                             <i v-else  class="fa fa-plus"></i>
                                         </b-btn>
                                     </b-card-header>
-                                    <b-collapse v-for="promo in storePromotions" v-model="togglePromos"   :accordion="$t(promo.name)" role="tabpanel" class="accordion_body"> <!-- :id="$t(item.name)" :visible="item.show_sub_menu" -->
-                                        <b-card-body v-for="sub_menu in item.sub_menu">
+                                    <b-collapse v-for="promo in storePromotions" v-model="togglePromos" role="tabpanel" class="accordion_body"> <!-- :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(promo.name)" -->
+                                        <b-card-body> <!--  v-for="sub_menu in item.sub_menu" -->
                                             <p class="card-text">
                                                 Hello
                                             </p>
