@@ -456,124 +456,124 @@ $secondary: #969696;
 //         }
 //     }
 // }
-/* *** HOME *** */
-.home_banner_container {
-    position: relative;
-    .home_banner_wrapper {
-        margin: 0 auto;
-        padding-right: 10px;
-        width: 100%;
-        height: 400px;
-        max-width: 960px;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        -webkit-box-align: end;
-        -webkit-align-items: flex-end;
-        -ms-flex-align: end;
-        align-items: flex-end;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        .home_hours, .home_stores {
-            padding: 0 10px;
-            width: 190px;
-            height: 190px;
-            background: #FFF;
-        }
-        .home_hours h2 {
-            margin: 5px 0;
-        }
-        .home_hours p {
-            margin-bottom: 5px;
-            font-weight: 700;
-            font-size: 14px;
-            line-height: 19px;
-            span {
-                font-weight: 500;
-            }
-        }
-        .home_stores {
-            position: relative;
-            h2 {
-                margin: 0;
-                padding-right: 10px;
-                position: absolute;
-                top: 50%;
-                transform: translate(0%, -50%);
-            }
-        }
-    }
-}
-.banner_image {
-    margin-bottom: 40px;
-    height: 400px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50%;
-}
-.slick-dots {
-    padding: 0;
-    display: block;
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 0;
-    line-height: 0;
-    cursor: pointer;
-    z-index: 99;
-    li {
-        padding: 0 5px;
-        display: inline-block;
-        button {
-            margin: 0;
-            padding: 0;
-            width: 15px;
-            height: 15px;
-            border: 1px solid #FFF;
-            border-radius: 20px;
-            background-color: transparent;
-            font-size: 0;
-        }
-    }
-    .slick-active button {
-        background-color: #FFF;
-        opacity: .9;
-    }
-}
-.feature_item_container {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    .feature_item {
-        img {
-            max-width: 100%
-        }
-    }
-    .feature_item:first-child {
-        padding-right: 20px;
-        width: calc(50% - 20px);
-    }
-    .feature_item:last-child {
-        padding-left: 20px;
-        width: calc(50% - 20px);
-        border-left: 1px solid #D8D8D8;
-    }
-}
+// /* *** HOME *** */
+// .home_banner_container {
+//     position: relative;
+//     .home_banner_wrapper {
+//         margin: 0 auto;
+//         padding-right: 10px;
+//         width: 100%;
+//         height: 400px;
+//         max-width: 960px;
+//         display: -webkit-box;
+//         display: -webkit-flex;
+//         display: -ms-flexbox;
+//         display: flex;
+//         -webkit-box-orient: vertical;
+//         -webkit-box-direction: normal;
+//         -webkit-flex-direction: column;
+//         -ms-flex-direction: column;
+//         flex-direction: column;
+//         -webkit-box-pack: justify;
+//         -webkit-justify-content: space-between;
+//         -ms-flex-pack: justify;
+//         justify-content: space-between;
+//         -webkit-box-align: end;
+//         -webkit-align-items: flex-end;
+//         -ms-flex-align: end;
+//         align-items: flex-end;
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         bottom: 0;
+//         left: 0;
+//         .home_hours, .home_stores {
+//             padding: 0 10px;
+//             width: 190px;
+//             height: 190px;
+//             background: #FFF;
+//         }
+//         .home_hours h2 {
+//             margin: 5px 0;
+//         }
+//         .home_hours p {
+//             margin-bottom: 5px;
+//             font-weight: 700;
+//             font-size: 14px;
+//             line-height: 19px;
+//             span {
+//                 font-weight: 500;
+//             }
+//         }
+//         .home_stores {
+//             position: relative;
+//             h2 {
+//                 margin: 0;
+//                 padding-right: 10px;
+//                 position: absolute;
+//                 top: 50%;
+//                 transform: translate(0%, -50%);
+//             }
+//         }
+//     }
+// }
+// .banner_image {
+//     margin-bottom: 40px;
+//     height: 400px;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: 50%;
+// }
+// .slick-dots {
+//     padding: 0;
+//     display: block;
+//     position: absolute;
+//     bottom: 40px;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     font-size: 0;
+//     line-height: 0;
+//     cursor: pointer;
+//     z-index: 99;
+//     li {
+//         padding: 0 5px;
+//         display: inline-block;
+//         button {
+//             margin: 0;
+//             padding: 0;
+//             width: 15px;
+//             height: 15px;
+//             border: 1px solid #FFF;
+//             border-radius: 20px;
+//             background-color: transparent;
+//             font-size: 0;
+//         }
+//     }
+//     .slick-active button {
+//         background-color: #FFF;
+//         opacity: .9;
+//     }
+// }
+// .feature_item_container {
+//     display: -webkit-box;
+//     display: -webkit-flex;
+//     display: -ms-flexbox;
+//     display: flex;
+//     .feature_item {
+//         img {
+//             max-width: 100%
+//         }
+//     }
+//     .feature_item:first-child {
+//         padding-right: 20px;
+//         width: calc(50% - 20px);
+//     }
+//     .feature_item:last-child {
+//         padding-left: 20px;
+//         width: calc(50% - 20px);
+//         border-left: 1px solid #D8D8D8;
+//     }
+// }
 
 /* *** INSIDE PAGES *** */
 .inside_header_background {
