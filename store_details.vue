@@ -154,6 +154,7 @@
                     'findStoreBySlug',
                     'findCategoryById',
                     'findHourById',
+                    'findPromoById',
                 ]),
                 storeCategory() {
                     var currentStoreCategory = this.currentStore.categories[0];
