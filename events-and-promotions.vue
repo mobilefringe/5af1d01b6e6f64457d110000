@@ -16,7 +16,38 @@
                             <img src="http://placehold.it/1200x440/757575" alt="" />    
                         </div>
                         <div class="col-md-9">
-                            
+                            <div v-if="events.length >= 1">
+                                <b-card no-body class="mb-1 inside_page_toggle">
+                                    <b-card-header header-tag="header" class="p-1" role="tab">
+                                        <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" aria-controls="togglePromotions">
+                                            Events
+                                            <i v-if="togglePromos"  class="fa fa-minus f"></i>
+                                            <i v-else  class="fa fa-plus"></i>
+                                        </b-btn>
+                                    </b-card-header>
+                                    <b-collapse v-for="event in storePromotions" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
+                                        <b-card-body>
+                                            <div class="row">
+                                                <div class="col-md-5" v-if="">
+                                                    <img :src="promo.image_url" :alt="promo.name" class="" />
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <p class="promo_name">{{promo.name}}</p>
+                                                    <p class="promo_date" v-if="isMultiDay(promo)">
+                        							    {{ promo.start_date | moment("MMMM D", timezone)}} to {{ promo.end_date | moment("MMMM D", timezone)}}
+                                                    </p>
+                                                    <p class="promo_date" v-else>{{ promo.start_date | moment("MMMM D", timezone)}}</p>
+                                                    <div class="promo_desc" v-html="promo.description_short"></div>
+                                                    <router-link :to="'/promotions/'+ promo.slug" >
+							                            <a class="read_more">Promo Details</a>
+					                                </router-link>
+                                                </div>
+                                            </div>
+                                            <hr class="promo_separator" />
+                                        </b-card-body>
+                                    </b-collapse>
+                                </b-card>
+                            </div>
                             <div v-if="this.currentStore.promotions">
                                 <b-card no-body class="mb-1 inside_page_toggle">
                                     <b-card-header header-tag="header" class="p-1" role="tab">
@@ -41,34 +72,6 @@
                                                     <div class="promo_desc" v-html="promo.description_short"></div>
                                                     <router-link :to="'/promotions/'+ promo.slug" >
 							                            <a class="read_more">Promo Details</a>
-					                                </router-link>
-                                                </div>
-                                            </div>
-                                            <hr class="promo_separator" />
-                                        </b-card-body>
-                                    </b-collapse>
-                                </b-card>
-                            </div>
-                            <div v-if="this.currentStore.jobs">
-                                <b-card no-body class="mb-1 inside_page_toggle">
-                                    <b-card-header header-tag="header" class="p-1" role="tab">
-                                        <b-btn block @click="toggleJobs = !toggleJobs" :aria-expanded="toggleJobs ? 'true' : 'false'" aria-controls="toggleJobs">
-                                            Jobs
-                                            <i v-if="toggleJobs"  class="fa fa-minus f"></i>
-                                            <i v-else  class="fa fa-plus"></i>
-                                        </b-btn>
-                                    </b-card-header>
-                                    <b-collapse v-for="job in storeJobs" v-model="toggleJobs" role="tabpanel" id="toggleJobs" class="accordion_body">
-                                        <b-card-body>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p class="promo_name">{{job.name}}</p>
-                                                    <p class="promo_date" v-if="isMultiDay(job)">
-                        							    {{ job.start_date | moment("MMMM D", timezone)}} to {{ job.end_date | moment("MMMM D", timezone)}}
-                                                    </p>
-                                                    <p class="promo_date" v-else>{{ job.start_date | moment("MMMM D", timezone)}}</p>
-                                                    <router-link :to="'/jobs/'+ job.slug" >
-							                            <a class="read_more">View Job Details</a>
 					                                </router-link>
                                                 </div>
                                             </div>
@@ -109,7 +112,7 @@
                     'processedEvents',
                     'processedPromos',
                 ]),
-                events: function events() {
+                eventList: function events() {
                     var events = this.processedEvents;
                     var showEvents = [];
                     _.forEach(events, function (value, key) {
@@ -129,7 +132,7 @@
                     console.log(sortedEvents)
                     return sortedEvents
                 },
-                promos: function promos() {
+                promoList: function promos() {
                     var vm = this;
                     var showPromos = [];
                     _.forEach(this.processedPromos, function(value, key) {
