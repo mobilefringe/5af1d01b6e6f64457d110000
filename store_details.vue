@@ -135,7 +135,7 @@
                         temp_promo.push(current_promo);
                     }); 
                     this.storePromotions = temp_promo;
-                    console.log(this.promotions)
+                    console.log(this.storePromotions)
                 },
                 // map : function (){
                     
