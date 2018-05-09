@@ -113,9 +113,7 @@
                 this.loadData().then(response => {
                     this.dataLoaded = true;
                     this.updateCurrentStore(this.id);
-                    console.log(this.storePromotions)
                 });
-                
             },
             watch: {
                 $route: function () {
@@ -147,7 +145,7 @@
                         temp_promo.push(current_promo);
                     }); 
                     this.storePromotions = temp_promo;
-                    
+                    console.log(this.storePromotions)
                 },
                 // map : function (){
                     
