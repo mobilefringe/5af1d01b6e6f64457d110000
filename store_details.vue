@@ -204,7 +204,17 @@
                     // console.log("this.currentStore.svgmap_region", this.currentStore.svgmap_region);
                     this.svgMapRef.addMarker(this.currentStore,'//codecloud.cdn.speedyrails.net/sites/589e308f6e6f641b9f010000/image/png/1484850466000/show_pin.png');
                     this.svgMapRef.setViewBox(this.currentStore)
-                } 
+                },
+                isMultiDay(promo) {
+                    var timezone = this.timezone
+                    var start_date = moment(promo.start_date).tz(timezone).format("MM-DD-YYYY")
+                    var end_date = moment(promo.end_date).tz(timezone).format("MM-DD-YYYY")
+                    if (start_date === end_date) {
+                        return false
+                    } else {
+                        return true
+                    }
+                }
             }
         });
     });
