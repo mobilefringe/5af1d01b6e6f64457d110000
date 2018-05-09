@@ -166,6 +166,20 @@
                         temp_promo.push(current_promo);
                     }); 
                     this.storePromotions = temp_promo;
+                    
+                    var vm = this;
+                    var temp_job = [];
+                    _.forEach(this.currentStore.jobs, function(value, key) {
+                        var current_job = vm.findJobById(value);
+                        
+                        if (_.includes(current_job.image_url, 'missing')) {
+                            current_job.image_url = "http://placehold.it/1560x800/757575";
+                        }
+                        current_job.description_short = _.truncate(current_job.description, { 'length': 150, 'separator': ' ' });
+
+                        temp_job.push(current_job);
+                    }); 
+                    this.storeJobs = temp_job;
                 },
                 // map : function (){
                     
