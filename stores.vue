@@ -2,61 +2,68 @@
     <div> <!-- without an outer container div this component template will not render -->
         <loading-spinner v-if="!dataLoaded"></loading-spinner>
         <transition name="fade">
-            <inside-header-component></inside-header-component>
-        </transition>
-        <transition name="fade">
-            <div v-if="dataLoaded" v-cloak class="main_container margin_30">
-                <div class="hidden_phone">
-                    <div class="row store_nav">
-                        <div class="col-md-3">
-                            <a class="store_nav_link active_store_nav" href="/stores">Directory</a>
-                        </div>
-                        <div class="col-md-3">
-                            <a class="store_nav_link" href="/map">Centre Map</a>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Sort By: </span>
-                            <a class="store_nav_link" v-on:click="changeMode('alphabetical')">Alphabetical</a>
-                        </div>
-                        <div class="col-md-3">
-                            <v-select v-model="selectedCat" :options="dropDownCats" :searchable="false" :on-change="filteredByCategory" class="category-select" :placeholder="$t('stores_page.sort_by_cats')" id="selectByCat"></v-select>
+            <div v-if="dataLoaded" v-cloak>
+                <div class="inside_header_background">
+                    <div class="main_container">
+                        
+                        <div class="page_container">
+                            <h1></h1>
                         </div>
                     </div>
-                    <div class="row stores_container">
-                        <div class="col-md-12" :class="{ store_col_count: breakIntoCol }">
-                            <div v-for="(stores, index) in filteredStores" v-if="listMode === 'alphabetical'">
-                                <div class="list_header">
-                                    <div class="store_initial_container">
-                                        <div class="store_initial_box">
-                                            <span>{{index}}</span>    
+                </div>
+                <div class="main_container margin_30">
+                    <div class="hidden_phone">
+                        <div class="row store_nav">
+                            <div class="col-md-3">
+                                <a class="store_nav_link active_store_nav" href="/stores">Directory</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="store_nav_link" href="/map">Centre Map</a>
+                            </div>
+                            <div class="col-md-3">
+                                <span>Sort By: </span>
+                                <a class="store_nav_link" v-on:click="changeMode('alphabetical')">Alphabetical</a>
+                            </div>
+                            <div class="col-md-3">
+                                <v-select v-model="selectedCat" :options="dropDownCats" :searchable="false" :on-change="filteredByCategory" class="category-select" :placeholder="$t('stores_page.sort_by_cats')" id="selectByCat"></v-select>
+                            </div>
+                        </div>
+                        <div class="row stores_container">
+                            <div class="col-md-12" :class="{ store_col_count: breakIntoCol }">
+                                <div v-for="(stores, index) in filteredStores" v-if="listMode === 'alphabetical'">
+                                    <div class="list_header">
+                                        <div class="store_initial_container">
+                                            <div class="store_initial_box">
+                                                <span>{{index}}</span>    
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="store-section" v-for="store in stores">
-                                    <p class="store_list_name">
-                                        <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
-                                            {{store.name}}
-                                        </router-link>
-                                        <span v-if="store.is_new_store" class="pull-right new_store">NEW</span>
-                                        <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store">COMING SOON</span>
-                                        <span v-if="store.promotions != null" class="promo_exist pull-right">PROMOTION</span>
-                                    </p>
+                                    <div class="store-section" v-for="store in stores">
+                                        <p class="store_list_name">
+                                            <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
+                                                {{store.name}}
+                                            </router-link>
+                                            <span v-if="store.is_new_store" class="pull-right new_store">NEW</span>
+                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store">COMING SOON</span>
+                                            <span v-if="store.promotions != null" class="promo_exist pull-right">PROMOTION</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="hidden-lg hidden-md visible-sm-block visible-xs-block">
-                    <div class="row hidden-lg hidden-md visible-sm-block visible-xs-block">
-                        <div class="col-md-12 mobile_store_select">
-                            <v-select :options="allStores" :placeholder="'Select A Store'" :searchable="false" :label="'name'" :on-change="dropPin"></v-select> 
+                    <div class="hidden-lg hidden-md visible-sm-block visible-xs-block">
+                        <div class="row hidden-lg hidden-md visible-sm-block visible-xs-block">
+                            <div class="col-md-12 mobile_store_select">
+                                <v-select :options="allStores" :placeholder="'Select A Store'" :searchable="false" :label="'name'" :on-change="dropPin"></v-select> 
+                            </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <svg-map ref="svgRef" v-bind:svgMapUrl="getSVGurl" :regions="regions"></svg-map>
+                            </div>
+                        </div>    
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <svg-map ref="svgRef" v-bind:svgMapUrl="getSVGurl" :regions="regions"></svg-map>
-                        </div>
-                    </div>    
                 </div>
             </div>
         </transition>
