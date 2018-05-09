@@ -14,13 +14,19 @@
                     <div class="row">
                         <div class="col-md-3">
                             <img class="details_image" :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'" />
-                            <p class="colored_link" style="{{phone_show}}">Phone</p>
-                            <a class="side_link" style="{{phone_show}}" href="tel:{{phone}}">{{phone}}</a>
+                            <div v-if="currentStore.phone">
+                                <p class="colored_link">Phone</p>
+                                <a class="side_link" :href="'tel:' + currentStore.phone">{{phone}}</a>    
+                            </div>
+                            
                             <p class="colored_link" style="{{address_show}}">Address</p>
                             <p class="side_link">
                                 2275 Village Walk Drive Henderson, Nevada 89052
                             </p>
                             <a class="main_btn animated_btn" href="//{{website}}" target="_blank" style="{{show}}">Visit Website</a>
+                        </div>
+                        <div class="col-md-9">
+                            
                         </div>
                     </div>
                     <div v-if="currentStore" class="store_details_container">
