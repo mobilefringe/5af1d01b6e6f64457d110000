@@ -25,11 +25,9 @@
                             <a v-if="currentStore.website" class="animated_btn" :href="'http://' + currentStore.website" target="_blank">Visit Website</a>
                         </div>
                         <div class="col-md-9">
-                            <div id="map">
+                            <div id="map" class="margin_20">
                                 <svg-map  ref="svgmapRef"  @updateMap="updateSVGMap"  :svgMapUrl="getSVGurl" ></svg-map>
                             </div>
-                                
-                            <!--<div id="mapsvg_store_detail" class="map_container"></div>-->
                             <div class="inside_page_header">Store Hours & Information</div>
                             <table id="reg_hours_container" class="hours_container"></table>
                             <div class=" margin_30 store_details_desc" v-html="currentStore.rich_description"></div>
