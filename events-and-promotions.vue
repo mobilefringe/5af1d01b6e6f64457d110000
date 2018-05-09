@@ -33,10 +33,12 @@
                                                 </div>
                                                 <div class="col-md-7">
                                                     <p class="promo_name">{{event.name}}</p>
-                                                    <p class="promo_date" v-if="isMultiDay(event)">
-                        							    {{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}
+                                                    <p class="promo_date">
+                                                        <span v-if="event.eventable_type == 'Store'">{{ event.store.name }} | </span>
+                                                        <span v-else>{{ property.name }} | </span>
+                                                        <span v-if="isMultiDay(event)">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span>
+                                                        <span v-else>{{ event.start_date | moment("MMMM D", timezone)}}</span>
                                                     </p>
-                                                    <p class="promo_date" v-else>{{ event.start_date | moment("MMMM D", timezone)}}</p>
                                                     <div class="promo_desc" v-html="event.description_short"></div>
                                                     <router-link :to="'/events/'+ event.slug" >
 							                            <a class="read_more">Event Details</a>
