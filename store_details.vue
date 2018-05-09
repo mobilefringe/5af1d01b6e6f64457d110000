@@ -34,7 +34,7 @@
                             <table id="reg_hours_container" class="hours_container"></table>
                             <div class=" margin_30 store_details_desc" v-html="currentStore.rich_description"></div>
                             
-                            <div id="promotions_header" class="details_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            <div id="promotions_header" class="inside_page_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
                                 Promotions
                                 <i class="fa fa-chevron-up pull-right"></i>
                             </div>
@@ -42,7 +42,7 @@
                                 <div class="store_desc" id="promos_container"></div>
                             </div>
                             
-                            <h5 id="jobs_header" class="details_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            <h5 id="jobs_header" class="inside_page_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
                                 Jobs
                                 <i class="fa fa-chevron-up pull-right"></i>
                             </h5>
