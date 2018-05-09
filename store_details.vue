@@ -83,28 +83,22 @@
                             <div v-if="this.currentStore.jobs">
                                 <b-card no-body class="mb-1 inside_page_toggle">
                                     <b-card-header header-tag="header" class="p-1" role="tab">
-                                        <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" aria-controls="togglePromotions">
+                                        <b-btn block @click="toggleJobs = !toggleJobs" :aria-expanded="toggleJobs ? 'true' : 'false'" aria-controls="toggleJobs">
                                             Jobs
-                                            <i v-if="togglePromos"  class="fa fa-minus f"></i>
+                                            <i v-if="toggleJobs"  class="fa fa-minus f"></i>
                                             <i v-else  class="fa fa-plus"></i>
                                         </b-btn>
                                     </b-card-header>
-                                    <b-collapse v-for="promo in storePromotions" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
+                                    <b-collapse v-for="job in storeJobs" v-model="toggleJobs" role="tabpanel" id="toggleJobs" class="accordion_body">
                                         <b-card-body>
                                             <div class="row">
-                                                <div class="col-md-5" v-if="">
-                                                    <img :src="promo.image_url" :alt="promo.name" class="" />
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <p class="promo_name">{{promo.name}}</p>
-                                                    <p class="promo_date" v-if="isMultiDay(promo)">
-                        							    {{ promo.start_date | moment("MMMM D", timezone)}} to {{ promo.end_date | moment("MMMM D", timezone)}}
+                                                <div class="col-md-12">
+                                                    <p class="promo_name">{{job.name}}</p>
+                                                    <p class="promo_date" v-if="isMultiDay(job)">
+                        							    {{ job.start_date | moment("MMMM D", timezone)}} to {{ job.end_date | moment("MMMM D", timezone)}}
                                                     </p>
-                                                    <p class="promo_date" v-else>{{ promo.start_date | moment("MMMM D", timezone)}}</p>
-                                                    <div class="promo_desc" v-html="promo.description_short"></div>
-                                                    <router-link :to="'/promotions/'+ promo.slug" >
-							                            <a class="read_more">Promo Details</a>
-					                                </router-link>
+                                                    <p class="promo_date" v-else>{{ job.start_date | moment("MMMM D", timezone)}}</p>
+                                                    <a href="/jobs/{{slug}}" class="read_more">View Requirements</a>
                                                 </div>
                                             </div>
                                             <hr class="promo_separator" />
