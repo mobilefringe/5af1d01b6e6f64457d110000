@@ -16,7 +16,7 @@
                             <img src="http://placehold.it/1200x440/757575" alt="" />    
                         </div>
                         <div class="col-md-9">
-                            <div v-if="events.length >= 1">
+                            <div v-if="eventList.length >= 1">
                                 <b-card no-body class="mb-1 inside_page_toggle">
                                     <b-card-header header-tag="header" class="p-1" role="tab">
                                         <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" aria-controls="togglePromotions">
@@ -25,20 +25,20 @@
                                             <i v-else  class="fa fa-plus"></i>
                                         </b-btn>
                                     </b-card-header>
-                                    <b-collapse v-for="event in storePromotions" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
+                                    <b-collapse v-for="event in eventList" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
                                         <b-card-body>
                                             <div class="row">
                                                 <div class="col-md-5" v-if="">
-                                                    <img :src="promo.image_url" :alt="promo.name" class="" />
+                                                    <img :src="event.image_url" :alt="event.name" class="" />
                                                 </div>
                                                 <div class="col-md-7">
-                                                    <p class="promo_name">{{promo.name}}</p>
-                                                    <p class="promo_date" v-if="isMultiDay(promo)">
-                        							    {{ promo.start_date | moment("MMMM D", timezone)}} to {{ promo.end_date | moment("MMMM D", timezone)}}
+                                                    <p class="promo_name">{{event.name}}</p>
+                                                    <p class="promo_date" v-if="isMultiDay(event)">
+                        							    {{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}
                                                     </p>
-                                                    <p class="promo_date" v-else>{{ promo.start_date | moment("MMMM D", timezone)}}</p>
-                                                    <div class="promo_desc" v-html="promo.description_short"></div>
-                                                    <router-link :to="'/promotions/'+ promo.slug" >
+                                                    <p class="promo_date" v-else>{{ event.start_date | moment("MMMM D", timezone)}}</p>
+                                                    <div class="promo_desc" v-html="event.description_short"></div>
+                                                    <router-link :to="'/promotions/'+ event.slug" >
 							                            <a class="read_more">Promo Details</a>
 					                                </router-link>
                                                 </div>
@@ -98,6 +98,9 @@
             data: function () {
                 return {
                     dataLoaded: false,
+                    toggleEvents: false,
+                    togglePromos: false,
+                    
                 }
             },
             created (){
