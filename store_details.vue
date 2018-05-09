@@ -118,7 +118,7 @@
                     storeHours: null,
                     storePromotions: null,
                     togglePromos: false,
-                     storeJobs: null,
+                    storeJobs: null,
                     toggleJobs: false,
                     map: null
                 }
