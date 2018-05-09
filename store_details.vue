@@ -42,13 +42,13 @@
                             <div v-if="storePromotions">
                                 <b-card no-body class="mb-1 inside_page_toggle">
                                     <b-card-header header-tag="header" class="p-1" role="tab">
-                                        <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" :aria-controls="togglePromotions"> <!-- :class="item.show_sub_menu ? 'collapsed' : null" :aria-controls="$t(item.name)" -->
+                                        <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" aria-controls="togglePromotions"> <!-- :class="item.show_sub_menu ? 'collapsed' : null" :aria-controls="$t(item.name)" -->
                                             Promotions
                                             <i v-if="togglePromos"  class="fa fa-minus f"></i>
                                             <i v-else  class="fa fa-plus"></i>
                                         </b-btn>
                                     </b-card-header>
-                                    <b-collapse v-for="promo in storePromotions" v-model="togglePromos" role="tabpanel" :id="togglePromotions" class="accordion_body"> <!--  :visible="item.show_sub_menu" :accordion="$t(promo.name)" -->
+                                    <b-collapse v-for="promo in storePromotions" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body"> <!--  :visible="item.show_sub_menu" :accordion="$t(promo.name)" -->
                                         <b-card-body>
                                             <div class="row">
                                                 <div class="col-md-5" v-if="">
