@@ -15,7 +15,7 @@
                         <div class="col-md-3">
                             <img class="store_details_image" :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'" />
                             <div v-if="currentStore.phone">
-                                <p class="inside_page_header">Phone</p>
+                                <p class="inside_page_title">Phone</p>
                                 <a class="store_details_phone" :href="'tel:' + currentStore.phone">{{ currentStore.phone }}</a>    
                             </div>
                             <div v-if="currentStore.address">
