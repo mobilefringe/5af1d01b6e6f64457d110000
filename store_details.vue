@@ -58,7 +58,7 @@
                                                     <p class="colored_link">{{promo.name}}</p>
                                                     <!--<h3 class="publish_date">{{dates}}</h3>-->
                                                     <!--<div class="details_desc">{{promo.description_short}}</div>-->
-                                                    <a :href="/promotions/promo.slug" class="read_more">Promo Details</a>
+                                                    <!--<a :href="'/promotions/promo.slug" class="read_more">Promo Details</a>-->
                                                 </div>
                                             </div>
                                             <hr class="promo_separator" />
