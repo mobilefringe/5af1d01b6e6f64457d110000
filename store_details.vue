@@ -122,6 +122,7 @@
                     if (this.currentStore === null || this.currentStore === undefined) {
                         this.$router.replace({ name: 'stores' });
                     }
+                    console.log(this.currentStore)
                 },
                 updateSVGMap (map) {
                     this.map = map;
