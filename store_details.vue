@@ -57,7 +57,7 @@
                                                 <div class="col-md-7">
                                                     <p class="colored_link">{{promo.name}}</p>
                                                     <!--<h3 class="publish_date">{{dates}}</h3>-->
-                                                    <!--<div class="details_desc">{{promo.description_short}}</div>-->
+                                                    <div class="details_desc">{{promo.description_short}}</div>
                                                     <!--<a :href="'/promotions/promo.slug" class="read_more">Promo Details</a>-->
                                                 </div>
                                             </div>
@@ -128,7 +128,7 @@
                         if (_.includes(current_promo.image_url, 'missing')) {
                             current_promo.image_url = "http://placehold.it/1560x800/757575";
                         }
-                        // current_promo.name_short = _.truncate(current_promo.name, { 'length': 30, 'separator': ' ' });
+                        current_promo.description_short = _.truncate(current_promo.description, { 'length': 150, 'separator': ' ' });
                         // current_promo.name_short_2 = _.truncate(current_promo.name_2, { 'length': 30, 'separator': ' ' });
 
                         // if (_.includes(current_promo.image_url, 'missing')) {
