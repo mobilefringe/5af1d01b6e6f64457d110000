@@ -11,6 +11,18 @@
                     </div>
                 </div>
                 <div class="main_container margin_30">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="details_image" :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'" />
+                            <p class="colored_link" style="{{phone_show}}">Phone</p>
+                            <a class="side_link" style="{{phone_show}}" href="tel:{{phone}}">{{phone}}</a>
+                            <p class="colored_link" style="{{address_show}}">Address</p>
+                            <p class="side_link">
+                                2275 Village Walk Drive Henderson, Nevada 89052
+                            </p>
+                            <a class="main_btn animated_btn" href="//{{website}}" target="_blank" style="{{show}}">Visit Website</a>
+                        </div>
+                    </div>
                     <div v-if="currentStore" class="store_details_container">
                         <div class="row">
                             <div class="col-md-12">
