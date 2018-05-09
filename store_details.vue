@@ -47,7 +47,23 @@
                             <div id="collapse3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
                                 <div class="store_desc" id="promos_container"></div>
                             </div>
-                            
+                            <b-card no-body class="mb-1">
+                                <b-card-header header-tag="header" class="p-1" role="tab">
+                                    <b-btn block @click="item.show_sub_menu = !item.show_sub_menu" :class="item.show_sub_menu ? 'collapsed' : null" :aria-controls="$t(item.name)" :aria-expanded="item.show_sub_menu ? 'true' : 'false'">
+                                        Promotions
+                                        <i v-if="item.show_sub_menu"  class="fa fa-minus"></i>
+                                        <i v-else  class="fa fa-plus"></i>
+                                    </b-btn>
+                                </b-card-header>
+                                <b-collapse v-model="item.show_sub_menu" :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(item.name)" role="tabpanel" class="accordion_body">
+                                    <b-card-body v-for="sub_menu in item.sub_menu">
+                                        <p class="card-text">
+                                            <router-link :to="sub_menu.href">{{$t(sub_menu.name)}}</router-link>
+                                        </p>
+                                    </b-card-body>
+                                </b-collapse>
+                            </b-card>
+                                            
                             <div v-if="currentStore.total_published_jobs > 0" id="jobs_header" class="inside_page_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
                                 Jobs
                                 <i class="fa fa-chevron-up pull-right"></i>
