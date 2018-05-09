@@ -82,8 +82,8 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "vue-meta", "jquery", "Raphael", "mm_mapsvg", "mousewheel", "vue!svg-map"], function (Vue, Vuex, Meta, $, Raphael, mapSvg, mousewheel,SVGMapComponent) {
-        Vue.use(Meta);
+    define(["Vue", "vuex", "vue-meta", "jquery", "Raphael", "mm_mapsvg", "mousewheel", "vue!svg-map", "bootstrap-vue"], function (Vue, Vuex, Meta, $, Raphael, mapSvg, mousewheel,SVGMapComponent, BootstrapVue) {
+        Vue.use(BootstrapVue);
         return Vue.component("store-details-component", {
             template: template, // the variable template will be injected,
             props: ['id'],
