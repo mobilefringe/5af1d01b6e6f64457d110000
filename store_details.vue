@@ -35,8 +35,8 @@
                                     <td class="hours_right">{{hour_string}}</td>    
                                 </p>
                             </div>
-                            <ul class="details-hours-list">
-                                <li v-if="!hour.is_closed" v-for="hour in hours">
+                            <ul v-if="storeHours" class="details-hours-list">
+                                <li v-for="hour in hours" v-if="!hour.is_closed">
                                     {{hour.day_of_week | moment("dddd", timezone)}}: {{hour.open_time | moment("hA", timezone)}}-{{hour.close_time | moment("hA", timezone)}}
                                 </li>
                                 <li v-else>
