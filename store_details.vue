@@ -59,15 +59,15 @@
                                     <b-collapse v-for="promo in storePromotions" v-model="togglePromos" role="tabpanel" class="accordion_body"> <!-- :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(promo.name)" -->
                                         <b-card-body> <!--  v-for="sub_menu in item.sub_menu" -->
                                             <div class="row">
-                                                <div class="promo_col_3" v-if="">
-                                                    <img src="{{promo_image_url_abs}}" :alt="promo.name" class="" />
-                                                </div>
-                                                <div class="promo_col_9" style="{{full_width}}">
-                                                    <p class="colored_link">{{name}}</p>
-                                                    <h3 class="publish_date">{{dates}}</h3>
-                                                    <div class="details_desc">{{description_short}}</div>
-                                                    <a href="/promotions/{{slug}}" class="read_more">Read More</a>
-                                                </div>
+                                                <!--<div class="promo_col_3" v-if="">-->
+                                                <!--    <img src="{{promo_image_url_abs}}" :alt="promo.name" class="" />-->
+                                                <!--</div>-->
+                                                <!--<div class="promo_col_9" style="{{full_width}}">-->
+                                                <!--    <p class="colored_link">{{name}}</p>-->
+                                                <!--    <h3 class="publish_date">{{dates}}</h3>-->
+                                                <!--    <div class="details_desc">{{description_short}}</div>-->
+                                                <!--    <a href="/promotions/{{slug}}" class="read_more">Read More</a>-->
+                                                <!--</div>-->
                                             </div>
                                             <hr class="promo_separator" />
                                         </b-card-body>
