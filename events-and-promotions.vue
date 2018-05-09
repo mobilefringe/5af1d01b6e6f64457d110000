@@ -86,119 +86,75 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "moment", "bootstrap-vue"], function (Vue, Vuex, Meta, moment, BootstrapVue) {
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "lightbox", "vue-lazy-load", "bootstrap-vue"], function (Vue, Vuex, moment, tz, VueMoment, Lightbox, VueLazyload, BootstrapVue) {
         Vue.use(BootstrapVue);
+        Vue.use(Lightbox);
+        Vue.use(VueLazyload);
         return Vue.component("events-and-promotions-component", {
             template: template, // the variable template will be injected,
-            props: ['id'],
             data: function () {
                 return {
                     dataLoaded: false,
-                    currentStore: null,
-                    storeHours: null,
-                    storePromotions: null,
-                    togglePromos: false,
-                    storeJobs: null,
-                    toggleJobs: false,
-                    map: null
                 }
             },
             created (){
                 this.loadData().then(response => {
                     this.dataLoaded = true;
-                    this.updateCurrentStore(this.id);
                 });
-            },
-            watch: {
-                $route: function () {
-                    this.updateCurrentStore(this.$route.params.id);
-                },
-                currentStore: function () {
-                    var vm = this;
-                    var storeHours = [];
-                    _.forEach(this.currentStore.store_hours, function (value, key) {
-                        storeHours.push(vm.findHourById(value));
-                    });
-                    this.storeHours = storeHours;
-                    
-                    var vm = this;
-                    var temp_promo = [];
-                    _.forEach(this.currentStore.promotions, function(value, key) {
-                        var current_promo = vm.findPromoById(value);
-                        
-                        if (_.includes(current_promo.image_url, 'missing')) {
-                            current_promo.image_url = "http://placehold.it/1560x800/757575";
-                        }
-                        current_promo.description_short = _.truncate(current_promo.description, { 'length': 150, 'separator': ' ' });
-
-                        temp_promo.push(current_promo);
-                    }); 
-                    this.storePromotions = temp_promo;
-                    this.togglePromos = true;
-                    
-                    var vm = this;
-                    var temp_job = [];
-                    _.forEach(this.currentStore.jobs, function(value, key) {
-                        var current_job = vm.findJobById(value);
-                        temp_job.push(current_job);
-                    }); 
-                    this.storeJobs = temp_job;
-                    this.toggleJobs = true;
-                },
-                // map : function (){
-                    
-                //         var vm = this;
-                //         setTimeout(function () {
-                //             vm.dropPin();
-                //         }, 500);
-                   
-                // }
             },
             computed: {
                 ...Vuex.mapGetters([
                     'property',
                     'timezone',
-                    'stores',
-                    'findStoreBySlug',
-                    'findCategoryById',
-                    'findHourById',
-                    'findPromoById',
-                    'findJobById'
+                    'processedEvents',
+                    'processedPromos',
                 ]),
-                storeCategory() {
-                    var currentStoreCategory = this.currentStore.categories[0];
-                    category = this.findCategoryById(currentStoreCategory)
-                    return category.name
+                events: function events() {
+                    var events = this.processedEvents;
+                    var showEvents = [];
+                    _.forEach(events, function (value, key) {
+                        var today = moment.tz(this.timezone).format();
+                        var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
+                        if (today >= showOnWebDate) {
+                            console.log(window.width)
+                            if(window.width > 768) {
+                                value.description = _.truncate(value.description, { 'length': 100, 'separator': ' ' });
+                            } else {
+                                value.description = _.truncate(value.description, { 'length': 50, 'separator': ' ' });    
+                            }
+                            showEvents.push(value);
+                        }
+                    });
+                    var sortedEvents = _.orderBy(showEvents, function (o) { return o.end_date })
+                    return sortedEvents
                 },
-                getSVGurl () {
-                    return "https://www.mallmaverick.com" + this.property.svgmap_url;
-                },
-                svgMapRef () {
-                    return _.filter(this.$children, function(o) { return (o.$el.className == "svg-map") })[0];
+                promos: function promos() {
+                    var vm = this;
+                    var showPromos = [];
+                    _.forEach(this.processedPromos, function(value, key) {
+                        var today = moment.tz(this.timezone).format();
+                        var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
+                        if (today >= showOnWebDate) {
+                            if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
+                                value.store.image_url = "http://placehold.it/400x400";
+                            }
+                            if (_.includes(value.image_url, 'missing')) {
+                                value.image_url = "http://placehold.it/400x400";
+                            }
+                            showPromos.push(value);
+                        }
+                    });
+                    var sortedPromos = _.orderBy(showPromos, [function(o) { return o.end_date; }]);
+                    return sortedPromos;
                 }
             },
             methods: {
                 loadData: async function () {
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "categories"), this.$store.dispatch("getData","promotions"), this.$store.dispatch("getData","jobs")]);
+                        let results = await Promise.all([this.$store.dispatch("getData", "events"), this.$store.dispatch("getData","promotions")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
-                },
-                updateCurrentStore(id) {
-                    this.currentStore = this.findStoreBySlug(id);
-                    if (this.currentStore === null || this.currentStore === undefined) {
-                        this.$router.replace({ name: 'stores' });
-                    }
-                    console.log(this.currentStore)
-                },
-                updateSVGMap (map) {
-                    this.map = map;
-                    this.dropPin();
-                },
-                dropPin () {
-                    this.svgMapRef.addMarker(this.currentStore, '//codecloud.cdn.speedyrails.net/sites/589e308f6e6f641b9f010000/image/png/1484850466000/show_pin.png');
-                    this.svgMapRef.setViewBox(this.currentStore)
                 },
                 isMultiDay(promo) {
                     var timezone = this.timezone
