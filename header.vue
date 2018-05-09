@@ -77,6 +77,7 @@
                             <div class="mobile_social_icons">
                                 <span v-for="item in social_media">
                                     <a :href="item.url" target="_blank">
+                                        <p class="accessibility">{{item.name}}</p>
                                         <i :class="item.iconClass" aria-hidden="true"></i>
                                     </a>
                                 </span>
