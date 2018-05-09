@@ -58,7 +58,9 @@
                                                     <p class="colored_link">{{promo.name}}</p>
                                                     <!--<h3 class="publish_date">{{dates}}</h3>-->
                                                     <div class="details_desc" v-html="promo.description_short"></div>
-                                                    <!--<a :href="'/promotions/promo.slug" class="read_more">Promo Details</a>-->
+                                                    <router-link :to="'/promotions/'+ promo.slug" >
+							                            <a class="read_more">Promo Details</a>
+					                                </router-link>
                                                 </div>
                                             </div>
                                             <hr class="promo_separator" />
