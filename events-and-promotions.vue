@@ -38,8 +38,8 @@
                                                     </p>
                                                     <p class="promo_date" v-else>{{ event.start_date | moment("MMMM D", timezone)}}</p>
                                                     <div class="promo_desc" v-html="event.description_short"></div>
-                                                    <router-link :to="'/promotions/'+ event.slug" >
-							                            <a class="read_more">Promo Details</a>
+                                                    <router-link :to="'/events/'+ event.slug" >
+							                            <a class="read_more">Event Details</a>
 					                                </router-link>
                                                 </div>
                                             </div>
@@ -48,7 +48,7 @@
                                     </b-collapse>
                                 </b-card>
                             </div>
-                            <div v-if="this.currentStore.promotions">
+                            <div v-if="promoList.length >= 1">
                                 <b-card no-body class="mb-1 inside_page_toggle">
                                     <b-card-header header-tag="header" class="p-1" role="tab">
                                         <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" aria-controls="togglePromotions">
