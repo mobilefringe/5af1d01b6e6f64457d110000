@@ -39,14 +39,6 @@
                                 </li>
                             </ul>
                             <div class=" margin_30 store_details_desc" v-html="currentStore.rich_description"></div>
-                            
-                            <div v-if="currentStore.total_published_promos > 0" id="promotions_header" class="inside_page_header accordion_header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                Promotions
-                                <i class="fa fa-chevron-up pull-right"></i>
-                            </div>
-                            <div id="collapse3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
-                                <div class="store_desc" id="promos_container"></div>
-                            </div>
                             <div v-if="storePromotions">
                                 <b-card no-body class="mb-1 inside_page_toggle">
                                     <b-card-header header-tag="header" class="p-1" role="tab">
