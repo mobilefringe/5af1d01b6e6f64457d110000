@@ -66,7 +66,8 @@
                                                 <div class="col-md-7">
                                                     <p class="promo_name">{{promo.name}}</p>
                                                     <p class="promo_date" v-if="isMultiDay(promo)">
-                                                        {{ promo.store.name }} | 
+                                                        <span v-if="promo.promotionable_type == 'Store'">{{ promo.store.name }} | </span>
+                                                        <span v-else>{{ property.name }} | </span>
                         							    {{ promo.start_date | moment("MMMM D", timezone)}} to {{ promo.end_date | moment("MMMM D", timezone)}}
                                                     </p>
                                                     <p class="promo_date" v-else>{{ promo.start_date | moment("MMMM D", timezone)}}</p>
