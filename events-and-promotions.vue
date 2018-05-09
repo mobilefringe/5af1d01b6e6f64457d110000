@@ -34,8 +34,11 @@
                                                 <div class="col-md-7">
                                                     <p class="promo_name">{{event.name}}</p>
                                                     <p class="promo_store_name">
-                                                        <span v-if="event.eventable_type == 'Store'">{{ event.store.name }} | </span>
-                                                        <span v-else>{{ property.name }} | </span>
+                                                        <router-link v-if="event.eventable_type == 'Store'" :to="'/stores/'+ event.store.slug">
+                                                            {{ event.store.name }}
+                                                        </router-link>
+                                                        <span v-else>{{ property.name }}</span>
+                                                        <span>| </span>
                                                         <span v-if="isMultiDay(event)" class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span>
                                                         <span v-else class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}}</span>
                                                     </p>
