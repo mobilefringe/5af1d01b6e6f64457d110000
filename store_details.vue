@@ -185,6 +185,7 @@
                     'findCategoryById',
                     'findHourById',
                     'findPromoById',
+                    'findJobById'
                 ]),
                 storeCategory() {
                     var currentStoreCategory = this.currentStore.categories[0];
