@@ -12,12 +12,11 @@
                 </div>
                 <div class="main_container margin_30">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <p class="inside_page_title" style="">Office Phone Number</p>
                             <a class="inside_page_link" :href="'tel:' + property.contact_phone">{{ property.contact_phone }}</a>
                             <p class="inside_page_title" style="">Address</p>
                             <p class="inside_page_link">
-                                2275 Village Walk Drive Henderson, Nevada 89052
                                 {{ property.name }} <br>
                                 {{ property.address1 }} <br>
                                 {{ property.city }}, {{ property.province_state }} <br>
@@ -30,7 +29,7 @@
                                 <hr>    
                             </div>
                         </div>
-                        <div class="col-sm-9">
+                        <div class="col-sm-8">
                             <iframe title="Map" width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  :src="'http://maps.google.nl/maps?q=' + getPropertyAddress + '&amp;hl=en&amp;ie=UTF8&amp;t=v&amp;hnear=' + getPropertyAddress + '&amp;z=16&amp;output=embed'"></iframe>
                             <div class="row">
                                 <div class="col-md-12">
