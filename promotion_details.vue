@@ -24,7 +24,7 @@
                             </a>
                             <p class="promo_name">{{ currentPromo.name }}</p>
                             <p class="promo_store_name">
-                                <router-link v-if="currentPromo.eventable_type == 'Store'" :to="'/stores/'+ currentPromo.store.slug">
+                                <router-link v-if="currentPromo.promotionable_type == 'Store'" :to="'/stores/'+ currentPromo.store.slug">
                                     {{ currentPromo.store.name }}
                                 </router-link>
                                 <span v-else>{{ property.name }}</span>
