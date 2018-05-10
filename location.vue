@@ -18,6 +18,9 @@
                             <p class="inside_page_title" style="">Address</p>
                             <p class="inside_page_link">
                                 2275 Village Walk Drive Henderson, Nevada 89052
+                                {{ property.name }} <br>
+                                {{ property.address1 }} <br>
+                                {{ property.
                             </p>
                             <a class="main_btn block animated_btn" href="https://maps.google.com/maps?ll=36.022438,-115.08492&z=16&t=m&hl=en-US&gl=CA&mapclient=embed&daddr=2225%20Village%20Walk%20Dr%20%23171%20Henderson%2C%20NV%2089052%20USA@36.022438,-115.0849203" target="_blank" >Driving Direction</a>   
                         </div>
@@ -56,6 +59,7 @@
                 this.loadData().then(response => {
                     // this.currentPage = response[0].data;
                     this.dataLoaded = true;
+                    console.log(this.property)
                 });
             },
             computed: {
