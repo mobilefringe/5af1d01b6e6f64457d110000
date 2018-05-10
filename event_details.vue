@@ -4,7 +4,7 @@
         <transition name="fade">
             <div v-if="dataLoaded" v-cloak>
                 <div class="inside_header_background">
-                    <div class="main_container page_container">
+                    <div class="main_container">
                         <h2>Events</h2>
                     </div>
                 </div>
