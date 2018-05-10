@@ -20,7 +20,7 @@
                                 <div class="inside_page_header"><i class="fa fa-caret-left"></i> Back to List</div>
                             </router-link>
                             <a :href="currentEvent.image_url" :data-lightbox="currentEvent.name">
-                                <img v-lazy="currentEvent.image_url" :alt="currentEvent.name"/>
+                                <img v-lazy="currentEvent.image_url" :alt="currentEvent.name" class="margin_20"/>
                             </a>
                             <p class="inside_page_title">{{ currentEvent.name }}</p>
                             <!--<p class="dates" v-if="isMultiDayEvent(currentEvent)">-->
