@@ -19,36 +19,36 @@
                         
                         
                             <div  class="event_details_container">
-                                <!--<div class="row">-->
-                                <!--    <div class="col-md-6">-->
-                                <!--        <a :href="currentEvent.image_url" :data-lightbox="currentEvent.name">-->
-                                <!--            <img v-lazy="currentEvent.image_url" :alt="currentEvent.name"/>-->
-                                <!--        </a>-->
-                                <!--    </div>-->
-                                <!--    <div class="col-md-6">-->
-                                <!--        <h2 class="event_name">{{ currentEvent.name }}</h2>-->
-                                <!--        <p class="dates" v-if="isMultiDayEvent(currentEvent)">-->
-                                <!--            {{ currentEvent.start_date | moment("MMM D", timezone)}} to {{ currentEvent.end_date | moment("MMM D", timezone)}}-->
-                                <!--        </p>-->
-                                <!--        <p class="dates" v-else>{{ currentEvent.start_date | moment("MMM D", timezone)}}</p>-->
-                                <!--        <div class="event_desc" v-html="currentEvent.rich_description"></div>-->
-                                <!--        <div class="row"> -->
-                                <!--            <div class="col-md-12">-->
-                                <!--                <social-sharing v-if="currentEvent" :url="shareURL(currentEvent.slug)" :title="currentEvent.title" :description="currentEvent.body" :quote="truncate(currentEvent.body)" twitter-user="MiltonMall" :media="currentEvent.image_url" inline-template>-->
-                                <!--                    <div class="social_share">-->
-                                <!--                        <h5>Share</h5>-->
-                                <!--                        <network network="facebook">-->
-                                <!--                            <i class="fa fa-facebook-square"></i>-->
-                                <!--                        </network>-->
-                                <!--                        <network network="twitter">-->
-                                <!--                            <i class="fa fa-twitter-square"></i>-->
-                                <!--                        </network>-->
-                                <!--                    </div>-->
-                                <!--                </social-sharing>-->
-                                <!--            </div>-->
-                                <!--        </div>-->
-                                <!--    </div>-->
-                                <!--</div>-->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a :href="currentEvent.image_url" :data-lightbox="currentEvent.name">
+                                            <img v-lazy="currentEvent.image_url" :alt="currentEvent.name"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h2 class="event_name">{{ currentEvent.name }}</h2>
+                                        <p class="dates" v-if="isMultiDayEvent(currentEvent)">
+                                            {{ currentEvent.start_date | moment("MMM D", timezone)}} to {{ currentEvent.end_date | moment("MMM D", timezone)}}
+                                        </p>
+                                        <p class="dates" v-else>{{ currentEvent.start_date | moment("MMM D", timezone)}}</p>
+                                        <div class="event_desc" v-html="currentEvent.rich_description"></div>
+                                        <div class="row"> 
+                                            <div class="col-md-12">
+                                                <social-sharing v-if="currentEvent" :url="shareURL(currentEvent.slug)" :title="currentEvent.title" :description="currentEvent.body" :quote="truncate(currentEvent.body)" twitter-user="MiltonMall" :media="currentEvent.image_url" inline-template>
+                                                    <div class="social_share">
+                                                        <h5>Share</h5>
+                                                        <network network="facebook">
+                                                            <i class="fa fa-facebook-square"></i>
+                                                        </network>
+                                                        <network network="twitter">
+                                                            <i class="fa fa-twitter-square"></i>
+                                                        </network>
+                                                    </div>
+                                                </social-sharing>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
