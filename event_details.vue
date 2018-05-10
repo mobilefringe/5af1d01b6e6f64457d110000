@@ -23,11 +23,6 @@
                                 <img v-lazy="currentEvent.image_url" :alt="currentEvent.name" class="margin_20"/>
                             </a>
                             <p class="inside_page_title">{{ currentEvent.name }}</p>
-                            <!--<p class="dates" v-if="isMultiDayEvent(currentEvent)">-->
-                            <!--    {{ currentEvent.start_date | moment("MMM D", timezone)}} to {{ currentEvent.end_date | moment("MMM D", timezone)}}-->
-                            <!--</p>-->
-                            <!--<p class="dates" v-else>{{ currentEvent.start_date | moment("MMM D", timezone)}}</p>-->
-                            
                             <p class="promo_store_name">
                                 <router-link v-if="currentEvent.eventable_type == 'Store'" :to="'/stores/'+ currentEvent.store.slug">
                                     {{ currentEvent.store.name }}
