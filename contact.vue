@@ -90,7 +90,7 @@
             },
             created() {
                 this.loadData().then(response => {
-                    this.currentPage = response[0].data;
+                    // this.currentPage = response[0].data;
                     this.dataLoaded = true;
                 });
             },
