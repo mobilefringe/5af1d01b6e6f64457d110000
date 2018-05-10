@@ -13,9 +13,9 @@
                 <div class="main_container margin_30">
                     <div class="row">
                         <div class="col-md-3">
-                            <p class="colored_link" style="">Office Phone Number</p>
+                            <p class="inside_page_title" style="">Office Phone Number</p>
                             <a class="side_link" href="tel:(702) 564-8595">(702) 564-8595</a>
-                            <p class="colored_link" style="">Address</p>
+                            <p class="inside_page_title" style="">Address</p>
                             <p class="side_link">
                                 2275 Village Walk Drive Henderson, Nevada 89052
                             </p>
