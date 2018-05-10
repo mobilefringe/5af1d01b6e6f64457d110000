@@ -23,18 +23,9 @@
                             </p>
                             <a class="main_btn block animated_btn" href="https://maps.google.com/maps?ll=36.022438,-115.08492&z=16&t=m&hl=en-US&gl=CA&mapclient=embed&daddr=2225%20Village%20Walk%20Dr%20%23171%20Henderson%2C%20NV%2089052%20USA@36.022438,-115.0849203" target="_blank" >Driving Direction</a>   
                         </div>
-                        <div class="hidden-lg hidden-md visible-sm-block visible-xs-block">
-                            <div class="col-md-12">
-                                <hr>    
-                            </div>
-                        </div>
                         <div class="details_col_9">
                             <iframe title="Map" width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  :src="'http://maps.google.nl/maps?q=' + getPropertyAddress + '&amp;hl=en&amp;ie=UTF8&amp;t=v&amp;hnear=' + getPropertyAddress + '&amp;z=16&amp;output=embed'"></iframe>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <!--<div class="page_content" v-if="currentPage" v-html="currentPage.body"></div>-->
-                                </div>
-                            </div>
+                            <!--<div class="page_content" v-if="currentPage" v-html="currentPage.body"></div>-->
                         </div>
                     </div>
                 </div>
