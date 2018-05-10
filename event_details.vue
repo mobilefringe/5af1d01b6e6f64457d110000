@@ -19,11 +19,10 @@
                             <router-link to="/events-and-promotions">
                                 <div class="inside_page_header"><i class="fa fa-caret-left"></i> Back to List</div>
                             </router-link>
-
                             <a :href="currentEvent.image_url" :data-lightbox="currentEvent.name">
                                 <img v-lazy="currentEvent.image_url" :alt="currentEvent.name"/>
                             </a>
-                            <h2 class="event_name">{{ currentEvent.name }}</h2>
+                            <p class="inside_page_title">{{ currentEvent.name }}</p>
                             <p class="dates" v-if="isMultiDayEvent(currentEvent)">
                                 {{ currentEvent.start_date | moment("MMM D", timezone)}} to {{ currentEvent.end_date | moment("MMM D", timezone)}}
                             </p>
