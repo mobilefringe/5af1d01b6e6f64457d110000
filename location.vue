@@ -24,7 +24,7 @@
                             <iframe title="Map" width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  :src="'http://maps.google.nl/maps?q=' + getPropertyAddress + '&amp;hl=en&amp;ie=UTF8&amp;t=v&amp;hnear=' + getPropertyAddress + '&amp;z=16&amp;output=embed'"></iframe>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="page_content" v-if="currentPage" v-html="currentPage.body"></div>
+                                    <!--<div class="page_content" v-if="currentPage" v-html="currentPage.body"></div>-->
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
             },
             created() {
                 this.loadData().then(response => {
-                    this.currentPage = response[0].data;
+                    // this.currentPage = response[0].data;
                     this.dataLoaded = true;
                 });
             },
