@@ -17,7 +17,6 @@
                             <a class="inside_page_link" :href="'tel:' + property.contact_phone">{{ property.contact_phone }}</a>
                             <p class="inside_page_title" style="">Address</p>
                             <p class="inside_page_link">
-                                {{ property.name }} <br>
                                 {{ property.address1 }} <br>
                                 {{ property.city }}, {{ property.province_state }} <br>
                                 {{ property.postal_code }}
