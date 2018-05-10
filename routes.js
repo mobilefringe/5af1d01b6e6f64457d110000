@@ -32,29 +32,29 @@ define([], function () {
                 }
             ]
         },
-        // {
-        //     path: '/events',
-        //     component: view('default'),
-        //     children: [
-        //         {
-        //             path: '',
-        //             component: view('events'),
-        //             meta: {
-        //                 pageName: 'Events',
-        //             },
-        //             name: 'events'
-        //         },
-        //         {
-        //             path: ':id',
-        //             component: view('event_details'),
-        //             meta: {
-        //                 pageName: 'Events',
-        //             },
-        //             name: 'eventDetails',
-        //             props: true
-        //         }
-        //     ]
-        // },
+        {
+            path: '/events',
+            component: view('default'),
+            children: [
+                // {
+                //     path: '',
+                //     component: view('events'),
+                //     meta: {
+                //         pageName: 'Events',
+                //     },
+                //     name: 'events'
+                // },
+                {
+                    path: ':id',
+                    component: view('event_details'),
+                    meta: {
+                        pageName: 'Events',
+                    },
+                    name: 'eventDetails',
+                    props: true
+                }
+            ]
+        },
         {
             path: '/events-and-promotions',
             component: view('default'),
