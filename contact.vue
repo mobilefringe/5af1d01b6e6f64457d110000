@@ -11,16 +11,11 @@
                     </div>
                 </div>
                 <div class="main_container margin_30">
-                    <div class="row">
-                        <div class="col-md-3">
+                    <div class="details_row">
+                        <div class="details_col_3">
                             <img class="img_max" src="http://placehold.it/440x1200" alt="" />    
                         </div>
-                        <div class="hidden-lg hidden-md visible-sm-block visible-xs-block">
-                            <div class="col-md-12">
-                                <hr>    
-                            </div>
-                        </div>
-                        <div class="col-sm-9">
+                        <div class="details_col_9">
                             <div class="row">
                                 <div class="col-md-12">
                                     <p>We value your feedback. Send us your comments or questions by completing the contact form below.</p>    
