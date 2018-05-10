@@ -27,6 +27,16 @@
                                 {{ currentEvent.start_date | moment("MMM D", timezone)}} to {{ currentEvent.end_date | moment("MMM D", timezone)}}
                             </p>
                             <p class="dates" v-else>{{ currentEvent.start_date | moment("MMM D", timezone)}}</p>
+                            
+                            <p class="promo_store_name">
+                                <router-link v-if="currentEvent.eventable_type == 'Store'" :to="'/stores/'+ currentEvent.store.slug">
+                                    {{ currentEvent.store.name }}
+                                </router-link>
+                                <span v-else>{{ property.name }}</span>
+                                <span>| </span>
+                                <span v-if="isMultiDay(event)" class="promo_date">{{ currentEvent.start_date | moment("MMMM D", timezone)}} to {{ currentEvent.end_date | moment("MMMM D", timezone)}}</span>
+                                <span v-else class="promo_date">{{ currentEvent.start_date | moment("MMMM D", timezone)}}</span>
+                            </p>
                             <div class="event_desc" v-html="currentEvent.rich_description"></div>
                             <div class="row"> 
                                 <div class="col-md-12">
