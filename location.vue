@@ -14,9 +14,9 @@
                     <div class="row">
                         <div class="col-md-3">
                             <p class="inside_page_title" style="">Office Phone Number</p>
-                            <a class="side_link" :href="'tel:' + property.contact_phone">{{ property.contact_phone }}</a>
+                            <a class="inside_page_link" :href="'tel:' + property.contact_phone">{{ property.contact_phone }}</a>
                             <p class="inside_page_title" style="">Address</p>
-                            <p class="side_link">
+                            <p class="inside_page_link">
                                 2275 Village Walk Drive Henderson, Nevada 89052
                             </p>
                             <a class="main_btn block animated_btn" href="https://maps.google.com/maps?ll=36.022438,-115.08492&z=16&t=m&hl=en-US&gl=CA&mapclient=embed&daddr=2225%20Village%20Walk%20Dr%20%23171%20Henderson%2C%20NV%2089052%20USA@36.022438,-115.0849203" target="_blank" >Driving Direction</a>   
