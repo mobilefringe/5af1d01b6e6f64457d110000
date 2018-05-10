@@ -51,25 +51,13 @@
                                 <router-link tag="li" to="/location" class="menu_item" exact>
                                     Location
                                 </router-link>
-                                <li id="dropDown3" @click="toggleSubMenu('dropDown3')" class="menu_item">Contact Us
+                                <li id="dropDown3" @click="toggleSubMenu('dropDown3')" class="menu_item">Center Informtaion
                                     <ul :class="'submenu' + { show_submenu: showSubMenu3 }">
+                                        <router-link tag="li" to="/pages/" class="submenu_item" exact>
+                                            <a>Services</a>
+                                        </router-link>
                                         <router-link tag="li" to="/contact-us" class="submenu_item" exact>
-                                            <a>{{ $t("menu.contact") }}</a>
-                                        </router-link>
-                                        <router-link tag="li" to="/directions" class="submenu_item" exact>
-                                            <a>{{ $t("menu.find") }}</a>
-                                        </router-link>
-                                        <router-link tag="li" to="/" class="submenu_item" exact>
-                                            <a>{{ $t("menu.about") }}</a>
-                                        </router-link>
-                                        <router-link tag="li" to="/jobs" class="submenu_item" exact>
-                                            <a>{{ $t("menu.jobs") }}</a>
-                                        </router-link>
-                                        <router-link tag="li" to="/hours" class="submenu_item" exact>
-                                            <a>{{ $t("menu.hours") }}</a>
-                                        </router-link>
-                                        <router-link tag="li" to="/" class="submenu_item" exact>
-                                            <a>{{ $t("menu.community") }}</a>
+                                            <a>Contact</a>
                                         </router-link>
                                     </ul>
                                 </li>
