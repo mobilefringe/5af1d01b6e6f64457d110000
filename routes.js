@@ -174,29 +174,29 @@ define([], function () {
         //         }
         //     ]
         // },
-        // {
-        //     path: '/promotions',
-        //     component: view('default'),
-        //     children: [
-        //         {
-        //             path: '',
-        //             component: view('promotions'),
-        //             meta: {
-        //                 pageName: 'Promotions',
-        //             },
-        //             name: 'promotions'
-        //         },
-        //         {
-        //             path: ':id',
-        //             component: view('promotion_details'),
-        //             meta: {
-        //                 pageName: 'Promotions',
-        //             },
-        //             name: 'promotionDetails',
-        //             props: true
-        //         }
-        //     ]
-        // },
+        {
+            path: '/promotions',
+            component: view('default'),
+            children: [
+                // {
+                //     path: '',
+                //     component: view('promotions'),
+                //     meta: {
+                //         pageName: 'Promotions',
+                //     },
+                //     name: 'promotions'
+                // },
+                {
+                    path: ':id',
+                    component: view('promotion_details'),
+                    meta: {
+                        pageName: 'Promotions',
+                    },
+                    name: 'promotionDetails',
+                    props: true
+                }
+            ]
+        },
         {
             path: '/stores',
             component: view('default'),
