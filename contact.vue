@@ -6,28 +6,21 @@
                 <div class="inside_header_background">
                     <div class="main_container">
                         <div class="page_container">
-                            <h2>Directory</h2>
+                            <h2>Contact Us</h2>
                         </div>
                     </div>
                 </div>
                 <div class="main_container margin_30">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <h3 class="contact_page_title">Centre Information</h3>
-                            <p class="directory_content">
-                                {{ property.name }}<br/>
-                                {{ property.address1 }}<br/>
-                                {{ property.city }}, {{ property.province_state }} {{ property.postal_code }}
-                            </p>
-                            <br/>
-                            <!--<div class="contact_page_body" v-html="currentPage.body"></div>-->
+                        <div class="col-md-3">
+                            <img class="img_max" src="http://placehold.it/440x1200" alt="" />    
                         </div>
                         <div class="hidden-lg hidden-md visible-sm-block visible-xs-block">
                             <div class="col-md-12">
                                 <hr>    
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-9">
                             <div class="row">
                                 <div class="col-md-12">
                                     <p>We value your feedback. Send us your comments or questions by completing the contact form below.</p>    
@@ -70,6 +63,11 @@
                                     <span class="sr-only">Error:</span>
                                     There was an error when trying to submit your request. Please try again later.
                                 </div>    
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!--<div class="contact_page_body" v-html="currentPage.body"></div>-->
+                                </div>
                             </div>
                         </div>
                     </div>
