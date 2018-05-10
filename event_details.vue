@@ -22,7 +22,7 @@
                             <a :href="currentEvent.image_url" :data-lightbox="currentEvent.name">
                                 <img v-lazy="currentEvent.image_url" :alt="currentEvent.name" class="margin_20"/>
                             </a>
-                            <p class="inside_page_title">{{ currentEvent.name }}</p>
+                            <p class="promo_name">{{ currentEvent.name }}</p>
                             <p class="promo_store_name">
                                 <router-link v-if="currentEvent.eventable_type == 'Store'" :to="'/stores/'+ currentEvent.store.slug">
                                     {{ currentEvent.store.name }}
