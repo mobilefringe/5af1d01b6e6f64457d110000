@@ -33,21 +33,17 @@
                                 <span v-else class="promo_date">{{ currentEvent.start_date | moment("MMMM D", timezone)}}</span>
                             </p>
                             <div class="promo_desc" v-html="currentEvent.rich_description"></div>
-                            <div class="row"> 
-                                <div class="col-md-12">
-                                    <social-sharing v-if="currentEvent" :url="shareURL(currentEvent.slug)" :title="currentEvent.title" :description="currentEvent.body" :quote="truncate(currentEvent.body)" twitter-user="MiltonMall" :media="currentEvent.image_url" inline-template>
-                                        <div class="social_share">
-                                            <h5>Share</h5>
-                                            <network network="facebook">
-                                                <i class="fa fa-facebook-square"></i>
-                                            </network>
-                                            <network network="twitter">
-                                                <i class="fa fa-twitter-square"></i>
-                                            </network>
-                                        </div>
-                                    </social-sharing>
+                            <social-sharing v-if="currentEvent" :url="shareURL(currentEvent.slug)" :title="currentEvent.title" :description="currentEvent.body" :quote="truncate(currentEvent.body)" twitter-user="MiltonMall" :media="currentEvent.image_url" inline-template>
+                                <div class="social_share">
+                                    <h5>Share</h5>
+                                    <network network="facebook">
+                                        <i class="fa fa-facebook-square"></i>
+                                    </network>
+                                    <network network="twitter">
+                                        <i class="fa fa-twitter-square"></i>
+                                    </network>
                                 </div>
-                            </div>
+                            </social-sharing>
                         </div>
                     </div>
                 </div>
