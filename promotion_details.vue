@@ -88,7 +88,7 @@
                 ])
             },
             methods: {
-				isMultiDayEvent(currentPromo) {
+				isMultiDay(currentPromo) {
 					var timezone = this.timezone
 					var start_date = moment(currentPromo.start_date).tz(timezone).format("MM-DD-YYYY")
 					var end_date = moment(currentPromo.end_date).tz(timezone).format("MM-DD-YYYY")
