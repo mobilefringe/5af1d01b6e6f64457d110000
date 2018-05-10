@@ -16,7 +16,7 @@
                             <img class="img_max" src="http://placehold.it/440x1200" alt="" />    
                         </div>
                         <div class="details_col_9" v-if="currentEvent">
-                            <router-link v-if="event.eventable_type == 'Store'" :to="'/stores/'+ event.store.slug">
+                            <router-link to="/events-and-promotions">
                                 <div class="inside_page_header"><i class="fa fa-caret-left"></i> Back to List</div>
                             </router-link>
 
