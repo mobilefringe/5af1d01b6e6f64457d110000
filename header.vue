@@ -45,10 +45,10 @@
                                 <router-link tag="li" to="/events-and-promotions" class="menu_item" exact>
                                     Events & Promotions
                                 </router-link>
-                                <router-link tag="li" to="/promotions" class="menu_item" exact>
+                                <router-link tag="li" to="/dine" class="menu_item" exact>
                                     Dine
                                 </router-link>
-                                <router-link tag="li" to="/promotions" class="menu_item" exact>
+                                <router-link tag="li" to="/location" class="menu_item" exact>
                                     Location
                                 </router-link>
                                 <li id="dropDown3" @click="toggleSubMenu('dropDown3')" class="menu_item">Contact Us
