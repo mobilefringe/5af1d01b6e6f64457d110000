@@ -66,24 +66,6 @@ define([], function () {
                         pageName: 'Events & Promotions',
                     },
                     name: 'events-and-promotions'
-                },
-                {
-                    path: ':id',
-                    component: view('event_details'),
-                    meta: {
-                        pageName: 'Event Details',
-                    },
-                    name: 'eventDetails',
-                    props: true
-                },
-                {
-                    path: ':id',
-                    component: view('promotion_details'),
-                    meta: {
-                        pageName: 'Promotion Details',
-                    },
-                    name: 'promotionDetails',
-                    props: true
                 }
             ]
         },
