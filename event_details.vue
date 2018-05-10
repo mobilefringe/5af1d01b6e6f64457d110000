@@ -16,7 +16,9 @@
                             <img class="img_max" src="http://placehold.it/440x1200" alt="" />    
                         </div>
                         <div class="details_col_9" v-if="currentEvent">
-                            <div class="inside_page_header">Store Hours & Information</div>
+                            <router-link v-if="event.eventable_type == 'Store'" :to="'/stores/'+ event.store.slug">
+                                <div class="inside_page_header"><i class="fa fa-caret-left"></i> Back to List</div>
+                            </router-link>
 
                             <a :href="currentEvent.image_url" :data-lightbox="currentEvent.name">
                                 <img v-lazy="currentEvent.image_url" :alt="currentEvent.name"/>
