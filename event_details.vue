@@ -34,7 +34,7 @@
                                 </router-link>
                                 <span v-else>{{ property.name }}</span>
                                 <span>| </span>
-                                <span v-if="isMultiDay(event)" class="promo_date">{{ currentEvent.start_date | moment("MMMM D", timezone)}} to {{ currentEvent.end_date | moment("MMMM D", timezone)}}</span>
+                                <span v-if="isMultiDay(currentEvent)" class="promo_date">{{ currentEvent.start_date | moment("MMMM D", timezone)}} to {{ currentEvent.end_date | moment("MMMM D", timezone)}}</span>
                                 <span v-else class="promo_date">{{ currentEvent.start_date | moment("MMMM D", timezone)}}</span>
                             </p>
                             <div class="event_desc" v-html="currentEvent.rich_description"></div>
