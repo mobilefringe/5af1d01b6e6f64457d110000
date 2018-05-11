@@ -141,8 +141,11 @@
                 currentStore: function () {
                     var vm = this;
                     var storeHours = [];
+                    var today = moment().day();
                     _.forEach(this.currentStore.store_hours, function (value, key) {
-                        console.log()
+                        if( today == value.day_of_week ){
+                            value.todays_hour = "todays_hour"
+                        }
                         storeHours.push(vm.findHourById(value));
                         console.log(storeHours)
                     });
