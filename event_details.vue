@@ -50,8 +50,6 @@
 
 <script>
 	define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, VueLazyload, SocialSharing, site) {
-        Vue.use(Meta);
-        Vue.use(Lightbox);
         Vue.use(VueLazyload);
         Vue.component('social-sharing', SocialSharing);
 		return Vue.component("event-details-component", {
