@@ -17,7 +17,7 @@
                             <router-link to="/jobs">
                                 <div class="inside_page_header"><i class="fa fa-caret-left"></i> Back to List</div>
                             </router-link>
-                            <p class="promo_name">{{ currentJob.name }}</p>
+                            <h3 class="promo_name">{{ currentJob.name }}</h3>
                             <p class="promo_store_name">
                                 <router-link v-if="currentJob.jobable_type == 'Store'" :to="'/stores/'+ currentJob.store.slug">
                                     {{ currentJob.store.name }}
