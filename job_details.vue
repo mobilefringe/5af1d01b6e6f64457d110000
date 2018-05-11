@@ -51,7 +51,7 @@
 </template>
 
 <!--<template>-->
-    <div> <!-- without an outer container div this component template will not render -->
+    <!--<div>  without an outer container div this component template will not render -->
 <!--        <loading-spinner v-if="!dataLoaded"></loading-spinner>-->
 <!--        <transition name="fade">-->
 <!--            <inside-header-component></inside-header-component>-->
