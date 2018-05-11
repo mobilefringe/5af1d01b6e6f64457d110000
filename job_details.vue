@@ -50,59 +50,6 @@
     </div>
 </template>
 
-<!--<template>-->
-    <!--<div>  without an outer container div this component template will not render -->
-<!--        <loading-spinner v-if="!dataLoaded"></loading-spinner>-->
-<!--        <transition name="fade">-->
-<!--            <inside-header-component></inside-header-component>-->
-<!--        </transition>-->
-<!--        <transition name="fade">-->
-<!--            <div v-if="dataLoaded" v-cloak class="main_container margin_30">-->
-<!--                <div v-if="currentJob" class="job_details_container">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-md-6">-->
-<!--                            <img v-lazy="currentJob.store.store_front_url_abs" :alt="currentJob.store.name" class="jobs_logo center-block"/>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-6">-->
-<!--                            <router-link :to="{ name: 'storeDetails', params: { id: currentJob.store.slug }}">-->
-<!--                                <span class="job_store_name hidden_phone">{{ currentJob.store.name }}</span>-->
-<!--                            </router-link>-->
-<!--                            <h2 class="job_name">{{ currentJob.name }}</h2>-->
-<!--                            <p class="job_date" v-if="isMultiDayEvent(currentJob)">-->
-<!--                                {{ currentJob.start_date | moment("MMM D", timezone)}} to {{ currentJob.end_date | moment("MMM D", timezone)}}-->
-<!--                            </p>-->
-<!--                            <p class="job_date" v-else>{{ currentJob.start_date | moment("MMM D", timezone)}}</p>-->
-<!--                            <div class="margin_20"></div>-->
-<!--                            <p v-if="currentJob.contact_name" class="job_date">Contact Name: {{ currentJob.contact_name }}</p>-->
-<!--                            <p v-if="currentJob.contact_phone" class="job_date">Telephone: {{ currentJob.contact_phone }}</p>-->
-<!--                            <p v-if="currentJob.contact_email" class="job_date">Email: <a :href="'mailto:' + currentJob.contact_email">{{ currentJob.contact_email }}</a></p>-->
-<!--                            <p v-if="currentJob.contact_website" class="job_date">Website: <a :href="currentJob.contact_website">{{ currentJob.contact_website }} </a></p>-->
-<!--                            <p v-if="currentJob.message" class="job_date">Message: {{ currentJob.message }}</p>-->
-<!--                            <div class="margin_20"></div>-->
-<!--                            <div class="job_desc" v-html="currentJob.rich_description"></div>-->
-<!--                            <div class="row"> -->
-<!--                                <div class="col-md-12">-->
-<!--                                    <social-sharing v-if="currentJob" :url="shareURL(currentJob.slug)" :title="currentJob.title" :description="currentJob.body" :quote="truncate(currentJob.body)" twitter-user="PickeringTC" :media="currentJob.image_url" inline-template>-->
-<!--                                        <div class="social_share">-->
-<!--                                            <h5>Share</h5>-->
-<!--                                            <network network="facebook">-->
-<!--                                                <i class="fa fa-facebook-square"></i>-->
-<!--                                            </network>-->
-<!--                                            <network network="twitter">-->
-<!--                                                <i class="fa fa-twitter-square"></i>-->
-<!--                                            </network>-->
-<!--                                        </div>-->
-<!--                                    </social-sharing>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </transition>-->
-<!--    </div>-->
-<!--</template>-->
-
 <script>
     define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-meta", "vue-lazy-load", "vue-social-sharing"], function(Vue, Vuex, moment, tz, VueMoment, Meta, VueLazyload, SocialSharing) {
         Vue.use(Meta);
