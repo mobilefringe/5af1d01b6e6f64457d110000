@@ -97,8 +97,6 @@
                     return truncate;
                 },
 				shareURL(slug) {
-				    console.log(this.property)
-				    console.log(window.location.href)
                     var share_url = window.location.href
                     return share_url
                 },
