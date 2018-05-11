@@ -23,7 +23,7 @@
                                         <i v-else  class="fa fa-plus"></i>
                                     </b-btn>
                                 </b-card-header>
-                                <b-collapse v-if="jobList.length >= 1" v-for="event in jobList" v-model="toggleJobs" role="tabpanel" id="toggleJobs" class="accordion_body">
+                                <b-collapse v-if="jobList.length >= 1" v-for="job in jobList" v-model="toggleJobs" role="tabpanel" id="toggleJobs" class="accordion_body">
                                     <b-card-body>
                                         <div class="row">
                                             <div class="col-md-12">
