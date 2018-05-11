@@ -145,6 +145,10 @@
                     var storeHours = [];
                     _.forEach(this.currentStore.store_hours, function (value, key) {
                         var hours = vm.findHourById(value);
+                        var today = moment().day();
+                        if( today == hours.day_of_week ){
+                            hours.todays_hour = "todays_hour"
+                        }
                         console.log(hours)
                         // storeHours.push();
                     });
