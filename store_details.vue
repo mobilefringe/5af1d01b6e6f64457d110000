@@ -64,7 +64,7 @@
                                                     <p class="promo_date" v-else>{{ promo.start_date | moment("MMMM D", timezone)}}</p>
                                                     <div class="promo_desc" v-html="promo.description_short"></div>
                                                     <router-link :to="'/promotions/'+ promo.slug" >
-							                            <a class="read_more">Promo Details</a>
+							                            <i class="fa fa-caret-right"></i> <a class="read_more">View Promotion Details</a>
 					                                </router-link>
                                                 </div>
                                             </div>
@@ -92,7 +92,7 @@
                                                     </p>
                                                     <p class="promo_date" v-else>{{ job.start_date | moment("MMMM D", timezone)}}</p>
                                                     <router-link :to="'/jobs/'+ job.slug" >
-							                            <a class="read_more">View Job Details</a>
+							                            <i class="fa fa-caret-right"></i> <a class="read_more">View Job Details</a>
 					                                </router-link>
                                                 </div>
                                             </div>
