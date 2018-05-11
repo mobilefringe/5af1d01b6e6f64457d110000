@@ -98,7 +98,7 @@
                 },
 				shareURL(slug) {
 				    console.log(window.location.href)
-                    var share_url = "https://www.miltonmall.com/promotions/" + slug
+                    var share_url = window.location.href
                     return share_url
                 }
 			}
