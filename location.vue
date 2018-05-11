@@ -21,7 +21,7 @@
                                 {{ property.city }}, {{ property.province_state }} <br>
                                 {{ property.postal_code }}
                             </p>
-                            <a class="main_btn block animated_btn" :href="siteInfo.googleMapsURL" target="_blank">Driving Direction</a>   
+                            <a class="animated_btn" :href="siteInfo.googleMapsURL" target="_blank">Driving Direction</a>   
                         </div>
                         <div class="details_col_9">
                             <iframe title="Map" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  :src="'http://maps.google.nl/maps?q=' + getPropertyAddress + '&amp;hl=en&amp;ie=UTF8&amp;t=v&amp;hnear=' + getPropertyAddress + '&amp;z=16&amp;output=embed'"></iframe>
