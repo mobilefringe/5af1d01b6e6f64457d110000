@@ -31,7 +31,7 @@
                             <div class="promo_desc" v-html="currentPromo.rich_description"></div>
                             <social-sharing v-if="currentPromo" :url="shareURL(currentPromo.slug)" :title="currentPromo.title" :description="currentPromo.body" :quote="truncate(currentPromo.body)" twitter-user="MiltonMall" :media="currentPromo.image_url" inline-template>
                                 <div class="social_share">
-                                    <h5>Share</h5>
+                                    <p>Share</p>
                                     <network network="facebook">
                                         <i class="fa fa-facebook-square"></i>
                                     </network>
