@@ -694,6 +694,16 @@ $secondary: #969696;
 //         }
 //     }
 // }
+.animated_btn {
+    margin-bottom: 15px;
+    padding: 5px 9px;
+    // width: calc(100% - 200px);
+    border: 0px solid #CCC;
+    border-radius: 0 4px 4px 0;
+    background: #f5a623;
+    font-size: 0.875rem;
+    color: #FFF;
+}
 // .animated_btn {
 //     padding: 10px;
 //     min-width: 150px;
