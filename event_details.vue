@@ -51,7 +51,7 @@
 </template>
 
 <script>
-	define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-meta", "lightbox", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, Meta, Lightbox, VueLazyload, SocialSharing, Site) {
+	define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-meta", "lightbox", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, Meta, Lightbox, VueLazyload, SocialSharing, site) {
         Vue.use(Meta);
         Vue.use(Lightbox);
         Vue.use(VueLazyload);
@@ -64,7 +64,7 @@
 					dataLoaded: false,
 					currentEvent: null,
 				// 	store_hours: [],
-				    siteInfo: Site,
+				    siteInfo: site,
 				}
 			},
 			created() {
