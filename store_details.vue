@@ -30,14 +30,12 @@
                             </div>
                             <div class="inside_page_header">Store Hours & Information</div>
                             <ul v-if="storeHours" class="store_details_hours_list">
-                                <li v-for="hour in storeHours" > <!-- :class="hour.todays_hour" -->
-                                    <!--<span v-if="!hour.is_closed">-->
-                                    <!--    <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}}</span> -->
-                                    <!--    <span>{{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}</span>-->
-                                    <!--</span>-->
-                                    <!--<span v-else>-->
-                                    <!--    {{hour.day_of_week | moment("dddd", timezone)}}: CLOSED-->
-                                    <!--</span>-->
+                                <li v-for="hour in storeHours" v-if="!hour.is_closed">
+                                    <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}}</span> 
+                                    <span :class>{{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}</span>
+                                </li>
+                                <li v-else>
+                                    {{hour.day_of_week | moment("dddd", timezone)}}: CLOSED
                                 </li>
                             </ul>
                             <div class=" margin_30 store_details_desc" v-html="currentStore.rich_description"></div>
@@ -144,17 +142,8 @@
                     var vm = this;
                     var storeHours = [];
                     _.forEach(this.currentStore.store_hours, function (value, key) {
-                        var hours = vm.findHourById(value);
-                        var today = moment().day();
-                        if( today == hours.day_of_week ){
-                            console.log(hours)
-                            hours.todays_hour = true;
-                        }
-                        // console.log(hours)
-                        storeHours.push(hours);
+                        storeHours.push(vm.findHourById(value));
                     });
-                    console.log(storeHours)
-
                     this.storeHours = storeHours;
                     
                     var vm = this;
@@ -226,6 +215,7 @@
                     if (this.currentStore === null || this.currentStore === undefined) {
                         this.$router.replace({ name: 'stores' });
                     }
+                    console.log(this.currentStore)
                 },
                 updateSVGMap (map) {
                     this.map = map;
