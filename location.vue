@@ -42,7 +42,8 @@
             data: function () {
                 return {
                     dataLoaded: false,
-                    currentPage: null
+                    currentPage: null,
+                    siteInfo: site
                 }
             },
             created() {
