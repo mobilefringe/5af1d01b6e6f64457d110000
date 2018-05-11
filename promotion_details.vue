@@ -101,6 +101,9 @@
 				    console.log(window.location.href)
                     var share_url = window.location.href
                     return share_url
+                },
+                twitterUser() {
+                    return "Hello!"
                 }
 			}
         });
