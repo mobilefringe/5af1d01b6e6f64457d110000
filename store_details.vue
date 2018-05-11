@@ -148,10 +148,10 @@
                         var today = moment().day();
                         if( today == hours.day_of_week ){
                             console.log(hours)
-                            hours.todays_hour = "todays_hour"
+                            hours.todays_hour = true;
                         }
-                        console.log(hours)
-                        // storeHours.push();
+                        // console.log(hours)
+                        storeHours.push(hours);
                     });
                     // var today = moment().day();
                     // _.forEach(storeHours, function (value, key) {
