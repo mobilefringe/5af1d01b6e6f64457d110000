@@ -19,6 +19,20 @@ define([], function () {
             ]
         },
         {
+            path: '/dine',
+            component: view('default'),
+            children: [
+                {
+                    path: '',
+                    component: view('directions'),
+                    meta: {
+                        pageName: 'Find Us',
+                    },
+                    name: 'directions'
+                }
+            ]
+        },
+        {
             path: '/directions',
             component: view('default'),
             children: [
@@ -36,14 +50,6 @@ define([], function () {
             path: '/events',
             component: view('default'),
             children: [
-                // {
-                //     path: '',
-                //     component: view('events'),
-                //     meta: {
-                //         pageName: 'Events',
-                //     },
-                //     name: 'events'
-                // },
                 {
                     path: ':id',
                     component: view('event_details'),
@@ -69,20 +75,6 @@ define([], function () {
                 }
             ]
         },
-        // {
-        //     path: '/hours',
-        //     component: view('default'),
-        //     children: [
-        //         {
-        //             path: '',
-        //             component: view('hours'),
-        //             meta: {
-        //                 pageName: 'Hours',
-        //             },
-        //             name: 'hours'
-        //         }
-        //     ]
-        // },
         {
             path: '/jobs',
             component: view('default'),
@@ -160,32 +152,10 @@ define([], function () {
                 }
             ]
         },
-        // {
-        //     path: '/photos',
-        //     component: view('default'),
-        //     children: [
-        //         {   
-        //             path: '',
-        //             component: view('photos'),
-        //             meta: {
-        //                 pageName: 'Photos',
-        //             },
-        //             name: 'photos'
-        //         }
-        //     ]
-        // },
         {
             path: '/promotions',
             component: view('default'),
             children: [
-                // {
-                //     path: '',
-                //     component: view('promotions'),
-                //     meta: {
-                //         pageName: 'Promotions',
-                //     },
-                //     name: 'promotions'
-                // },
                 {
                     path: ':id',
                     component: view('promotion_details'),
