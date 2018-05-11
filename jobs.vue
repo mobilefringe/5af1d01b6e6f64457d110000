@@ -23,34 +23,34 @@
                                         <i v-else  class="fa fa-plus"></i>
                                     </b-btn>
                                 </b-card-header>
-                                <b-collapse v-if="eventList.length >= 1" v-for="event in eventList" v-model="toggleJobs" role="tabpanel" id="toggleJobs" class="accordion_body">
+                                <b-collapse v-if="jobList.length >= 1" v-for="event in jobList" v-model="toggleJobs" role="tabpanel" id="toggleJobs" class="accordion_body">
                                     <b-card-body>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <p class="promo_name">{{event.name}}</p>
+                                                <p class="promo_name">{{job.name}}</p>
                                                 <p class="promo_store_name">
-                                                    <router-link v-if="event.eventable_type == 'Store'" :to="'/stores/'+ event.store.slug">
-                                                        {{ event.store.name }}
+                                                    <router-link v-if="job.jobable_type == 'Store'" :to="'/stores/'+ job.store.slug">
+                                                        {{ job.store.name }}
                                                     </router-link>
                                                     <span v-else>{{ property.name }}</span>
                                                     <span>| </span>
-                                                    <span v-if="isMultiDay(event)" class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span>
-                                                    <span v-else class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}}</span>
+                                                    <span v-if="isMultiDay(job)" class="promo_date">{{ job.start_date | moment("MMMM D", timezone)}} to {{ job.end_date | moment("MMMM D", timezone)}}</span>
+                                                    <span v-else class="promo_date">{{ job.start_date | moment("MMMM D", timezone)}}</span>
                                                 </p>
-                                                <div class="promo_desc" v-html="event.description_short"></div>
-                                                <router-link :to="'/events/'+ event.slug" >
-						                            <a class="read_more">Event Details</a>
+                                                <div class="promo_desc" v-html="job.description_short"></div>
+                                                <router-link :to="'/jobs/'+ job.slug" >
+						                            <a class="read_more">Job Details</a>
 				                                </router-link>
                                             </div>
                                         </div>
                                         <hr class="promo_separator" />
                                     </b-card-body>
                                 </b-collapse>
-                                <b-collapse v-if="eventList.length == 0" v-model="toggleJobs" role="tabpanel" id="toggleJobs" class="accordion_body">
+                                <b-collapse v-if="jobList.length == 0" v-model="toggleJobs" role="tabpanel" id="toggleJobs" class="accordion_body">
                                     <b-card-body>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <p>Sorry, there are no Events posted at this time. Please check back soon!</p>
+                                                <p>Sorry, there are no Jobs posted at this time. Please check back soon!</p>
                                             </div>
                                         </div>
                                         <hr class="promo_separator" />
@@ -67,42 +67,42 @@
 
 
 
-<template>
+<!--<template>-->
     <div> <!-- without an outer container div this component template will not render -->
-        <loading-spinner v-if="!dataLoaded"></loading-spinner>
-        <transition name="fade">
-            <div v-if="dataLoaded" v-cloak>
-                <div class="inside_header_background">
-                    <div class="main_container">
-                        <h2>Events & Promotions</h2>
-                    </div>
-                </div>
-                <div class="main_container mobile_padding margin_30">
-                    <div class="details_row">
-                        <div class="details_col_3 hidden_phone">
-                            <img class="img_max" src="http://placehold.it/440x1200" alt="" />    
-                        </div>
-                        <div class="details_col_9">
-                <div v-if="processedJobs.length == 0">
-                    <p>Sorry, there are no job postings at this time. Please check back soon.</p>
-                </div>
-                <div class="job_container" v-if="processedJobs.length >= 1" v-for="job in processedJobs">
-                    <div class="job_image_container">
-                        <img v-lazy="job.store.store_front_url_abs" :alt="job.name" />
-                    </div>
-                    <router-link :to="{ name: 'storeDetails', params: { id: job.store.slug }}">
-                        <span class="job_store_name">{{ job.store.name }}</span>
-                    </router-link>
-                    <h3 class="job_name">{{ job.name }}</h3>
-                    <p class="job_type">{{job.job_type}}</p>
-                    <router-link :to="{ name: 'jobDetails', params: { id: job.slug }}">
-                        <span class="read_more">Read More</span>
-                    </router-link>
-                </div>
-            </div>
-        </transition>
-    </div>
-</template>
+<!--        <loading-spinner v-if="!dataLoaded"></loading-spinner>-->
+<!--        <transition name="fade">-->
+<!--            <div v-if="dataLoaded" v-cloak>-->
+<!--                <div class="inside_header_background">-->
+<!--                    <div class="main_container">-->
+<!--                        <h2>Events & Promotions</h2>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="main_container mobile_padding margin_30">-->
+<!--                    <div class="details_row">-->
+<!--                        <div class="details_col_3 hidden_phone">-->
+<!--                            <img class="img_max" src="http://placehold.it/440x1200" alt="" />    -->
+<!--                        </div>-->
+<!--                        <div class="details_col_9">-->
+<!--                <div v-if="processedJobs.length == 0">-->
+<!--                    <p>Sorry, there are no job postings at this time. Please check back soon.</p>-->
+<!--                </div>-->
+<!--                <div class="job_container" v-if="processedJobs.length >= 1" v-for="job in processedJobs">-->
+<!--                    <div class="job_image_container">-->
+<!--                        <img v-lazy="job.store.store_front_url_abs" :alt="job.name" />-->
+<!--                    </div>-->
+<!--                    <router-link :to="{ name: 'storeDetails', params: { id: job.store.slug }}">-->
+<!--                        <span class="job_store_name">{{ job.store.name }}</span>-->
+<!--                    </router-link>-->
+<!--                    <h3 class="job_name">{{ job.name }}</h3>-->
+<!--                    <p class="job_type">{{job.job_type}}</p>-->
+<!--                    <router-link :to="{ name: 'jobDetails', params: { id: job.slug }}">-->
+<!--                        <span class="read_more">Read More</span>-->
+<!--                    </router-link>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </transition>-->
+<!--    </div>-->
+<!--</template>-->
 <script>
     define(["Vue", "vuex", "vue-meta", "vue-lazy-load"], function (Vue, Vuex, Meta, VueLazyload) {
         Vue.use(Meta);
