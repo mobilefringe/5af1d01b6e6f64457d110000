@@ -97,7 +97,7 @@
                     return truncate;
                 },
 				shareURL(slug) {
-				    console.log(this.window)
+				    console.log(window)
                     var share_url = "https://www.miltonmall.com/promotions/" + slug
                     return share_url
                 }
