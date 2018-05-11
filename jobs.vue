@@ -147,6 +147,7 @@
                         }
                     });
                     var sortedJobs = _.orderBy(showJobs, function (o) { return o.end_date });
+                    console.log(sortedJobs)
                     if (sortedJobs.length > 0) {
                         this.toggleJobs = true;
                     }
