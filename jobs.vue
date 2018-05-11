@@ -88,7 +88,7 @@ define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "bootstrap-vue
                     'processedJobs'
                 ]),
                 jobList: function jobs() {
-                    var jobs = this.processedJob;
+                    var jobs = this.processedJobs;
                     var showJobs = [];
                     _.forEach(jobs, function (value, key) {
                         var today = moment.tz(this.timezone).format();
