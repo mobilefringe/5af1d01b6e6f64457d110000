@@ -151,7 +151,6 @@
                         this.toggleJobs = true;
                     }
                     return sortedJobs
-                    
                 },
             },
             methods: {
