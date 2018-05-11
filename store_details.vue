@@ -36,7 +36,7 @@
                                         {{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}
                                     </span>
                                     <span v-else>
-                                        {{hour.day_of_week | moment("dddd", timezone)}}: CLOSED
+                                        <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}}: </span> CLOSED
                                     </span>
                                 </li>
                                 
