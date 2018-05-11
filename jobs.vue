@@ -69,9 +69,8 @@
 
 
 <script>
-    define(["Vue", "vuex", "vue-meta", "vue-lazy-load"], function (Vue, Vuex, Meta, VueLazyload) {
-        Vue.use(Meta);
-        Vue.use(VueLazyload);
+define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "bootstrap-vue"], function (Vue, Vuex, moment, tz, VueMoment, BootstrapVue) {
+        Vue.use(BootstrapVue);
         return Vue.component("jobs-component", {
             template: template, // the variable template will be injected
             data: function () {
