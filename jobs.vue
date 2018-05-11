@@ -67,42 +67,7 @@
 
 
 
-<!--<template>-->
-    <div> <!-- without an outer container div this component template will not render -->
-<!--        <loading-spinner v-if="!dataLoaded"></loading-spinner>-->
-<!--        <transition name="fade">-->
-<!--            <div v-if="dataLoaded" v-cloak>-->
-<!--                <div class="inside_header_background">-->
-<!--                    <div class="main_container">-->
-<!--                        <h2>Events & Promotions</h2>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="main_container mobile_padding margin_30">-->
-<!--                    <div class="details_row">-->
-<!--                        <div class="details_col_3 hidden_phone">-->
-<!--                            <img class="img_max" src="http://placehold.it/440x1200" alt="" />    -->
-<!--                        </div>-->
-<!--                        <div class="details_col_9">-->
-<!--                <div v-if="processedJobs.length == 0">-->
-<!--                    <p>Sorry, there are no job postings at this time. Please check back soon.</p>-->
-<!--                </div>-->
-<!--                <div class="job_container" v-if="processedJobs.length >= 1" v-for="job in processedJobs">-->
-<!--                    <div class="job_image_container">-->
-<!--                        <img v-lazy="job.store.store_front_url_abs" :alt="job.name" />-->
-<!--                    </div>-->
-<!--                    <router-link :to="{ name: 'storeDetails', params: { id: job.store.slug }}">-->
-<!--                        <span class="job_store_name">{{ job.store.name }}</span>-->
-<!--                    </router-link>-->
-<!--                    <h3 class="job_name">{{ job.name }}</h3>-->
-<!--                    <p class="job_type">{{job.job_type}}</p>-->
-<!--                    <router-link :to="{ name: 'jobDetails', params: { id: job.slug }}">-->
-<!--                        <span class="read_more">Read More</span>-->
-<!--                    </router-link>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </transition>-->
-<!--    </div>-->
-<!--</template>-->
+
 <script>
     define(["Vue", "vuex", "vue-meta", "vue-lazy-load"], function (Vue, Vuex, Meta, VueLazyload) {
         Vue.use(Meta);
