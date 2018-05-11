@@ -725,9 +725,15 @@ $secondary: #969696;
         -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.9, 1);
         transition-timing-function: cubic-bezier(0.7, 0, 0.9, 1);
     }
-    &:hover {
-        color: #FFF;
-        text-decoration: none;
+}
+.animated_btn:hover {
+    color: #FFF;
+    text-decoration: none;
+    &:before {
+        -webkit-transform: scale3d(9, 9, 1);
+        transform: scale3d(9, 9, 1);
+    }
+}
     
     }
     
