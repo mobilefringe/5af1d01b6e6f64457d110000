@@ -705,6 +705,11 @@ $secondary: #969696;
     font-size: 1.125rem;
     color: #FFF;
     text-align: center;
+    &:hover {
+        color: #FFF;
+        text-decoration: none;
+    
+    }
     
 }
 // .animated_btn {
