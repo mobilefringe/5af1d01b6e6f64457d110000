@@ -959,19 +959,19 @@ $secondary: #969696;
     }
 }
 
-/* *** PAGES *** */
-.page_title {
-    font-weight: 700;
-    line-height: 33px;
-    text-transform: uppercase;
-}
-.page_body {
-    font-size: 18px !important;
-    line-height: 24px !important;
-    img {
-        max-width: 100%;
-    }
-}
+// /* *** PAGES *** */
+// .page_title {
+//     font-weight: 700;
+//     line-height: 33px;
+//     text-transform: uppercase;
+// }
+// .page_body {
+//     font-size: 18px !important;
+//     line-height: 24px !important;
+//     img {
+//         max-width: 100%;
+//     }
+// }
 
 /* *** PHOTOS *** */
 .leasing_photo_container {
