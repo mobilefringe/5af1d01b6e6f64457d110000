@@ -149,9 +149,9 @@
                     var today = moment().day();
                     _.forEach(storeHours, function (value, key) {
                         console.log(value)
-                        if( today == value.day_of_week ){
-                            value.todays_hour = "todays_hour"
-                        }
+                        // if( today == value.day_of_week ){
+                        //     value.todays_hour = "todays_hour"
+                        // }
                         storeHours.push(vm.findHourById(value));
                         console.log(storeHours)
                     });
