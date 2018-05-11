@@ -113,8 +113,12 @@
                     return truncate;
                 },
 				shareURL(slug) {
-                    var share_url = "https://www.miltonmall.com/events/" + slug
+                    var share_url = window.location.href
                     return share_url
+                },
+                twitterUser() {
+                    // Add Property Twitter Handle
+                    return "PropertyTwitterHandle"
                 }
 			}
 		});
