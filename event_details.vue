@@ -51,7 +51,7 @@
 </template>
 
 <script>
-	define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-meta", "lightbox", "vue-lazy-load",  "vue-social-sharing"], function(Vue, Vuex, moment, tz, VueMoment, Meta, Lightbox, VueLazyload, SocialSharing) {
+	define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-meta", "lightbox", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, Meta, Lightbox, VueLazyload, SocialSharing, Site) {
         Vue.use(Meta);
         Vue.use(Lightbox);
         Vue.use(VueLazyload);
@@ -63,7 +63,8 @@
 				return {
 					dataLoaded: false,
 					currentEvent: null,
-					store_hours: [],
+				// 	store_hours: [],
+				    siteInfo: Site,
 				}
 			},
 			created() {
@@ -77,18 +78,18 @@
 					console.error("Could not retrieve data from server. Please check internet connection and try again.");
 				});
 			},
-			watch: {
-				currentEvent: function() {
-					if (this.currentEvent.eventable_type == "Store") {
-						var vm = this;
-						var storeHours = [];
-						_.forEach(this.currentEvent.store.store_hours, function(value, key) {
-							storeHours.push(vm.findHourById(value));
-						});
-						this.store_hours = storeHours;
-					}
-				}
-			},
+// 			watch: {
+// 				currentEvent: function() {
+// 					if (this.currentEvent.eventable_type == "Store") {
+// 						var vm = this;
+// 						var storeHours = [];
+// 						_.forEach(this.currentEvent.store.store_hours, function(value, key) {
+// 							storeHours.push(vm.findHourById(value));
+// 						});
+// 						this.store_hours = storeHours;
+// 					}
+// 				}
+// 			},
 			computed: {
 				...Vuex.mapGetters([
 					'property',
