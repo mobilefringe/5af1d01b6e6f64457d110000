@@ -149,6 +149,7 @@
                     // this.storeHours = _.sortBy(storeHours, function(o) { return o.day_of_week });
                     _.forEach(this.currentStore.store_hours, function (value, key) {
                         hours = vm.findHourById(value)
+                        console.log(hours)
                         storeHours.push(hours);
                     });
                     this.storeHours = _.sortBy(storeHours, function(o) { return o.day_of_week });
