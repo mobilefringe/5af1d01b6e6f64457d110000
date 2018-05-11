@@ -57,7 +57,7 @@
                                                     <img :src="promo.image_url" :alt="'Promotion:' + promo.name" class="max_img" />
                                                 </div>
                                                 <div class="col-md-7">
-                                                    <p class="promo_name">{{promo.name}}</p>
+                                                    <h3 class="promo_name">{{promo.name}}</h3>
                                                     <p class="promo_date" v-if="isMultiDay(promo)">
                         							    {{ promo.start_date | moment("MMMM D", timezone)}} to {{ promo.end_date | moment("MMMM D", timezone)}}
                                                     </p>
@@ -86,7 +86,7 @@
                                         <b-card-body>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <p class="promo_name">{{job.name}}</p>
+                                                    <h3 class="promo_name">{{job.name}}</h3>
                                                     <p class="promo_date" v-if="isMultiDay(job)">
                         							    {{ job.start_date | moment("MMMM D", timezone)}} to {{ job.end_date | moment("MMMM D", timezone)}}
                                                     </p>
