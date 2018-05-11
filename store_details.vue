@@ -147,6 +147,7 @@
                         var hours = vm.findHourById(value);
                         var today = moment().day();
                         if( today == hours.day_of_week ){
+                            console.log(hours)
                             hours.todays_hour = "todays_hour"
                         }
                         console.log(hours)
