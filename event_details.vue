@@ -18,7 +18,7 @@
                                 <div class="inside_page_header"><i class="fa fa-caret-left"></i> Back to List</div>
                             </router-link>
                             <a :href="currentEvent.image_url" :data-lightbox="currentEvent.name">
-                                <img v-lazy="currentEvent.image_url" :alt="currentEvent.name" class="margin_20 img_max"/>
+                                <img v-lazy="currentEvent.image_url" :alt="'Event: ' + currentEvent.name" class="margin_20 img_max"/>
                             </a>
                             <h3 class="promo_name">{{ currentEvent.name }}</h3>
                             <p class="promo_store_name">
