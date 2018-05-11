@@ -147,8 +147,8 @@
                     _.forEach(this.currentStore.store_hours, function (value, key) {
                         storeHours.push(vm.findHourById(value));
                     });
-                    this.storeHours = storeHours;
-                    
+                    this.storeHours = _.sortBy(storeHours, function(o) { return o.day_of_week });
+                
                     var vm = this;
                     var temp_promo = [];
                     _.forEach(this.currentStore.promotions, function(value, key) {
