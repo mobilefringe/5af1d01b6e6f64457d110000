@@ -19,12 +19,12 @@
                                     <p>We value your feedback. Send us your comments or questions by completing the contact form below.</p>    
                                 </div>
                                 <form class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
-                                    <div class="col-xs-12" :class="{'has-error': errors.has('name')}">
+                                    <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('name')}">
                                         <label for="name">Name</label>
                                         <input id="name" v-model="form_data.name" v-validate="'required|true'" class="form-control" :class="{'input': true}" name="name" type="text" data-vv-delay="1000">
                                         <span v-show="errors.has('name')" class="form-control-feedback">{{ errors.first('name') }}</span>
                                     </div>
-                                    <div class="col-xs-12" :class="{'has-error': errors.has('email')}">
+                                    <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('email')}">
                                         <label for="email">Email</label>
                                         <input id="email" v-model="form_data.email" v-validate="'required|email'" class="form-control" :class="{'input': true}" name="email" type="email" data-vv-delay="1000">
                                         <span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>
