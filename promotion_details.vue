@@ -103,7 +103,8 @@
                     return share_url
                 },
                 twitterUser() {
-                    return "Hello!"
+                    // Add Property Twitter Handle
+                    return "PropertyTwitterHandle"
                 }
 			}
         });
