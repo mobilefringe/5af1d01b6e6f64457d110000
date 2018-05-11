@@ -31,7 +31,7 @@
                                 <span v-else class="promo_date">{{ currentEvent.start_date | moment("MMMM D", timezone)}}</span>
                             </p>
                             <div class="promo_desc" v-html="currentEvent.rich_description"></div>
-                            <social-sharing v-if="currentEvent" :url="shareURL(currentEvent.slug)" :title="currentEvent.title" :description="currentEvent.body" :quote="truncate(currentEvent.body)" :twitter-user="site.info.twitterHandle" :media="currentEvent.image_url" inline-template>
+                            <social-sharing v-if="currentEvent" :url="shareURL(currentEvent.slug)" :title="currentEvent.title" :description="currentEvent.body" :quote="truncate(currentEvent.body)" :twitter-user="" :media="currentEvent.image_url" inline-template>
                                 <div class="social_share">
                                     <p>Share</p>
                                     <network network="facebook">
