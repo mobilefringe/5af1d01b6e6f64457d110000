@@ -17,9 +17,6 @@
                             <router-link to="/jobs">
                                 <div class="inside_page_header"><i class="fa fa-caret-left"></i> Back to List</div>
                             </router-link>
-                            <a :href="currentJob.image_url" :data-lightbox="currentJob.name">
-                                <img v-lazy="currentJob.image_url" :alt="currentJob.name" class="margin_20 img_max"/>
-                            </a>
                             <p class="promo_name">{{ currentJob.name }}</p>
                             <p class="promo_store_name">
                                 <router-link v-if="currentJob.jobable_type == 'Store'" :to="'/stores/'+ currentJob.store.slug">
