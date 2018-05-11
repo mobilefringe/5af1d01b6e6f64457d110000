@@ -13,9 +13,9 @@
                 <div class="main_container margin_30">
                     <div class="details_row">
                         <div class="details_col_3">
-                            <h3 class="inside_page_title" style="">Office Phone Number</h3>
+                            <h3 class="inside_page_title">Office Phone Number</h3>
                             <a class="inside_page_link" :href="'tel:' + property.contact_phone">{{ property.contact_phone }}</a>
-                            <h3 class="inside_page_title" style="">Address</h3>
+                            <h3 class="inside_page_title">Address</h3>
                             <p class="inside_page_link">
                                 {{ property.address1 }} <br>
                                 {{ property.city }}, {{ property.province_state }} <br>
