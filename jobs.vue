@@ -65,9 +65,6 @@
     </div>
 </template>
 
-
-
-
 <script>
 define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "bootstrap-vue"], function (Vue, Vuex, moment, tz, VueMoment, BootstrapVue) {
         Vue.use(BootstrapVue);
@@ -91,7 +88,7 @@ define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "bootstrap-vue
                     'processedJobs'
                 ]),
                 jobList: function jobs() {
-                    var jobs = this.processedEvents;
+                    var jobs = this.processedJob;
                     var showJobs = [];
                     _.forEach(jobs, function (value, key) {
                         var today = moment.tz(this.timezone).format();
