@@ -24,25 +24,11 @@ define([], function () {
             children: [
                 {
                     path: '',
-                    component: view('directions'),
+                    component: view('dine'),
                     meta: {
-                        pageName: 'Find Us',
+                        pageName: 'Dine',
                     },
-                    name: 'directions'
-                }
-            ]
-        },
-        {
-            path: '/directions',
-            component: view('default'),
-            children: [
-                {
-                    path: '',
-                    component: view('directions'),
-                    meta: {
-                        pageName: 'Find Us',
-                    },
-                    name: 'directions'
+                    name: 'dine'
                 }
             ]
         },
