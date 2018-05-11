@@ -32,7 +32,7 @@
                             <ul v-if="storeHours" class="store_details_hours_list">
                                 <li v-for="hour in storeHours" v-if="!hour.is_closed">
                                     <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}}</span> 
-                                    <span>{{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}</span>
+                                    <span :class>{{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}</span>
                                 </li>
                                 <li v-else>
                                     {{hour.day_of_week | moment("dddd", timezone)}}: CLOSED
