@@ -20,7 +20,7 @@
                             <a :href="currentPromo.image_url" :data-lightbox="currentPromo.name">
                                 <img v-lazy="currentPromo.image_url" :alt="'Promotion: ' + currentPromo.name" class="margin_20 img_max"/>
                             </a>
-                            <p class="promo_name">{{ currentPromo.name }}</p>
+                            <h3 class="promo_name">{{ currentPromo.name }}</h3>
                             <p class="promo_store_name">
                                 <router-link v-if="currentPromo.promotionable_type == 'Store'" :to="'/stores/'+ currentPromo.store.slug">{{ currentPromo.store.name }}</router-link>
                                 <span v-else>{{ property.name }}</span>
