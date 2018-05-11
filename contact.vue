@@ -59,6 +59,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
+                                    <hr>
                                     <!--<div class="contact_page_body" v-html="currentPage.body"></div>-->
                                 </div>
                             </div>
