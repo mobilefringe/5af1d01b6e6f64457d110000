@@ -48,8 +48,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-meta", "vue-lazy-load", "vue-social-sharing"], function(Vue, Vuex, moment, tz, VueMoment, Meta, VueLazyload, SocialSharing) {
-        Vue.use(Meta);
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, VueLazyload, SocialSharing, site) {
         Vue.use(VueLazyload);
         Vue.component('social-sharing', SocialSharing);
         return Vue.component("job-details-component", {
@@ -58,7 +57,8 @@
             data: function() {
                 return {
                     dataLoaded: false,
-                    currentJob: null
+                    currentJob: null,
+                    siteInfo: site,
                 }
             },
             created() {
@@ -110,7 +110,7 @@
 				shareURL(slug) {
                     var share_url = window.location.href
                     return share_url
-                },
+                }
 			}
         });
     });
