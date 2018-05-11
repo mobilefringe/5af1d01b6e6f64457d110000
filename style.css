@@ -695,14 +695,16 @@ $secondary: #969696;
 //     }
 // }
 .animated_btn {
-    margin-bottom: 15px;
-    padding: 5px 9px;
-    // width: calc(100% - 200px);
-    border: 0px solid #CCC;
-    border-radius: 0 4px 4px 0;
-    background: #f5a623;
-    font-size: 0.875rem;
+    padding: 7.5px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: $primary;
+    font-family: Avenir-Medium;
+    font-size: 1.125rem;
     color: #FFF;
+    text-align: center;
+    
 }
 // .animated_btn {
 //     padding: 10px;
