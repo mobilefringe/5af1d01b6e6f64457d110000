@@ -63,13 +63,11 @@
 				return {
 					dataLoaded: false,
 					currentEvent: null,
-				// 	store_hours: [],
 				    siteInfo: site,
 				}
 			},
 			created() {
 				this.$store.dispatch("getData", "events").then(response => {
-				    console.log(this.siteInfo)
 					this.currentEvent = this.findEventBySlug(this.id);
 					if (this.currentEvent === null || this.currentEvent === undefined) {
 						this.$router.replace({ name: '404' });
@@ -79,18 +77,6 @@
 					console.error("Could not retrieve data from server. Please check internet connection and try again.");
 				});
 			},
-// 			watch: {
-// 				currentEvent: function() {
-// 					if (this.currentEvent.eventable_type == "Store") {
-// 						var vm = this;
-// 						var storeHours = [];
-// 						_.forEach(this.currentEvent.store.store_hours, function(value, key) {
-// 							storeHours.push(vm.findHourById(value));
-// 						});
-// 						this.store_hours = storeHours;
-// 					}
-// 				}
-// 			},
 			computed: {
 				...Vuex.mapGetters([
 					'property',
@@ -118,10 +104,6 @@
                     var share_url = window.location.href
                     return share_url
                 },
-                twitterUser() {
-                    // Add Property Twitter Handle
-                    return "PropertyTwitterHandle"
-                }
 			}
 		});
 	});
