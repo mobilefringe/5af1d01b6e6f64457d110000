@@ -152,9 +152,9 @@
                         console.log(hours)
                         today = moment().day();
                         if( today == hours.day_of_week ){
-                            hours.todays_hour = true;
+                            hours.todays_hours = true;
                         } else {
-                            hours.todays_hour = false;
+                            hours.todays_hours = false;
                         }
                         storeHours.push(hours);
                     });
