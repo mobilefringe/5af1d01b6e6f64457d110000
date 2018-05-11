@@ -98,10 +98,6 @@
 				shareURL(slug) {
                     var share_url = window.location.href
                     return share_url
-                },
-                twitterUser() {
-                    // Add Property Twitter Handle
-                    return "PropertyTwitterHandle"
                 }
 			}
         });
