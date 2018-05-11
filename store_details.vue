@@ -153,6 +153,7 @@
                         // console.log(hours)
                         storeHours.push(hours);
                     });
+                    console.log(storeHours)
 
                     this.storeHours = storeHours;
                     
