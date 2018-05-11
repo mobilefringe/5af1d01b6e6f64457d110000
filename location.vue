@@ -35,7 +35,7 @@
 </template>
 
 <script>
-	define(["Vue", "vuex", "vue-meta"], function(Vue, Vuex, Meta) {
+	define(["Vue", "vuex", "json!site.json"], function(Vue, Vuex, site) {
         Vue.use(Meta);
 		return Vue.component("location-component", {
             template: template, // the variable template will be injected
