@@ -17,9 +17,7 @@
                             <router-link to="/events-and-promotions">
                                 <div class="inside_page_header"><i class="fa fa-caret-left"></i> Back to List</div>
                             </router-link>
-                            <a :href="currentEvent.image_url" :data-lightbox="currentEvent.name">
-                                <img v-lazy="currentEvent.image_url" :alt="'Event: ' + currentEvent.name" class="margin_20 img_max"/>
-                            </a>
+                            <img v-lazy="currentEvent.image_url" :alt="'Event: ' + currentEvent.name" class="margin_20 img_max"/>
                             <h3 class="promo_name">{{ currentEvent.name }}</h3>
                             <p class="promo_store_name">
                                 <router-link v-if="currentEvent.eventable_type == 'Store'" :to="'/stores/'+ currentEvent.store.slug">
