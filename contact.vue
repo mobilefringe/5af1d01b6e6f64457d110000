@@ -20,7 +20,7 @@
                                 </div>
                                 <form class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
                                     <div class="col-xs-12" :class="{'has-error': errors.has('name')}">
-                                        <label for="name">Name</label>
+                                        <label for="form_data.name">Name</label>
                                         <input v-model="form_data.name" v-validate="'required|alpha_spaces'" class="form-control" :class="{'input': true}" name="name" type="text" data-vv-delay="1000">
                                         <span v-show="errors.has('name')" class="form-control-feedback">{{ errors.first('name') }}</span>
                                     </div>
