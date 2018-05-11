@@ -29,7 +29,7 @@
                                 <span v-else class="promo_date">{{ currentPromo.start_date | moment("MMMM D", timezone)}}</span>
                             </p>
                             <div class="promo_desc" v-html="currentPromo.rich_description"></div>
-                            <social-sharing v-if="currentPromo" :url="shareURL(currentPromo.slug)" :title="currentPromo.title" :description="currentPromo.body" :quote="truncate(currentPromo.body)" twitter-user="MiltonMall" :media="currentPromo.image_url" inline-template>
+                            <social-sharing v-if="currentPromo" :url="shareURL(currentPromo.slug)" :title="currentPromo.title" :description="currentPromo.body" :quote="truncate(currentPromo.body)" twitter-user="twitter" :media="currentPromo.image_url" inline-template>
                                 <div class="social_share">
                                     <p>Share</p>
                                     <network network="facebook">
@@ -97,6 +97,7 @@
                     return truncate;
                 },
 				shareURL(slug) {
+				    console.log(this.property)
 				    console.log(window.location.href)
                     var share_url = window.location.href
                     return share_url
