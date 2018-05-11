@@ -696,6 +696,7 @@ $secondary: #969696;
 // }
 .animated_btn {
     padding: 7.5px 0;
+    display: block;
     position: relative;
     overflow: hidden;
     z-index: 1;
