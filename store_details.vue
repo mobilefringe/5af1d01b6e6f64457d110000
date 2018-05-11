@@ -54,7 +54,7 @@
                                         <b-card-body>
                                             <div class="row">
                                                 <div class="col-md-5" v-if="">
-                                                    <img :src="promo.image_url" :alt="'Promotion: ' + promo.name" class="max_img" />
+                                                    <img :src="promo.image_url" :alt="'Promotion: ' + promo.name" />
                                                 </div>
                                                 <div class="col-md-7">
                                                     <h3 class="promo_name">{{promo.name}}</h3>
