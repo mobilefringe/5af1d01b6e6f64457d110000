@@ -78,8 +78,9 @@ define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "bootstrap-vue
             },
             created() {
                 this.loadData().then(response => {
-                    this.dataLoaded = true;
                     console.log(this.processedJobs)
+                    this.dataLoaded = true;
+                    
                 });
             },
             computed: {
