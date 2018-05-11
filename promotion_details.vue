@@ -49,9 +49,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-meta", "lightbox", "vue-lazy-load", "vue-social-sharing"], function(Vue, Vuex, moment, tz, VueMoment, Meta, Lightbox, VueLazyload, SocialSharing) {
-        Vue.use(Meta);
-        Vue.use(Lightbox);
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, VueLazyload, SocialSharing, site) {
         Vue.use(VueLazyload);
         Vue.component('social-sharing', SocialSharing);
         return Vue.component("promo-details-component", {
@@ -60,7 +58,8 @@
             data: function() {
                 return {
                     dataLoaded: false,
-                    currentPromo: null
+                    currentPromo: null,
+                    siteInfo: site
                 }
             },
             created() {
