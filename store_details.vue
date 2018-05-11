@@ -30,7 +30,7 @@
                             </div>
                             <div class="inside_page_header">Store Hours & Information</div>
                             <ul v-if="storeHours" class="store_details_hours_list">
-                                <li v-for="hour in storeHours">
+                                <li v-for="hour in storeHours" :class="{ today: show_menu }">
                                     <div v-if="!hour.is_closed">
                                         <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span>{{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}
                                     </div>
@@ -143,8 +143,13 @@
                 currentStore: function () {
                     var vm = this;
                     var storeHours = [];
+                    // _.forEach(this.currentStore.store_hours, function (value, key) {
+                    //     storeHours.push(vm.findHourById(value));
+                    // });
+                    // this.storeHours = _.sortBy(storeHours, function(o) { return o.day_of_week });
                     _.forEach(this.currentStore.store_hours, function (value, key) {
-                        storeHours.push(vm.findHourById(value));
+                        hours = vm.findHourById(value)
+                        storeHours.push(hours);
                     });
                     this.storeHours = _.sortBy(storeHours, function(o) { return o.day_of_week });
                 
