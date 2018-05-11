@@ -18,7 +18,7 @@
                                 <div class="inside_page_header"><i class="fa fa-caret-left"></i> Back to List</div>
                             </router-link>
                             <a :href="currentPromo.image_url" :data-lightbox="currentPromo.name">
-                                <img v-lazy="currentPromo.image_url" :alt="currentPromo.name" class="margin_20 img_max"/>
+                                <img v-lazy="currentPromo.image_url" :alt="'Promotion: ' + currentPromo.name" class="margin_20 img_max"/>
                             </a>
                             <p class="promo_name">{{ currentPromo.name }}</p>
                             <p class="promo_store_name">
