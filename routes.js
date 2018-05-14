@@ -182,7 +182,7 @@ define([], function () {
             children: [
                 {   
                     path: '',
-                    component: view('stores'),
+                    component: view('store-test'),
                     meta: {
                         pageName: 'Store Directory',
                     },
