@@ -104,7 +104,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <!--<mapplic-png-map ref="pngmap_ref" :height="700" :hovertip="true" :storelist="storesList" :floorlist="floorList" :bindLocationOpened="true" :svgWidth="property.map_image_width" :svgHeight="property.map_image_height" :showPin="true" tooltiplabel="View Store Details"></mapplic-png-map>-->
+                                <mapplic-png-map ref="pngmap_ref" :height="700" :hovertip="true" :storelist="storesList" :floorlist="floorList" :bindLocationOpened="true" :svgWidth="property.map_image_width" :svgHeight="property.map_image_height" :showPin="true" tooltiplabel="View Store Details"></mapplic-png-map>
                             </div>
                         </div>    
                     </div>
