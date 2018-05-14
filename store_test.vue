@@ -218,9 +218,8 @@
                         // this.breakIntoCol = true;
                     } else {
                         this.sortByStores = false;
-                        this.filteredStores = this.storesByAlphaIndex;
                         var find = this.findCategoryById;
-                        var filtered = _.filter(this.allStores, function(o) {return _.indexOf(o.categories, _.toNumber(category_id)) > -1; });
+                        var filtered = _.filter(this.processedStores, function(o) {return _.indexOf(o.categories, _.toNumber(category_id)) > -1; });
                         _.forEach(filtered, function(value, i) {
                             value.currentCategory = find(category_id).name;
                         });
