@@ -23,22 +23,22 @@
                             <!--<img src="//codecloud.cdn.speedyrails.net/sites/5af1d01b6e6f64457d110000/image/png/1518461604000/Stores Directory.png" />-->
                         </div>
                     </div>
-                    <div class="row home_map_container hidden-lg hidden-md visible-sm-block visible-xs-block">
-                        <div class="col-sm-8 col-sm-offset-2">
-                            <hr>    
-                        </div>
-                        <div class="col-sm-12">
-                            <h3>Map & Store Directory</h3>
-                            <v-select 
-                                :options="allStores" 
-                                :placeholder="'Select A Store'" 
-                                :searchable="false" 
-                                :label="'name'" 
-                                :on-change="dropPin"
-                            ></v-select> 
-                            <svg-map ref="svgRef" v-bind:svgMapUrl="getSVGurl" :regions="regions"></svg-map>
-                        </div>
-                    </div>
+                    <!--<div class="row home_map_container hidden-lg hidden-md visible-sm-block visible-xs-block">-->
+                    <!--    <div class="col-sm-8 col-sm-offset-2">-->
+                    <!--        <hr>    -->
+                    <!--    </div>-->
+                    <!--    <div class="col-sm-12">-->
+                    <!--        <h3>Map & Store Directory</h3>-->
+                    <!--        <v-select -->
+                    <!--            :options="allStores" -->
+                    <!--            :placeholder="'Select A Store'" -->
+                    <!--            :searchable="false" -->
+                    <!--            :label="'name'" -->
+                    <!--            :on-change="dropPin"-->
+                    <!--        ></v-select> -->
+                    <!--        <svg-map ref="svgRef" v-bind:svgMapUrl="getSVGurl" :regions="regions"></svg-map>-->
+                    <!--    </div>-->
+                    <!--</div>-->
                 </div>
             </div>
         </transition>
