@@ -37,7 +37,7 @@
                                                     {{index}}
                                                 </div>
                                             </div>
-                                            <div class="store-section" v-for="store in stores">
+                                            <div class="store-section" v-for="store in listAM">
                                                 <p class="store_list_name">
                                                     <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
                                                         {{store.name}}
