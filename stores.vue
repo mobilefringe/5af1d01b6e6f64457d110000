@@ -113,8 +113,8 @@
                             listTwo.push(value);    
                         }
                     });
-                    console.log(listOne)
-                    console.log("List Two: " + listTwo)
+                    console.log("List One: ", listOne)
+                    console.log("List Two: ", listTwo)
                     return this.processedStores;
                 },
                 dropDownCats() {
