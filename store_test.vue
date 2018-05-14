@@ -82,7 +82,7 @@
                                             </router-link>
                                             <span v-if="store.is_new_store" class="pull-right new_store">NEW</span>
                                             <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store">COMING SOON</span>
-                                            <span v-if="store.promotions != null" class="promo_exist pull-right">PROMOTION</span>
+                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fa fa-tags"></i></span>
                                         </p>
                                     </div>
                                 </div>
