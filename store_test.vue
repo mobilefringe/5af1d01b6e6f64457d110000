@@ -183,7 +183,6 @@
                     cats.unshift('All');
                     return cats;
                 },
-                
                 getSVGurl () {
                     return "https://www.mallmaverick.com" + this.property.svgmap_url;
                 },
