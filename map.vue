@@ -15,9 +15,7 @@
                         <div class="details_col_3">
                             <h3 class="inside_page_title">Find Store</h3>
                             <div class="store_list_container hidden-mobile" v-if="allStores">
-                                <div class="store_name" v-for="store in allStores">
-                                    <p v-on:click="dropPin(store)">{{store.name}}</p>
-                                </div>
+                                <p class="store_name" v-for="store in allStores" v-on:click="dropPin(store)">{{store.name}}</p>
                             </div>
                         </div>
                         <div class="details_col_9">
