@@ -28,8 +28,8 @@
                             </div>
                         </div>
                         <div class="row" v-if="sortByStores">
-                            <div class="col-md-6" v-for="(stores, index) in listOne" >
-                                <div >
+                            <div class="col-md-6">
+                                <div v-for="(stores, index) in listOne">
                                     <div class="list_header">
                                         <div class="store_initial_container">
                                             {{index}}
@@ -47,8 +47,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6" v-for="(stores, index) in listTwo" >
-                                <div >
+                            <div class="col-md-6" >
+                                <div v-for="(stores, index) in listTwo">
                                     <div class="list_header">
                                         <div class="store_initial_container">
                                             {{index}}
