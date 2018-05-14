@@ -75,27 +75,27 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
                     {
                         name: "Facebook",
                         url: "https://www.facebook.com",
-                        iconClass: "fas fa-facebook-f"
+                        iconClass: "fab fa-facebook-f"
                     },
                     {
                         name: "Twitter",
                         url: "https://twitter.com",
-                        iconClass: "fas fa-twitter"
+                        iconClass: "fab fa-twitter"
                     },
                     {
                         name: "Instagram",
                         url: "https://www.instagram.com",
-                        iconClass: "fas fa-instagram"
+                        iconClass: "fab fa-instagram"
                     },
                     {
                         name: "SnapChat",
                         url: "",
-                        iconClass: "fas fa-snapchat-ghost"
+                        iconClass: "fab fa-snapchat-ghost"
                     },
                     {
                         name: "YouTube",
                         url: "https://www.youtube.com/",
-                        iconClass: "fas fa-youtube"
+                        iconClass: "fab fa-youtube"
                     }
                 ],
             }
