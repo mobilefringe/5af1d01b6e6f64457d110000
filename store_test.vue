@@ -137,13 +137,12 @@
             data: function() {
                 return {
                     dataLoaded: false,
-                    // listMode: "alphabetical",
                     sortByStores: true,
                     listOne: null,
                     listTwo: null,
                     filteredStores: null,
                     selectedCat: "Select a Category",
-                    breakIntoCol : true
+
                 }
             },
             created(){
@@ -176,13 +175,8 @@
                             listTwo.push(value);    
                         }
                     });
-                    console.log("List One: ", listOne)
-                    console.log("List Two: " , listTwo)
                     this.listOne = _.groupBy(listOne, store => (isNaN(_.upperCase(store.name.charAt(0))) ? _.upperCase(store.name.charAt(0)) : "#"));
                     this.listTwo = _.groupBy(listTwo, store => (isNaN(_.upperCase(store.name.charAt(0))) ? _.upperCase(store.name.charAt(0)) : "#"));
-                    
-                    
-                    // return this.processedStores;
                 },
                 dropDownCats() {
                     var cats = _.map(this.processedCategories, 'name');
@@ -232,12 +226,8 @@
                         category_id = this.findCategoryByName(cat_id).id;
                     }
                     
-                    this.breakIntoCol = false;
-                    
                     if(category_id == "All"){
                         this.sortByStores = true;
-                        // this.filteredStores = this.storesByAlphaIndex;
-                        // this.breakIntoCol = true;
                     } else {
                         this.sortByStores = false;
                         var find = this.findCategoryById;
