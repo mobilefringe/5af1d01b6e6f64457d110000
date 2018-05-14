@@ -177,6 +177,21 @@ define([], function () {
             ]
         },
         {
+            path: '/store_test',
+            component: view('default'),
+            children: [
+                {   
+                    path: '',
+                    component: view('stores'),
+                    meta: {
+                        pageName: 'Store Directory',
+                    },
+                    name: 'storeList'
+                },
+            ]
+        },
+        {
+            
             path: '/404',
             name: '404',
             component: view('notfoundcomponent')
