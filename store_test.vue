@@ -40,7 +40,9 @@
                                             <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
                                                 {{store.name}}
                                             </router-link>
-                                            <span v-if="store.is_new_store" class="pull-right new_store">NEW</span>
+                                            <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i>
+
+</span>
                                             <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i>
 
 </span>
@@ -61,7 +63,9 @@
                                             <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
                                                 {{store.name}}
                                             </router-link>
-                                            <span v-if="store.is_new_store" class="pull-right new_store">NEW</span>
+                                            <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i>
+
+</span>
                                             <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i>
 
 </span>
@@ -84,7 +88,9 @@
                                             <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
                                                 {{store.name}}
                                             </router-link>
-                                            <span v-if="store.is_new_store" class="pull-right new_store">NEW</span>
+                                            <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i>
+
+</span>
                                             <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i>
 
 </span>
