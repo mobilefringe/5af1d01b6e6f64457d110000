@@ -106,13 +106,13 @@
                     _.forEach( this.processedStores , function( value, key ) {
                         var starter = "A";
                         var breaker = "M";
-                        var current_initial = _.toUpper(value.name[0]);
+                        var store_initial = _.toUpper(value.name[0]);
                         console.log(current_initial)
-                        // if (upper_current_initial.charCodeAt(0) <= breaker.charCodeAt(0) && upper_current_initial.charCodeAt(0) >= starter.charCodeAt(0)){
-                        //     listOne.push(value);
-                        // } else {
-                        //     listTwo.push(value);    
-                        // }
+                        if (store_initial.charCodeAt(0) <= breaker.charCodeAt(0) && store_initial.charCodeAt(0) >= starter.charCodeAt(0)){
+                            listOne.push(value);
+                        } else {
+                            listTwo.push(value);    
+                        }
                     });
                     return this.processedStores;
                 },
