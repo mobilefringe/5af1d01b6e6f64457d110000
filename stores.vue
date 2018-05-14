@@ -100,8 +100,8 @@
                     'findCategoryById'
                 ]), 
                 allStores() {
-                    var listOne = [];
-                    var listTwo = [];
+                    var listOne = {};
+                    var listTwo = {};
                     _.forEach( this.processedStores , function( value, key ) {
                         var starter = "A";
                         var breaker = "M";
