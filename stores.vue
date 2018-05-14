@@ -101,13 +101,17 @@
                 ]), 
                 allStores() {
                     console.log(this.processedStores);
-                    // var listOne = [];
-                    // var listTwo = [];
-                    //  _.forEach( this.processedStores , function( val, key ) {
-                    //     if() {
-                            
-                    //     }
-                    // });
+                    var listOne = [];
+                    var listTwo = [];
+                    var starter = "A";
+                    var breaker = "M";
+                    _.forEach( this.processedStores , function( value, key ) {
+                        if (upper_current_initial.charCodeAt(0) <= breaker.charCodeAt(0) && upper_current_initial.charCodeAt(0) >= starter.charCodeAt(0)){
+                            listOne.push(value);
+                        } else {
+                            listTwo.push(value);    
+                        }
+                    });
                     return this.processedStores;
                 },
                 dropDownCats() {
