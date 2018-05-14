@@ -87,6 +87,7 @@
                     window.Raphael = Raphael; // our mapSvg plugin is stupid and outdated. need this hack to tie Raphael to window object (global variable)
                     this.filteredStores = this.storesByAlphaIndex;
                     this.dataLoaded = true;
+                    console.log(this.storesByAlphaIndex)
                 });
             },
             computed: {
