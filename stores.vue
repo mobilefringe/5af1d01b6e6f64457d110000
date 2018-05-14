@@ -100,13 +100,14 @@
                     'findCategoryById'
                 ]), 
                 allStores() {
-                    var listOne = {};
-                    var listTwo = {};
+                    var listOne = [];
+                    var listTwo = [];
                     _.forEach( this.processedStores , function( value, key ) {
                         var starter = "A";
                         var breaker = "M";
                         var store_initial = _.toUpper(value.name[0]);
                         if (store_initial.charCodeAt(0) <= breaker.charCodeAt(0) && store_initial.charCodeAt(0) >= starter.charCodeAt(0)){
+                            console.log(value)
                             listOne.push(value);
                         } else {
                             listTwo.push(value);    
