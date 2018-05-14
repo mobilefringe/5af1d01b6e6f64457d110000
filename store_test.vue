@@ -113,12 +113,12 @@
                     <div class="hidden-lg hidden-md visible-sm-block visible-xs-block">
                         <div class="row hidden-lg hidden-md visible-sm-block visible-xs-block">
                             <div class="col-md-12 mobile_store_select">
-                                <v-select :options="allStores" :placeholder="'Select A Store'" :searchable="false" :label="'name'" :on-change="dropPin"></v-select> 
+                                <v-select :options="storesList" :placeholder="'Select A Store'" :searchable="false" :label="'name'" :on-change="dropPin"></v-select> 
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <mapplic-png-map ref="pngmap_ref" :height="700" :hovertip="true" :storelist="allStores" :floorlist="floorList" :bindLocationOpened="true" :svgWidth="property.map_image_width" :svgHeight="property.map_image_height" :showPin="true" tooltiplabel="View Store Details"></mapplic-png-map>
+                                <mapplic-png-map ref="pngmap_ref" :height="700" :hovertip="true" :storelist="storesList" :floorlist="floorList" :bindLocationOpened="true" :svgWidth="property.map_image_width" :svgHeight="property.map_image_height" :showPin="true" tooltiplabel="View Store Details"></mapplic-png-map>
                             </div>
                         </div>    
                     </div>
