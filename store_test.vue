@@ -213,8 +213,9 @@
                     this.breakIntoCol = false;
                     
                     if(category_id == "All"){
-                        this.filteredStores = this.storesByAlphaIndex;
-                        this.breakIntoCol = true;
+                        
+                        // this.filteredStores = this.storesByAlphaIndex;
+                        // this.breakIntoCol = true;
                     } else {
                         var find = this.findCategoryById;
                         var filtered = _.filter(this.allStores, function(o) {return _.indexOf(o.categories, _.toNumber(category_id)) > -1; });
