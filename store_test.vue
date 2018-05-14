@@ -27,9 +27,9 @@
                                 <v-select v-model="selectedCat" :options="dropDownCats" :searchable="false" :on-change="filteredByCategory" class="category-select" :placeholder="$t('stores_page.sort_by_cats')" id="selectByCat"></v-select>
                             </div>
                         </div>
-                        <div class="row" v-if="listMode === 'alphabetical'">
-                            <div class="col-md-6">
-                                <div v-for="(stores, index) in filteredStores" >
+                        <div class="row" v-if="sortByStores">
+                            <div class="col-md-6" v-for="(stores, index) in filteredStores" >
+                                <div >
                                     <div class="list_header">
                                         <div class="store_initial_container">
                                             {{index}}
@@ -99,6 +99,8 @@
                     dataLoaded: false,
                     // listMode: "alphabetical",
                     sortByStores: true,
+                    listOne: null,
+                    listTwo: null,
                     filteredStores: null,
                     selectedCat: "Select a Category",
                     breakIntoCol : true
@@ -136,7 +138,11 @@
                     });
                     console.log("List One: ", listOne)
                     console.log("List Two: " , listTwo)
-                    return this.processedStores;
+                    this.listOne = _.groupBy(listOne, store => (isNaN(_.upperCase(store.name.charAt(0))) ? _.upperCase(store.name.charAt(0)) : "#"));
+                    this.listTwo = _.groupBy(listTwo, store => (isNaN(_.upperCase(store.name.charAt(0))) ? _.upperCase(store.name.charAt(0)) : "#"));
+                    
+                    
+                    // return this.processedStores;
                 },
                 dropDownCats() {
                     var cats = _.map(this.processedCategories, 'name');
