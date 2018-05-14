@@ -31,7 +31,7 @@
                             <div class="col-md-12">
                                 
                                 
-                                <span class="pull-right"><span class="promo_exist"></span><i class="fas fa-tag"></i></span> Promotion</span>  
+                                <span class="pull-right"><span class="promo_exist"><i class="fas fa-tag"></i></span> Promotion</span>  
                                 <span class="pull-right"><span class="new_store"><i class="fas fa-star"></i></span> New Store </span>
                                 <span class="pull-right"><span class="coming_soon_store"><i class="far fa-clock"></i></span> Coming Soon Store</span>
                             </div>
