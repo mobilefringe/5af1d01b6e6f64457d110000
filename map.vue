@@ -13,9 +13,20 @@
                 <div class="main_container margin_30">
                     <div class="details_row">
                         <div class="details_col_3">
-                            <h3 class="inside_page_title">Find Store</h3>
-                            <div class="store_list_container hidden-mobile" v-if="allStores">
-                                <p class="store_name" v-for="store in allStores" v-on:click="dropPin(store)">{{store.name}}</p>
+                            <div class="hidden_phone">
+                                <h3 class="inside_page_title">Find Store</h3>
+                                <div class="store_list_container hidden-mobile" v-if="allStores">
+                                    <p class="store_name" v-for="store in allStores" v-on:click="dropPin(store)">{{store.name}}</p>
+                                </div>
+                            </div>
+                            <div class="visible_phone">
+                                <v-select 
+                                    :options="allStores" 
+                                    :placeholder="'Select A Store'" 
+                                    :searchable="false" 
+                                    :label="'name'" 
+                                    :on-change="dropPin"
+                                ></v-select>
                             </div>
                         </div>
                         <div class="details_col_9">
@@ -45,7 +56,7 @@
 
 
 <script>
-    define(["Vue", "vuex", "vue-meta", "vue-select", "jquery", "Raphael", "mm_mapsvg", "mousewheel", "vue!svg-map"], function(Vue, Vuex, Meta, VueSelect, $, Raphael, mapSvg, mousewheel, SVGMapComponent) {
+    define(["Vue", "vuex", "vue-meta", "vue-select", "vue!mapplic-png-map"], function(Vue, Vuex, Meta, VueSelect, $, Raphael, mapSvg, mousewheel, SVGMapComponent) {
         Vue.use(Meta);
         Vue.component('v-select', VueSelect.VueSelect);
         return Vue.component("stores-component", {
