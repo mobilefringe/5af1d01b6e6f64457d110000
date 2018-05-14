@@ -14,8 +14,8 @@
                     <div class="details_row">
                         <div class="details_col_3">
                             <h3 class="inside_page_title">Find Store</h3>
-                            <div class="store_list_container hidden-mobile" v-if="filteredStores">
-                                <div class="store_name" v-for="store in filteredStores">
+                            <div class="store_list_container hidden-mobile" v-if="allStores">
+                                <div class="store_name" v-for="store in allStores">
                                     <p v-on:click="dropPin(store)">{{store.name}}</p>
                                 </div>
                             </div>
@@ -30,20 +30,20 @@
     </div>
 </template>
                         
-            <div v-if="dataLoaded" v-cloak class="main_container margin_30">
-                <div class="row hidden-lg hidden-md visible-sm-block visible-xs-block">
-                    <div class="col-md-12 mobile_store_select">
-                        <v-select :options="allStores" :placeholder="'Select A Store'" :searchable="false" :label="'name'" :on-change="dropPin"></v-select> 
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <svg-map ref="svgRef" v-bind:svgMapUrl="getSVGurl" :regions="regions"></svg-map>
-                    </div>
-                </div>
-            </div>
-        </transition>
-    </div>
+    <!--        <div v-if="dataLoaded" v-cloak class="main_container margin_30">-->
+    <!--            <div class="row hidden-lg hidden-md visible-sm-block visible-xs-block">-->
+    <!--                <div class="col-md-12 mobile_store_select">-->
+    <!--                    <v-select :options="allStores" :placeholder="'Select A Store'" :searchable="false" :label="'name'" :on-change="dropPin"></v-select> -->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="row">-->
+    <!--                <div class="col-md-12">-->
+    <!--                    <svg-map ref="svgRef" v-bind:svgMapUrl="getSVGurl" :regions="regions"></svg-map>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </transition>-->
+    <!--</div>-->
 
 
 <script>
@@ -69,7 +69,18 @@
                     'processedStores'
                 ]),
                 allStores() {
-                    return this.processedStores;
+                    var all_stores = this.processedStores;
+                    _.forEach(all_stores, function(value, key) {
+                        value.zoom = 2;
+                    });
+                    var initZoom = {};
+                    initZoom.svgmap_region = "init";
+                    initZoom.z_coordinate = 1;
+                    initZoom.x = 0.5;
+                    initZoom.y = 0.5;
+                    initZoom.zoom = 1;
+                    all_stores.push(initZoom)
+                    return all_stores
                 },
                 getSVGurl () {
                     return "https://www.mallmaverick.com" + this.property.svgmap_url;
