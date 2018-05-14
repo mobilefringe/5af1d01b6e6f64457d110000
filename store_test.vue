@@ -29,9 +29,11 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <span class="pull-right new_store"><i class="fas fa-star"></i></span>
-                                <span class="pull-right coming_soon_store"><i class="far fa-clock"></i></span>
-                                <span class="promo_exist pull-right"><i class="fas fa-tag"></i></span>    
+                                
+                                
+                                <span class="promo_exist pull-right"><i class="fas fa-tag"></i> Promotion</span>  
+                                <span class="pull-right new_store"><i class="fas fa-star"></i> New Store</span>
+                                <span class="pull-right coming_soon_store"><i class="far fa-clock"></i> Coming Soon Store</span>
                             </div>
                         </div>
                         <div class="row" v-if="sortByStores">
