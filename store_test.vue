@@ -213,10 +213,11 @@
                     this.breakIntoCol = false;
                     
                     if(category_id == "All"){
-                        
+                        this.sortByStores = true;
                         // this.filteredStores = this.storesByAlphaIndex;
                         // this.breakIntoCol = true;
                     } else {
+                        this.sortByStores = false
                         var find = this.findCategoryById;
                         var filtered = _.filter(this.allStores, function(o) {return _.indexOf(o.categories, _.toNumber(category_id)) > -1; });
                         _.forEach(filtered, function(value, i) {
