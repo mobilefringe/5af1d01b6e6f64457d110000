@@ -28,7 +28,26 @@
                             </div>
                         </div>
                         <div class="row" v-if="sortByStores">
-                            <div class="col-md-6" v-for="(stores, index) in filteredStores" >
+                            <div class="col-md-6" v-for="(stores, index) in listOne" >
+                                <div >
+                                    <div class="list_header">
+                                        <div class="store_initial_container">
+                                            {{index}}
+                                        </div>
+                                    </div>
+                                    <div class="store-section" v-for="store in stores">
+                                        <p class="store_list_name">
+                                            <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
+                                                {{store.name}}
+                                            </router-link>
+                                            <span v-if="store.is_new_store" class="pull-right new_store">NEW</span>
+                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store">COMING SOON</span>
+                                            <span v-if="store.promotions != null" class="promo_exist pull-right">PROMOTION</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" v-for="(stores, index) in listTwo" >
                                 <div >
                                     <div class="list_header">
                                         <div class="store_initial_container">
@@ -48,7 +67,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row" v-if="listMode != 'alphabetical'">
+                        <div class="row" v-else>
                             <div class="col-md-12">
                                 <div v-for="(stores, index) in filteredStores" >
                                     <div class="list_header">
