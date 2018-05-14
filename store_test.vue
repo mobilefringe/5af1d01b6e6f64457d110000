@@ -129,8 +129,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "vue-meta", "vue-select", "jquery", "Raphael", "mm_mapsvg", "mousewheel", "vue!svg-map"], function(Vue, Vuex, Meta, VueSelect, $, Raphael, mapSvg, mousewheel, SVGMapComponent) {
-        Vue.use(Meta);
+    define(["Vue", "vuex", "vue-select", "vue!mapplic-png-map"], function(Vue, Vuex, VueSelect, MapplicComponent) {
         Vue.component('v-select', VueSelect.VueSelect);
         return Vue.component("store-test-component", {
             template: template, // the variable template will be injected
