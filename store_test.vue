@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div class="row" v-if="listMode === 'alphabetical'">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div v-for="(stores, index) in filteredStores" >
                                     <div class="list_header">
                                         <div class="store_initial_container">
@@ -97,7 +97,8 @@
             data: function() {
                 return {
                     dataLoaded: false,
-                    listMode: "alphabetical",
+                    // listMode: "alphabetical",
+                    sortByStores: true,
                     filteredStores: null,
                     selectedCat: "Select a Category",
                     breakIntoCol : true
@@ -177,7 +178,7 @@
                     this.filteredStores = this.storesByAlphaIndex;
                 },
                 filteredByCategory (cat_id) {
-                    console.log(this.storesByAlphaIndex)
+                    
                     if(cat_id == "Select a Category" || cat_id == "All" || cat_id == null || cat_id == undefined){
                         category_id = "All";
                     } else {
