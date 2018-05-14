@@ -218,7 +218,6 @@
                     // this.filteredStores = this.storesByAlphaIndex;
                 },
                 filteredByCategory (cat_id) {
-                    
                     if(cat_id == "Select a Category" || cat_id == "All" || cat_id == null || cat_id == undefined){
                         category_id = "All";
                     } else {
