@@ -38,26 +38,8 @@
         </transition>
     </div>
 </template>
-                        
-    <!--        <div v-if="dataLoaded" v-cloak class="main_container margin_30">-->
-    <!--            <div class="row hidden-lg hidden-md visible-sm-block visible-xs-block">-->
-    <!--                <div class="col-md-12 mobile_store_select">-->
-    <!--                    <v-select :options="allStores" :placeholder="'Select A Store'" :searchable="false" :label="'name'" :on-change="dropPin"></v-select> -->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--            <div class="row">-->
-    <!--                <div class="col-md-12">-->
-    <!--                    <svg-map ref="svgRef" v-bind:svgMapUrl="getSVGurl" :regions="regions"></svg-map>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </transition>-->
-    <!--</div>-->
-
-
 <script>
-    define(["Vue", "vuex", "vue-meta", "vue-select", "vue!mapplic-png-map"], function(Vue, Vuex, Meta, VueSelect, $, Raphael, mapSvg, mousewheel, SVGMapComponent) {
-        Vue.use(Meta);
+    define(["Vue", "vuex", "vue-select", "vue!mapplic-png-map"], function(Vue, Vuex, VueSelect, MapplicComponent) {
         Vue.component('v-select', VueSelect.VueSelect);
         return Vue.component("stores-component", {
             template: template, // the variable template will be injected
@@ -77,39 +59,30 @@
                     'property',
                     'processedStores'
                 ]),
-                allStores() {
-                    var all_stores = this.processedStores;
-                    _.forEach(all_stores, function(value, key) {
-                        value.zoom = 2;
-                    });
-                    var initZoom = {};
-                    initZoom.svgmap_region = "init";
-                    initZoom.z_coordinate = 1;
-                    initZoom.x = 0.5;
-                    initZoom.y = 0.5;
-                    initZoom.zoom = 1;
-                    all_stores.push(initZoom)
-                    return all_stores
+                                allStores() {
+                    this.processedStores.map(function(store){
+                        store.zoom = 1;
+                    })
+                    return this.processedStores;
                 },
-                getSVGurl () {
-                    return "https://www.mallmaverick.com" + this.property.svgmap_url;
+                getPNGurl() {
+                    return "https://www.mallmaverick.com" + this.property.map_url;
                 },
-                svgMapRef() {
-                    return this.$refs.svgRef;
+                pngMapRef() {
+                    return this.$refs.pngmap_ref;
                 },
-                regions () {
-                    var regions = {}
-                    _.forEach( this.processedStores , function( val, key ) {
-                        if(val.svgmap_region != null && typeof(val.svgmap_region)  != 'undefined'){
-                            obj = {};
-                            obj["tooltip"] = "<p class='tooltip_name'>" + val.name + "</p>";
-                            obj["attr"] = {};
-                            obj["attr"]["href"] = "/stores/" + val.slug;
-                            regions[val.svgmap_region] = obj;
-                        }
-                        
-                    });
-                    return regions;
+                floorList () {
+                    var floor_list = [];
+                    
+                    var floor_1 = {};
+                    floor_1.id = "first-floor";
+                    floor_1.title = "Floor 1";
+                    floor_1.map = this.getPNGurl;
+                    floor_1.z_index = 1;
+                    floor_1.show = true;
+                    
+                    floor_list.push(floor_1);
+                    return floor_list;
                 }
             },
             methods: {
@@ -122,9 +95,7 @@
                     }
                 },
                 dropPin(store) {
-                    this.svgMapRef.hideMarkers();
-                    this.svgMapRef.addMarker(store, '//codecloud.cdn.speedyrails.net/sites/589e308f6e6f641b9f010000/image/png/1484850466000/show_pin.png');
-                    this.svgMapRef.setViewBox(store)
+                    this.pngMapRef.showLocation(store.id);
                 }
             }
         });
