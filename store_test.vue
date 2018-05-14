@@ -199,8 +199,9 @@
                     }
                 },
                 changeMode (mode) {
-                    this.breakIntoCol = true;
-                    this.filteredStores = this.storesByAlphaIndex;
+                    this.sortByStores = true;
+                    // this.breakIntoCol = true;
+                    // this.filteredStores = this.storesByAlphaIndex;
                 },
                 filteredByCategory (cat_id) {
                     
