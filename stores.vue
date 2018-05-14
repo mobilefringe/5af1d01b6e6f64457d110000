@@ -31,7 +31,7 @@
                             <div class="col-md-12" > <!-- :class="{ store_col_count: breakIntoCol }" -->
                                 <div v-if="listMode === 'alphabetical'"> <!-- v-for="(stores, index) in filteredStores"  -->
                                     <div class="row">
-                                        <div class="col-md-6" v-for="(stores, index) in listAM"  >
+                                        <div class="col-md-6" v-for="(stores, index) in filteredStores"  >
                                             <div class="list_header">
                                                 <div class="store_initial_container">
                                                     {{index}}
