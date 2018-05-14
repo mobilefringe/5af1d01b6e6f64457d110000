@@ -58,7 +58,7 @@
                     'property',
                     'processedStores'
                 ]),
-                                allStores() {
+                allStores() {
                     this.processedStores.map(function(store){
                         store.zoom = 1;
                     })
