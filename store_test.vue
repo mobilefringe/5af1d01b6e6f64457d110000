@@ -46,7 +46,7 @@
                                             <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i>
 
 </span>
-                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tags"></i></span>
+                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
                                         </p>
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@
                                             <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i>
 
 </span>
-                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tags"></i></span>
+                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
                                         </p>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                                             <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i>
 
 </span>
-                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tags"></i></span>
+                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
                                         </p>
                                     </div>
                                 </div>
