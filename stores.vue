@@ -32,12 +32,7 @@
                                 <div v-for="(stores, index) in filteredStores" v-if="listMode === 'alphabetical'">
                                     <div class="list_header">
                                         <div class="store_initial_container">
-                                            <!--<div class="store_initial_box">-->
-                                                <!--<span>-->
-                                                {{index}}
-                                                    
-                                                <!--</span>    -->
-                                            <!--</div>-->
+                                            {{index}}
                                         </div>
                                     </div>
                                     <div class="store-section" v-for="store in stores">
@@ -105,6 +100,14 @@
                     'findCategoryById'
                 ]), 
                 allStores() {
+                    console.log(this.processedStores);
+                    // var listOne = [];
+                    // var listTwo = [];
+                    //  _.forEach( this.processedStores , function( val, key ) {
+                    //     if() {
+                            
+                    //     }
+                    // });
                     return this.processedStores;
                 },
                 dropDownCats() {
