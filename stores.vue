@@ -137,7 +137,7 @@
                     this.listNZ = listTwo;
                     console.log("List One: ", listOne)
                     console.log("List Two: ", listTwo)
-                    // return this.processedStores;
+                    return this.processedStores;
                 },
                 dropDownCats() {
                     var cats = _.map(this.processedCategories, 'name');
