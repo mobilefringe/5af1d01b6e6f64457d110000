@@ -35,11 +35,11 @@ require.config({
         'vee-validate' : 'https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate',
         'vue-select': 'https://cdn.jsdelivr.net/npm/vue-select@2.3.0/dist/vue-select.min',
         'bootstrap-vue' : 'https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue',
-        // Dependencies for Map //
-        'Raphael': 'https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min', //'http://mallmaverick.com/javascripts/mapsvg/raphael',
-        'mousewheel': 'https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min',
-        'mm_mapsvg': 'https://mmvue.codecloudapp.com/mallmaverick_svgmap',
-        'svg-map' : 'https://mmvue.codecloudapp.com/svg_map.vue?noext'
+        //mappplic-png--map dependencies
+        'mousewheel' : 'https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min',
+        'mapplic' : 'https://mmvue.codecloudapp.com/mapplic',
+        'hammer' : 'https://codecloud.cdn.speedyrails.net/sites/59bac7db6e6f644f22ba0000/text/javascript/1484859750000/hammer.min',
+        'mapplic-png-map' : 'http://mmvue.codecloudapp.com/mapplic_png.vue?noext',
     }
 });
 
