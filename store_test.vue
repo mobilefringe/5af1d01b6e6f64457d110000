@@ -12,6 +12,11 @@
                 </div>
                 <div class="main_container margin_30">
                     <div class="hidden_phone">
+                        <div class="row">
+                            <span class="pull-right new_store"><i class="fas fa-star"></i></span>
+                            <span class="pull-right coming_soon_store"><i class="far fa-clock"></i></span>
+                            <span class="promo_exist pull-right"><i class="fas fa-tag"></i></span>    
+                        </div>
                         <div class="row store_nav">
                             <div class="col-md-3">
                                 <a class="store_nav_link active_store_nav" href="/stores">Directory</a>
