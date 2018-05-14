@@ -29,22 +29,41 @@
                         </div>
                         <div class="row stores_container">
                             <div class="col-md-12" :class="{ store_col_count: breakIntoCol }">
-                                <div v-for="(stores, index) in filteredStores" v-if="listMode === 'alphabetical'">
-                                    <div class="list_header">
-                                        <div class="store_initial_container">
-                                            {{index}}
+                                <div v-if="listMode === 'alphabetical'"> <!-- v-for="(stores, index) in filteredStores"  -->
+                                    <div class="row">
+                                        <div class="col-md-6" v-for="(stores, index) in filteredStores"  >
+                                            <div class="list_header">
+                                                <div class="store_initial_container">
+                                                    {{index}}
+                                                </div>
+                                            </div>
+                                            <div class="store-section" v-for="store in stores">
+                                                <p class="store_list_name">
+                                                    <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
+                                                        {{store.name}}
+                                                    </router-link>
+                                                    <span v-if="store.is_new_store" class="pull-right new_store">NEW</span>
+                                                    <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store">COMING SOON</span>
+                                                    <span v-if="store.promotions != null" class="promo_exist pull-right">PROMOTION</span>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="store-section" v-for="store in stores">
-                                        <p class="store_list_name">
-                                            <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
-                                                {{store.name}}
-                                            </router-link>
-                                            <span v-if="store.is_new_store" class="pull-right new_store">NEW</span>
-                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store">COMING SOON</span>
-                                            <span v-if="store.promotions != null" class="promo_exist pull-right">PROMOTION</span>
-                                        </p>
-                                    </div>
+                                <!--    <div class="list_header">-->
+                                <!--        <div class="store_initial_container">-->
+                                <!--            {{index}}-->
+                                <!--        </div>-->
+                                <!--    </div>-->
+                                <!--    <div class="store-section" v-for="store in stores">-->
+                                <!--        <p class="store_list_name">-->
+                                <!--            <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">-->
+                                <!--                {{store.name}}-->
+                                <!--            </router-link>-->
+                                <!--            <span v-if="store.is_new_store" class="pull-right new_store">NEW</span>-->
+                                <!--            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store">COMING SOON</span>-->
+                                <!--            <span v-if="store.promotions != null" class="promo_exist pull-right">PROMOTION</span>-->
+                                <!--        </p>-->
+                                <!--    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -78,6 +97,8 @@
                     dataLoaded: false,
                     listMode: "alphabetical",
                     filteredStores: null,
+                    listAM: null,
+                    listNZ: null,
                     selectedCat: "Select a Category",
                     breakIntoCol : true
                 }
@@ -107,15 +128,16 @@
                         var breaker = "M";
                         var store_initial = _.toUpper(value.name[0]);
                         if (store_initial.charCodeAt(0) <= breaker.charCodeAt(0) && store_initial.charCodeAt(0) >= starter.charCodeAt(0)){
-                            console.log(value)
                             listOne.push(value);
                         } else {
                             listTwo.push(value);    
                         }
                     });
+                    this.listAM = listOne;
+                    this.listNZ = listTwo;
                     console.log("List One: ", listOne)
                     console.log("List Two: ", listTwo)
-                    return this.processedStores;
+                    // return this.processedStores;
                 },
                 dropDownCats() {
                     var cats = _.map(this.processedCategories, 'name');
