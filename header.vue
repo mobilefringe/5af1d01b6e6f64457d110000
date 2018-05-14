@@ -45,20 +45,25 @@
                                 <router-link tag="li" to="/events-and-promotions" class="menu_item" exact>
                                     Promotions & Events
                                 </router-link>
-                                <router-link tag="li" to="/dine" class="menu_item" exact>
-                                    Dine
-                                </router-link>
-                                <router-link tag="li" to="/location" class="menu_item" exact>
-                                    Location
-                                </router-link>
-                                <li id="dropDown3" @click="toggleSubMenu('dropDown3')" class="menu_item">Center Informtaion
-                                    <ul :class="'submenu' + { show_submenu: showSubMenu3 }">
+                                <li id="dropDown1" @click="toggleSubMenu('dropDown1')" class="menu_item">About
+                                    <ul :class="'submenu' + { show_submenu: showSubMenu1 }">
                                         <router-link tag="li" to="/pages/" class="submenu_item" exact>
                                             <a>Services</a>
                                         </router-link>
-                                        <router-link tag="li" to="/contact-us" class="submenu_item" exact>
-                                            <a>Contact</a>
+                                        <router-link tag="li" to="/newsletter" class="submenu_item" exact>
+                                            <a>Newsletter</a>
                                         </router-link>
+                                    </ul>
+                                </li>
+                                <router-link tag="li" to="/location" class="menu_item" exact>
+                                    Location
+                                </router-link>
+                                <li id="dropDown2" @click="toggleSubMenu('dropDown2')" class="menu_item">Contact
+                                    <ul :class="'submenu' + { show_submenu: showSubMenu2 }">
+                                        <router-link tag="li" to="/jobs" class="submenu_item" exact>Jobs</router-link>
+                                        <router-link tag="li" to="/location" class="submenu_item" exact>Location</router-link>
+                                        <router-link tag="li" to="/pages/" class="submenu_item" exact>Management</router-link>
+                                        <router-link tag="li" to="/pages/" class="submenu_item" exact>Leasing</router-link>
                                     </ul>
                                 </li>
                             </ul>
