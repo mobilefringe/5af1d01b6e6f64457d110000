@@ -33,7 +33,7 @@
                                 
                                 <span class="pull-right"><span class="promo_exist"><i class="fas fa-tag"></i></span> Promotion</span>  
                                 <span class="pull-right"><span class="new_store"><i class="fas fa-star"></i></span> New Store </span>
-                                <span class="pull-right"><span class="coming_soon_store"><i class="fas fa-clock"></i></span> Coming Soon Store</span>
+                                <span class="pull-right"><span class="coming_soon_store"><i class="far fa-clock"></i></span> Coming Soon Store</span>
                             </div>
                         </div>
                         <div class="row" v-if="sortByStores">
@@ -52,7 +52,7 @@
                                             <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i>
 
 </span>
-                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="fas fa-clock"></i>
+                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i>
 
 </span>
                                             <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
@@ -75,7 +75,7 @@
                                             <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i>
 
 </span>
-                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="fas fa-clock"></i>
+                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i>
 
 </span>
                                             <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
@@ -100,7 +100,7 @@
                                             <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i>
 
 </span>
-                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="fas fa-clock"></i>
+                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i>
 
 </span>
                                             <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
