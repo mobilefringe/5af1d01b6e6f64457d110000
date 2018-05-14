@@ -60,10 +60,18 @@
                                 </router-link>
                                 <li id="dropDown2" @click="toggleSubMenu('dropDown2')" class="menu_item">Contact
                                     <ul :class="'submenu' + { show_submenu: showSubMenu2 }">
-                                        <router-link tag="li" to="/jobs" class="submenu_item" exact>Jobs</router-link>
-                                        <router-link tag="li" to="/location" class="submenu_item" exact>Location</router-link>
-                                        <router-link tag="li" to="/pages/" class="submenu_item" exact>Management</router-link>
-                                        <router-link tag="li" to="/pages/" class="submenu_item" exact>Leasing</router-link>
+                                        <router-link tag="li" to="/jobs" class="submenu_item" exact>
+                                            <a>Jobs</a>
+                                        </router-link>
+                                        <router-link tag="li" to="/location" class="submenu_item" exact>
+                                            <a>Location</a>
+                                        </router-link>
+                                        <router-link tag="li" to="/pages/" class="submenu_item" exact>
+                                            <a>Management</a>
+                                        </router-link>
+                                        <router-link tag="li" to="/pages/" class="submenu_item" exact>
+                                            <a>Leasing</a>
+                                        </router-link>
                                     </ul>
                                 </li>
                             </ul>
