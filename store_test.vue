@@ -118,7 +118,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <svg-map ref="svgRef" v-bind:svgMapUrl="getSVGurl" :regions="regions"></svg-map>
+                                <mapplic-png-map ref="pngmap_ref" :height="700" :hovertip="true" :storelist="allStores" :floorlist="floorList" :bindLocationOpened="true" :svgWidth="property.map_image_width" :svgHeight="property.map_image_height" :showPin="true" tooltiplabel="View Store Details"></mapplic-png-map>
                             </div>
                         </div>    
                     </div>
@@ -141,13 +141,11 @@
                     listOne: null,
                     listTwo: null,
                     filteredStores: null,
-                    selectedCat: "Select a Category",
-
+                    selectedCat: "Select a Category"
                 }
             },
             created(){
                 this.loadData().then(response => {
-                    window.Raphael = Raphael; // our mapSvg plugin is stupid and outdated. need this hack to tie Raphael to window object (global variable)
                     this.filteredStores = this.storesByAlphaIndex;
                     this.dataLoaded = true;
                 });
@@ -183,24 +181,30 @@
                     cats.unshift('All');
                     return cats;
                 },
-                getSVGurl () {
-                    return "https://www.mallmaverick.com" + this.property.svgmap_url;
+                storeList() {
+                    this.processedStores.map(function(store){
+                        store.zoom = 1;
+                    })
+                    return this.processedStores;
                 },
-                svgMapRef() {
-                    return this.$refs.svgRef;
+                getPNGurl() {
+                    return "https://www.mallmaverick.com" + this.property.map_url;
                 },
-                regions () {
-                    var regions = {}
-                    _.forEach( this.processedStores , function( val, key ) {
-                        if(val.svgmap_region != null && typeof(val.svgmap_region)  != 'undefined'){
-                            obj = {};
-                            obj["tooltip"] = "<p class='tooltip_name'>" + val.name + "</p>";
-                            obj["attr"] = {};
-                            obj["attr"]["href"] = "/stores/" + val.slug;
-                            regions[val.svgmap_region] = obj;
-                        }
-                    });
-                    return regions;
+                pngMapRef() {
+                    return this.$refs.pngmap_ref;
+                },
+                floorList () {
+                    var floor_list = [];
+                    
+                    var floor_1 = {};
+                    floor_1.id = "first-floor";
+                    floor_1.title = "Floor 1";
+                    floor_1.map = this.getPNGurl;
+                    floor_1.z_index = 1;
+                    floor_1.show = true;
+                    
+                    floor_list.push(floor_1);
+                    return floor_list;
                 }
             },
             methods: {
@@ -214,8 +218,6 @@
                 },
                 changeMode (mode) {
                     this.sortByStores = true;
-                    // this.breakIntoCol = true;
-                    // this.filteredStores = this.storesByAlphaIndex;
                 },
                 filteredByCategory (cat_id) {
                     if(cat_id == "Select a Category" || cat_id == "All" || cat_id == null || cat_id == undefined){
