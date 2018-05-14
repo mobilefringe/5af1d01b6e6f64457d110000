@@ -133,6 +133,7 @@
                 this.loadData().then(response => {
                     this.sortByStores = true;
                     this.dataLoaded = true;
+                    this.allStores
                 });
             },
             computed: {
