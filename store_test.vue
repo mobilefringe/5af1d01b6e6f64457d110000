@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     <div class="visibile_phone">
-                        <div class="row hidden-lg hidden-md visible-sm-block visible-xs-block">
+                        <div class="row">
                             <div class="col-md-12 mobile_store_select">
                                 <v-select :options="storesList" :placeholder="'Select A Store'" :searchable="false" :label="'name'" :on-change="dropPin"></v-select> 
                             </div>
