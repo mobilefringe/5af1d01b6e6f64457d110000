@@ -48,7 +48,7 @@
                         <!--        </div>-->
                         <!--    </div>-->
                         <!--</div>-->
-                        <div class="row"> <!-- stores_container -->
+                        <div class="row" v-if="listMode === 'alphabetical'"> <!-- stores_container -->
                             <div class="col-md-6"> <!-- :class="{ store_col_count: breakIntoCol }" -->
                                 <div v-for="(stores, index) in filteredStores" v-if="listMode === 'alphabetical'">
                                     <div class="list_header">
@@ -68,6 +68,9 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row" v-else>
+                            
                         </div>
                     </div>
                     <div class="hidden-lg hidden-md visible-sm-block visible-xs-block">
