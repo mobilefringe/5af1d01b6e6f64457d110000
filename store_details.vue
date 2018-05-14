@@ -11,8 +11,8 @@
                     </div>
                 </div>
                 <div class="main_container margin_30">
-                    <div class="row">
-                        <div class="col-md-3">
+                    <div class="details_row">
+                        <div class="details_col_3">
                             <img class="store_details_image" :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'" />
                             <div v-if="currentStore.phone">
                                 <h3 class="inside_page_title">Phone</h3>
@@ -24,7 +24,7 @@
                             </div>
                             <a v-if="currentStore.website" class="animated_btn" :href="'http://' + currentStore.website" target="_blank">Visit Website</a>
                         </div>
-                        <div class="col-md-9">
+                        <div class="details_col_9">
                             <div id="map" class="margin_20">
                                 <svg-map  ref="svgmapRef"  @updateMap="updateSVGMap"  :svgMapUrl="getSVGurl" ></svg-map>
                             </div>
