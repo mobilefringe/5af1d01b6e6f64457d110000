@@ -43,7 +43,7 @@
                                     Directory
                                 </router-link>
                                 <router-link tag="li" to="/events-and-promotions" class="menu_item" exact>
-                                    Events & Promotions
+                                    Promotions & Events
                                 </router-link>
                                 <router-link tag="li" to="/dine" class="menu_item" exact>
                                     Dine
