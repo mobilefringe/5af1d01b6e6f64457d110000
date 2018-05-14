@@ -131,7 +131,8 @@
             },
             created(){
                 this.loadData().then(response => {
-                    this.filteredStores = this.storesByAlphaIndex;
+                    // this.filteredStores = this.storesByAlphaIndex;
+                    this.sortByStores = true;
                     this.dataLoaded = true;
                 });
             },
