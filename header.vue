@@ -28,60 +28,72 @@
                             </span>
                         </div>
                     </div>
-                    <transition name="custom-classes-transition" enter-active-class="animated slideInRight" leave-active-class="animated slideOutRight">
-                        <nav id="primary_nav" v-if="show_menu" v-on:keyup.esc="show_menu = false">
-                            <div class="todays_hours" v-if="todays_hours">
-                                <span v-if="!todays_hours.is_closed">
-                                    Open Today - {{todays_hours.open_time | moment("h:mma", timezone)}} to {{todays_hours.close_time | moment("h:mma", timezone)}}
-                                </span>
-                                <span v-if="todays_hours.is_closed">
-                                    Closed Today
-                                </span>
-                            </div>
-                            <ul>
-                                <router-link tag="li" to="/stores" class="menu_item" exact>
-                                    Directory
-                                </router-link>
-                                <router-link tag="li" to="/events-and-promotions" class="menu_item" exact>
-                                    Promotions & Events
-                                </router-link>
-                                <li id="dropDown1" @click="toggleSubMenu('dropDown1')" class="menu_item">About
-                                    <ul :class="'submenu' + { show_submenu: showSubMenu1 }">
-                                        <router-link tag="li" to="/pages/" class="submenu_item" exact>
-                                            <a>Services</a>
-                                        </router-link>
-                                        <router-link tag="li" to="/newsletter" class="submenu_item" exact>
-                                            <a>Newsletter</a>
-                                        </router-link>
-                                    </ul>
-                                </li>
-                                <li id="dropDown2" @click="toggleSubMenu('dropDown2')" class="menu_item">Contact
-                                    <ul :class="'submenu' + { show_submenu: showSubMenu2 }">
-                                        <router-link tag="li" to="/jobs" class="submenu_item" exact>
-                                            <a>Jobs</a>
-                                        </router-link>
-                                        <router-link tag="li" to="/location" class="submenu_item" exact>
-                                            <a>Location</a>
-                                        </router-link>
-                                        <router-link tag="li" to="/pages/" class="submenu_item" exact>
-                                            <a>Management</a>
-                                        </router-link>
-                                        <router-link tag="li" to="/pages/" class="submenu_item" exact>
-                                            <a>Leasing</a>
-                                        </router-link>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div class="mobile_social_icons">
-                                <span v-for="item in social_media">
-                                    <a :href="item.url" target="_blank">
-                                        <p class="accessibility">{{item.name}}</p>
-                                        <i :class="item.iconClass" aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </nav>
-                    </transition>
+                    <nav id="primary_nav" class="hidden_phone">
+						<ul>
+						    <li class="menu_item" v-for="item in menu_items" :id="item.id">
+						        <router-link :to="item.href">{{$t(item.name)}}</router-link>
+						        <ul v-if="item.sub_menu">
+						            <li v-for="sub_menu in item.sub_menu" class="dropdown_item">
+						                <router-link :to="sub_menu.href">{{$t(sub_menu.name)}}</router-link>
+						            </li>
+								</ul>
+						    </li>
+						</ul>
+					</nav>
+                    <!--<transition name="custom-classes-transition" enter-active-class="animated slideInRight" leave-active-class="animated slideOutRight">-->
+                    <!--    <nav id="primary_nav" v-if="show_menu" v-on:keyup.esc="show_menu = false">-->
+                    <!--        <div class="todays_hours" v-if="todays_hours">-->
+                    <!--            <span v-if="!todays_hours.is_closed">-->
+                    <!--                Open Today - {{todays_hours.open_time | moment("h:mma", timezone)}} to {{todays_hours.close_time | moment("h:mma", timezone)}}-->
+                    <!--            </span>-->
+                    <!--            <span v-if="todays_hours.is_closed">-->
+                    <!--                Closed Today-->
+                    <!--            </span>-->
+                    <!--        </div>-->
+                    <!--        <ul>-->
+                    <!--            <router-link tag="li" to="/stores" class="menu_item" exact>-->
+                    <!--                Directory-->
+                    <!--            </router-link>-->
+                    <!--            <router-link tag="li" to="/events-and-promotions" class="menu_item" exact>-->
+                    <!--                Promotions & Events-->
+                    <!--            </router-link>-->
+                    <!--            <li id="dropDown1" @click="toggleSubMenu('dropDown1')" class="menu_item">About-->
+                    <!--                <ul :class="'submenu' + { show_submenu: showSubMenu1 }">-->
+                    <!--                    <router-link tag="li" to="/pages/" class="submenu_item" exact>-->
+                    <!--                        <a>Services</a>-->
+                    <!--                    </router-link>-->
+                    <!--                    <router-link tag="li" to="/newsletter" class="submenu_item" exact>-->
+                    <!--                        <a>Newsletter</a>-->
+                    <!--                    </router-link>-->
+                    <!--                </ul>-->
+                    <!--            </li>-->
+                    <!--            <li id="dropDown2" @click="toggleSubMenu('dropDown2')" class="menu_item">Contact-->
+                    <!--                <ul :class="'submenu' + { show_submenu: showSubMenu2 }">-->
+                    <!--                    <router-link tag="li" to="/jobs" class="submenu_item" exact>-->
+                    <!--                        <a>Jobs</a>-->
+                    <!--                    </router-link>-->
+                    <!--                    <router-link tag="li" to="/location" class="submenu_item" exact>-->
+                    <!--                        <a>Location</a>-->
+                    <!--                    </router-link>-->
+                    <!--                    <router-link tag="li" to="/pages/" class="submenu_item" exact>-->
+                    <!--                        <a>Management</a>-->
+                    <!--                    </router-link>-->
+                    <!--                    <router-link tag="li" to="/pages/" class="submenu_item" exact>-->
+                    <!--                        <a>Leasing</a>-->
+                    <!--                    </router-link>-->
+                    <!--                </ul>-->
+                    <!--            </li>-->
+                    <!--        </ul>-->
+                    <!--        <div class="mobile_social_icons">-->
+                    <!--            <span v-for="item in social_media">-->
+                    <!--                <a :href="item.url" target="_blank">-->
+                    <!--                    <p class="accessibility">{{item.name}}</p>-->
+                    <!--                    <i :class="item.iconClass" aria-hidden="true"></i>-->
+                    <!--                </a>-->
+                    <!--            </span>-->
+                    <!--        </div>-->
+                    <!--    </nav>-->
+                    <!--</transition>-->
                 </div>
             </div>
         </section>
