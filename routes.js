@@ -57,7 +57,7 @@ define([], function () {
                     meta: {
                         pageName: 'Promotions & Events',
                     },
-                    name: 'events-and-promotions'
+                    name: 'promotions-and-events'
                 }
             ]
         },
