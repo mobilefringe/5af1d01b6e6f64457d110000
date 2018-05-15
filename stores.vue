@@ -211,6 +211,7 @@
                 changeMode (mode) {
                     this.sortByStores = true;
                     this.selectedCat.value = "Select a Category"
+                    console.log(this.selectedCat)
                 },
                 filteredByCategory (cat_id) {
                     console.log(this)
