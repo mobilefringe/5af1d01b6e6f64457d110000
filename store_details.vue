@@ -141,8 +141,9 @@
                 currentStore: function () {
                     console.log(this.currentStore)
                     if (_.includes(this.currentStore.store_front_url_abs, 'missing')) {
-                        console.log("Yes")
+                        this.currentStore.store_front_url_abs = "http://placehold.it/300x300"
                     }
+                    
                     var vm = this;
                     var storeHours = [];
                     _.forEach(this.currentStore.store_hours, function (value, key) {
