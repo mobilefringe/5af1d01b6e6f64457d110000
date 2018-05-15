@@ -60,15 +60,14 @@
     </div>
 </template>
 <script>
-    define(["Vue", "vuex", "vue-meta", "jquery", "moment", "moment-timezone", "vue-moment", "vee-validate"], function(Vue, Vuex, Meta, $, moment, tz, VueMoment, VeeValidate) {
-        Vue.use(Meta);
+    define(["Vue", "vuex", "jquery", "vee-validate", "json!site.json"], function(Vue, Vuex, $, VeeValidate, site) {
         Vue.use(VeeValidate);
         return Vue.component("newsletter-component", {
             template: template, // the variable template will be injected
             data: function() {
                 return {
                     dataLoaded: true,
-                    currentPage: null,
+                    siteInfo: site
                     form_data : {},
                     formSuccess : false,
                     formError: false
@@ -86,8 +85,7 @@
             },
             computed: {
                 ...Vuex.mapGetters([
-                    'property',
-                    'timezone'
+                    'property'
                 ])
             },
             methods: {
