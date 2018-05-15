@@ -26,7 +26,7 @@
                             </div>
                         </div>
                     
-                        <div class="col-md-6">
+                        <div class="details_col_9">
                             <form class="form-horizontal" action="//mobilefringe.createsend.com/t/d/s/iljuii/" method="post" @submit.prevent="validateBeforeSubmit">
                                 <div class="row">
                                     <div class="col-xs-12" >
