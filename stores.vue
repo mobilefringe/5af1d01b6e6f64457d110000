@@ -210,7 +210,7 @@
                 },
                 changeMode (mode) {
                     this.sortByStores = true;
-                    // this.selectedCat = "Select a Category"
+                    this.selectedCat.value = "Select a Category"
                 },
                 filteredByCategory (cat_id) {
                     console.log(this)
