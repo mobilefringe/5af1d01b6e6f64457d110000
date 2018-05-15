@@ -32,10 +32,10 @@
                                 <div class="social_share">
                                     <p>Share</p>
                                     <network network="facebook">
-                                        <i class="fa fa-facebook-square"></i>
+                                        <i class="fab fa-facebook-square"></i>
                                     </network>
                                     <network network="twitter">
-                                        <i class="fa fa-twitter-square"></i>
+                                        <i class="fab fa-twitter-square"></i>
                                     </network>
                                 </div>
                             </social-sharing>
