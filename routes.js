@@ -48,20 +48,6 @@ define([], function () {
             ]
         },
         {
-            path: '/promotions-and-events',
-            component: view('default'),
-            children: [
-                {
-                    path: '',
-                    component: view('promotions-and-events'),
-                    meta: {
-                        pageName: 'Promotions & Events',
-                    },
-                    name: 'promotions-and-events'
-                }
-            ]
-        },
-        {
             path: '/jobs',
             component: view('default'),
             children: [
@@ -135,6 +121,20 @@ define([], function () {
                     component: view('page_details'),
                     name: 'pageDetails',
                     props: true
+                }
+            ]
+        },
+        {
+            path: '/promotions-and-events',
+            component: view('default'),
+            children: [
+                {
+                    path: '',
+                    component: view('promotions-and-events'),
+                    meta: {
+                        pageName: 'Promotions & Events',
+                    },
+                    name: 'promotions-and-events'
                 }
             ]
         },
