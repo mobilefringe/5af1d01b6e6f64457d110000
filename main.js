@@ -72,7 +72,56 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
         data: function () {
             return {
                 menu_items: [
-                    
+                    {
+                        name: "Directory",
+                        href: "/stores"
+                    },
+                    {
+                        name: "Promotions & Events",
+                        href: "/promotions-and-events"
+                    },
+                    {
+                        name: "nav.events",
+                        href: "/events",
+                    },
+                    {
+                        name: "nav.guest_services",
+                        id: "menu2",
+                        href: "",
+                        sub_menu: [
+                            {
+                                name: "nav.services",
+                                href: "/pages/stlaurent-services"
+                            },
+                            {
+                                name: "nav.gift_card",
+                                href: "/pages/stlaurent-gift-cards"
+                            }
+                        ]
+                    },
+                    {
+                        name: "nav.contact",
+                        id: "menu3",
+                        href: "",
+                        sub_menu: [
+                            {
+                                name: "nav.hours",
+                                href: "/hours"
+                            },
+                            {
+                                name: "nav.directions",
+                                href: "/contact_us"
+                            },
+                            {
+                                name: "nav.leasing",
+                                href: "/pages/stlaurent-leasing"
+                            },
+                            {
+                                name: "nav.jobs",
+                                href: "/jobs"
+                            }
+                        ]
+                    }
                 ],
                 social_media: [
                     {
