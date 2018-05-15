@@ -13,7 +13,7 @@
                 <div class="main_container margin_30">
                     <div class="details_row">
                         <div class="details_col_3">
-                            <img class="store_details_image" :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'" />
+                            <img class="store_details_image center-block" :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'" />
                             <div v-if="currentStore.phone">
                                 <h3 class="inside_page_title">Phone</h3>
                                 <a class="store_details_phone" :href="'tel:' + currentStore.phone">{{ currentStore.phone }}</a>    
