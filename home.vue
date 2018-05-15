@@ -28,8 +28,7 @@
     </div>
 </template>
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue!vue-slick", "vue-select", "jquery"], function (Vue, Vuex, moment, tz, VueMoment, slick, VueSelect, $) {
-        Vue.component('v-select', VueSelect.VueSelect);
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue!vue-slick"], function (Vue, Vuex, moment, tz, VueMoment, slick) {
         return Vue.component("home-component", {
             template: template, // the variable template will be injected
             data: function() {
