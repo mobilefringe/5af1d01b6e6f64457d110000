@@ -55,7 +55,7 @@ define([], function () {
                     path: '',
                     component: view('promotions-and-events'),
                     meta: {
-                        pageName: 'Events & Promotions',
+                        pageName: 'Promotions & Events',
                     },
                     name: 'events-and-promotions'
                 }
