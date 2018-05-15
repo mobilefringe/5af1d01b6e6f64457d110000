@@ -55,9 +55,6 @@
                                         </router-link>
                                     </ul>
                                 </li>
-                                <router-link tag="li" to="/location" class="menu_item" exact>
-                                    Location
-                                </router-link>
                                 <li id="dropDown2" @click="toggleSubMenu('dropDown2')" class="menu_item">Contact
                                     <ul :class="'submenu' + { show_submenu: showSubMenu2 }">
                                         <router-link tag="li" to="/jobs" class="submenu_item" exact>
