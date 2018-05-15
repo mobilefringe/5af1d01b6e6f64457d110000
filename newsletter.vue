@@ -13,12 +13,13 @@
                 <div class="main_container margin_30">
                     <div class="details_row">
                         <div class="details_col_3">
-                            <h3 class="contact_page_title">Centre Information</h3>
-                            <p class="directory_content">
-                                {{ property.name }}<br/>
-                                {{ property.address1 }}<br/>
-                                {{ property.city }}, {{ property.province_state }} {{ property.postal_code }}
+                            <h3 class="inside_page_title">Address</h3>
+                            <p class="inside_page_link">
+                                {{ property.address1 }} <br>
+                                {{ property.city }}, {{ property.province_state }} <br>
+                                {{ property.postal_code }}
                             </p>
+                            <a class="animated_btn" :href="siteInfo.googleMapsURL" target="_blank">Driving Direction</a>  
                         </div>
                         <div class="hidden-lg hidden-md visible-sm-block visible-xs-block">
                             <div class="col-md-12">
