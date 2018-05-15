@@ -48,12 +48,12 @@ define([], function () {
             ]
         },
         {
-            path: '/events-and-promotions',
+            path: '/promotions-and-events',
             component: view('default'),
             children: [
                 {
                     path: '',
-                    component: view('events-and-promotions'),
+                    component: view('promotions-and-events'),
                     meta: {
                         pageName: 'Events & Promotions',
                     },
