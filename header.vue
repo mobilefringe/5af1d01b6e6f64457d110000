@@ -145,7 +145,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "vue_router", "routes", "vue!today_hours.vue"], function (Vue, Vuex, VueRouter, appRoutes, TodayHoursComponent) {
+    define(["Vue", "vuex", "vue_router", "routes", "vue!today_hours.vue", "bootstrap-vue"], function (Vue, Vuex, VueRouter, appRoutes, TodayHoursComponent, BootstrapVue) {
         return Vue.component("header-component", {
             template: template, // the variable template will be injected,
             data: function () {
@@ -158,30 +158,58 @@
                     showSubMenu1: false,
                     showSubMenu2: false,
                     showSubMenu3: false
+                    
+                    showMenu: false,
+                    showMobileMenu: false,
+                    noScroll: false,
+                    windowWidth: 0
                 }
             },
             props:['menu_items', 'social_media'],
+            // watch: {
+            //     $route: function() {
+            //         if (this.windowWidth <= 768) {
+            //             this.show_menu = false;
+            //         }  
+            //     },
+            //     windowWidth: function() {
+            //         if (this.windowWidth <= 768) {
+            //             this.show_menu = false;
+            //         } else {
+            //             this.show_menu = true;
+            //             document.body.classList.remove("no-scroll");
+            //         }
+            //     },
+            //     show_menu: function() {
+            //         if(this.show_menu == true){
+            //             document.body.classList.add("no-scroll");
+            //         } else if (this.show_menu == false) {
+            //             document.body.classList.remove("no-scroll");
+            //         }
+            //     }
+            // },
             watch: {
                 $route: function() {
                     if (this.windowWidth <= 768) {
-                        this.show_menu = false;
+                        this.showMenu = false;
                     }  
+                    _.forEach(this.menu_items, function(value, key) {
+                        value.show_sub_menu = false;
+                    });
                 },
-                windowWidth: function() {
-                    if (this.windowWidth <= 768) {
-                        this.show_menu = false;
-                    } else {
-                        this.show_menu = true;
-                        document.body.classList.remove("no-scroll");
-                    }
-                },
-                show_menu: function() {
-                    if(this.show_menu == true){
-                        document.body.classList.add("no-scroll");
-                    } else if (this.show_menu == false) {
-                        document.body.classList.remove("no-scroll");
+                showMenu: function() {
+                    if(this.showMenu == true){
+                        document.body.classList.add("no_scroll");
+                    } else if (this.showMenu == false) {
+                        document.body.classList.remove("no_scroll");
                     }
                 }
+            },
+            created() {
+                this.$nextTick(function() {
+                    window.addEventListener('resize', this.getWindowWidth);
+                    this.getWindowWidth();
+                });
             },
             mounted() {
                 this.$nextTick(function() {
@@ -217,24 +245,40 @@
                 getWindowWidth(event) {
                     this.windowWidth = window.innerWidth;
                 },
-                toggleSubMenu(id) {
-                    this.showSubMenu1 = false;
-                    this.showSubMenu2 = false;
-                    this.showSubMenu3 = false;
-                    
-                    if(id == "dropDown1"){
-                        this.showSubMenu1 = true   
-                    } else if (id == "dropDown2"){
-                        this.showSubMenu2 = true 
-                    } else if (id == "dropDown3"){
-                        this.showSubMenu3 = true 
-                    }
-                    
+                onOptionSelect(option) {
+                    this.$nextTick(function() {
+                        this.search = ""
+                    });
+                    this.$router.push("/stores/" + option.slug);
                 }
             },
             beforeDestroy: function() {
                 window.removeEventListener('resize', this.getWindowWidth);
             }
+    
+            // methods: {
+            //     changeLocale: function(val) {
+            //         // this will update the data store, which in turn will trigger the watcher to update the locale in the system
+            //         this.locale = val; 
+            //     },
+            //     getWindowWidth(event) {
+            //         this.windowWidth = window.innerWidth;
+            //     },
+            //     toggleSubMenu(id) {
+            //         this.showSubMenu1 = false;
+            //         this.showSubMenu2 = false;
+            //         this.showSubMenu3 = false;
+                    
+            //         if(id == "dropDown1"){
+            //             this.showSubMenu1 = true   
+            //         } else if (id == "dropDown2"){
+            //             this.showSubMenu2 = true 
+            //         } else if (id == "dropDown3"){
+            //             this.showSubMenu3 = true 
+            //         }
+                    
+            //     }
+            // },
         });
     });
 </script>
