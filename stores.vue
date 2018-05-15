@@ -210,8 +210,6 @@
                 },
                 changeMode (mode) {
                     this.sortByStores = true;
-                    // this.selectedCat.value = "Select a Category"
-                    console.log(this.selectedCat)
                 },
                 filteredByCategory (cat_id) {
                     if(cat_id == "Select a Category" || cat_id == "All" || cat_id == null || cat_id == undefined){
