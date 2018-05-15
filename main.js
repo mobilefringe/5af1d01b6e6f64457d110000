@@ -71,6 +71,9 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
         el: '#app',
         data: function () {
             return {
+                menu_items: [
+                    
+                ],
                 social_media: [
                     {
                         name: "Facebook",
