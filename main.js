@@ -85,40 +85,40 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
                         href: "/events",
                     },
                     {
-                        name: "nav.guest_services",
-                        id: "menu2",
+                        name: "About",
+                        id: "menu1",
                         href: "",
                         sub_menu: [
                             {
-                                name: "nav.services",
-                                href: "/pages/stlaurent-services"
+                                name: "Services",
+                                href: "/pages/"
                             },
                             {
-                                name: "nav.gift_card",
-                                href: "/pages/stlaurent-gift-cards"
+                                name: "Newsletter",
+                                href: "/newsletter"
                             }
                         ]
                     },
                     {
-                        name: "nav.contact",
-                        id: "menu3",
+                        name: "Contact",
+                        id: "menu2",
                         href: "",
                         sub_menu: [
                             {
-                                name: "nav.hours",
-                                href: "/hours"
-                            },
-                            {
-                                name: "nav.directions",
-                                href: "/contact_us"
-                            },
-                            {
-                                name: "nav.leasing",
-                                href: "/pages/stlaurent-leasing"
-                            },
-                            {
-                                name: "nav.jobs",
+                                name: "Jobs",
                                 href: "/jobs"
+                            },
+                            {
+                                name: "Location",
+                                href: "/location"
+                            },
+                            {
+                                name: "Management",
+                                href: "/pages/"
+                            },
+                            {
+                                name: "Leasing",
+                                href: "/pages/"
                             }
                         ]
                     }
