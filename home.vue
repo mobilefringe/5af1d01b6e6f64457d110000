@@ -28,7 +28,7 @@
     </div>
 </template>
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue!vue-slick"], function (Vue, Vuex, moment, tz, VueMoment, slick) {
+    define(["Vue", "vuex", "vue!vue-slick"], function (Vue, Vuex, slick) {
         return Vue.component("home-component", {
             template: template, // the variable template will be injected
             data: function() {
@@ -56,8 +56,7 @@
                 ...Vuex.mapGetters([
                     'property',
                     'timezone',
-                    'getPropertyHours',
-                    'processedStores'
+                    'getPropertyHours'
                 ]),
                 homeBanners() {
                     var banners = [];
@@ -79,29 +78,6 @@
                 },
                 featureItems() {
                     return _.slice(this.$store.state.feature_items, 0, 3);
-                },
-                allStores() {
-                    return this.processedStores;
-                },
-                getSVGurl () {
-                    return "https://www.mallmaverick.com" + this.property.svgmap_url;
-                },
-                svgMapRef() {
-                    return this.$refs.svgRef;
-                },
-                regions () {
-                    var regions = {}
-                    _.forEach( this.processedStores , function( val, key ) {
-                        if(val.svgmap_region != null && typeof(val.svgmap_region)  != 'undefined'){
-                            obj = {};
-                            obj["tooltip"] = "<p class='tooltip_name'>" + val.name + "</p>";
-                            obj["attr"] = {};
-                            obj["attr"]["href"] = "/stores/" + val.slug;
-                            regions[val.svgmap_region] = obj;
-                        }
-                        
-                    });
-                    return regions;
                 }
             },
             methods: {
@@ -112,11 +88,6 @@
                     } catch(e) {
                         console.log("Error loading data: " + e.message);    
                     }
-                },
-                dropPin(store) {
-                    this.svgMapRef.hideMarkers();
-                    this.svgMapRef.addMarker(store, '//codecloud.cdn.speedyrails.net/sites/589e308f6e6f641b9f010000/image/png/1484850466000/show_pin.png');
-                    this.svgMapRef.setViewBox(store)
                 }
             }
         })
