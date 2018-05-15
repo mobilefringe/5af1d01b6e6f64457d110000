@@ -141,7 +141,7 @@
                     this.updateCurrentStore(this.$route.params.id);
                 },
                 currentStore: function () {
-                    console.log(currentStore)
+                    console.log(this.currentStore)
                     var vm = this;
                     var storeHours = [];
                     _.forEach(this.currentStore.store_hours, function (value, key) {
