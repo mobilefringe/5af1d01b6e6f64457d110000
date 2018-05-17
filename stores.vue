@@ -38,24 +38,18 @@
                             <div class="col-md-6">
                                 <div v-if="listOne" v-for="(stores, index) in listOne">
                                     <div class="list_header">
-                                        <div class="store_initial_container">{{index}}</div>
+                                        <div class="store_initial_container">
+                                            {{index}}
+                                        </div>
                                     </div>
                                     <div class="store-section" v-for="store in stores">
                                         <p class="store_list_name">
                                             <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
                                                 {{store.name}}
                                             </router-link>
-                                            <div>
-                                                <span v-if="store.is_new_store" class="pull-right new_store">
-                                                    <i class="fas fa-star"></i>
-                                                </span>
-                                                <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store">
-                                                    <i class="far fa-clock"></i>
-                                                </span>
-                                                <span v-if="store.promotions != null" class="promo_exist pull-right">
-                                                    <i class="fas fa-tag"></i>
-                                                </span>
-                                            </div>
+                                            <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i></span>
+                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i></span>
+                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
                                         </p>
                                     </div>
                                 </div>
@@ -72,11 +66,9 @@
                                             <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
                                                 {{store.name}}
                                             </router-link>
-                                            <div>
-                                                <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i></span>
-                                                <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i></span>
-                                                <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
-                                            </div>
+                                            <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i></span>
+                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i></span>
+                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
                                         </p>
                                     </div>
                                 </div>
@@ -84,24 +76,20 @@
                         </div>
                         <div class="row" v-else>
                             <div class="col-md-12">
-                                <div v-for="(stores, index) in filteredStores">
+                                <div v-for="(stores, index) in filteredStores" >
                                     <div class="list_header">
-                                        <div class="store_initial_container">{{index}}</div>
+                                        <div class="store_initial_container">
+                                            {{index}}
+                                        </div>
                                     </div>
                                     <div class="store-section" v-for="store in stores">
                                         <p class="store_list_name">
                                             <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
                                                 {{store.name}}
                                             </router-link>
-                                            <div>
-                                                <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i></span>
-                                                <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store">
-                                                    <i class="far fa-clock"></i>
-                                                </span>
-                                                <span v-if="store.promotions != null" class="promo_exist pull-right">
-                                                    <i class="fas fa-tag"></i>
-                                                </span>
-                                            </div>
+                                            <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i></span>
+                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i></span>
+                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
                                         </p>
                                     </div>
                                 </div>
